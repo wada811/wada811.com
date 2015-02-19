@@ -18,3 +18,18 @@ In terminal, execute the following commands.
 ### Preview themes
 
 `hugo server -t "`ls themes | peco`"`
+
+
+## Preview
+
+`hugo server`
+
+
+## Build
+
+`hugo`
+
+
+## Deploy
+
+`./deploy.sh`
