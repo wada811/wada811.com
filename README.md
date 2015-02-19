@@ -17,7 +17,7 @@ In terminal, execute the following commands.
 
 ### Preview themes
 
-`hugo server -t "`ls themes | peco`"`
+```hugo server -t "`ls themes | peco`"```
 
 
 ## Preview
