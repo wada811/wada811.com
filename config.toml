@@ -1,3 +1,3 @@
-baseurl = "http://wada811.github.io"
-languageCode = "ja-JP"
-title = "wada811/blog"
+BaseUrl = "/"
+LanguageCode = "ja-JP"
+Title = "wada811/blog"
