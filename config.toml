@@ -1,3 +1,7 @@
 BaseUrl = "/"
 LanguageCode = "ja-JP"
 Title = "wada811/blog"
+
+[Params]
+    Author = "wada811"
+    DateForm = "2006-01-02T15:04:05-07:00" # time - The Go Programming Language http://golang.org/pkg/time/#Time.Format
