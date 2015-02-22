@@ -8,10 +8,11 @@ Title = "wada811/blog"
     Facebook = "takumi.wada.92"
     Twitter = "wada811"
     Github = "wada811"
+    SyntaxHighlightTheme = "solarized_dark.min.css"
 
 [Indexes]
-    Tag = "tags"
+    tag = "tags"
 
 [Permalinks]
-    Post = "/:year/:month/:filename/"
-    Page = "/:filename/"
+    post = "/post/:year/:month/:filename/"
+    page = "/:filename/"
