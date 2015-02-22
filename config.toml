@@ -9,3 +9,9 @@ Title = "wada811/blog"
     Twitter = "wada811"
     Github = "wada811"
 
+[Indexes]
+    Tag = "tags"
+
+[Permalinks]
+    Post = "/:year/:month/:filename/"
+    Page = "/:filename/"
