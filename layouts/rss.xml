@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ .Site.Title }} </title>
-    <link>{{ .Permalink }}</link>
-    <language>en-us</language>
+    <title>{{ .Site.Title }}</title>
+    <link>{{ .Site.BaseUrl }}</link>
+    <language>{{ .Site.LanguageCode }}</language>
     <author>{{ .Site.Params.Author }}</author>
     <rights>(C) {{ .Site.LastChange.Year }}</rights>
     <updated>{{ .Date }}</updated>
