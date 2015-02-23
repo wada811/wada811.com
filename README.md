@@ -29,6 +29,10 @@ In terminal, execute the following commands.
 
 `hugo`
 
+If you want to apply theme,
+
+`hugo -t themename`
+
 
 ## Deploy
 
