@@ -15,14 +15,14 @@ cd public
 git add -A
 
 # Commit changes.
-msg="rebuilding site `date`"
+msg=""
 if [ $# -eq 1 ]
   then msg="$1"
 fi
-git commit --amend --allow-empty-message -m ""
+git commit --amend --allow-empty-message -m "$msg"
 
 # Push source and build repos.
-git push origin master
+git push -f origin master
 
 # Come Back
 cd ..
@@ -30,11 +30,11 @@ cd ..
 git add -A
 
 # Commit changes.
-msg="rebuilding site `date`"
+msg=""
 if [ $# -eq 1 ]
   then msg="$1"
 fi
-git commit --amend --allow-empty-message -m ""
+git commit --amend --allow-empty-message -m "$msg"
 
 # Push source and build repos.
-git push origin master
+git push -f origin master
