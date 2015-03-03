@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Refresh Public folder
-rm -rf public
-mkdir public
-echo "gitdir: ../.git/modules/public" > public/.git
-echo "blog.wada811.com" > public/CNAME
-
 # Build the project. 
 hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
