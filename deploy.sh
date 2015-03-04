@@ -1,6 +1,9 @@
-#!/bin/bash
+#!/bin/bash -eux
 
-# Build the project. 
+# Clean public
+rm -rf public/*
+
+# Build the project.
 hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 # Go To Public folder
