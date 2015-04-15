@@ -6,8 +6,75 @@
     <language>ja-JP</language>
     <author>wada811</author>
     <rights>(C) 2015</rights>
-    <updated>2015-03-04 22:40:40 &#43;0900 JST</updated>
+    <updated>2015-04-15 11:44:36 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>[Visual Studio]アドインの読み込み</title>
+          <link>http://blog.wada811.com/post/visual-studio-addins-settings/</link>
+          <pubDate>Wed, 15 Apr 2015 11:44:36 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/visual-studio-addins-settings/</guid>
+          <description>
+
+&lt;h2 id=&#34;アドインの読み込み:76f0a034b2b9c138b348d556e841115b&#34;&gt;アドインの読み込み&lt;/h2&gt;
+
+&lt;p&gt;アドインを入手した場合、Visual Studio からアドインを読み込むためには Visual Studio が認識できるディレクトリに置く必要があります。&lt;/p&gt;
+
+&lt;h3 id=&#34;visual-studio-が認識できるディレクトリ:76f0a034b2b9c138b348d556e841115b&#34;&gt;Visual Studio が認識できるディレクトリ&lt;/h3&gt;
+
+&lt;p&gt;[ツール] &amp;gt; [オプション] &amp;gt; [環境] &amp;gt; [アドイン セキュリティ] を開くと、下図のようなダイアログボックスが開きます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wada811.com/images/visual-studio-addins-settings/VisualStudioAddinSettings.png&#34; alt=&#34;&#34; /&gt;
+&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;変数&lt;/th&gt;
+&lt;th&gt;パス&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;%ALLUSERSPROFILE%&lt;/td&gt;
+&lt;td&gt;C:\Users\Public&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;%APPDATA%&lt;/td&gt;
+&lt;td&gt;C:\Users\&lt;strong&gt;username&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;%VSAPPDATA%&lt;/td&gt;
+&lt;td&gt;C:\Users\&lt;strong&gt;username&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;%VSCOMMONAPPDATA%&lt;/td&gt;
+&lt;td&gt;C:\Users\Public&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;%VSMYDOCUMENTS%&lt;/td&gt;
+&lt;td&gt;C:\Users\&lt;strong&gt;username&lt;/strong&gt;\Documents\Visual Studio 2013&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;読み込み:76f0a034b2b9c138b348d556e841115b&#34;&gt;読み込み&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;C:\Users\username\Documents\Visual Studio 2013\Addins&lt;/code&gt; に保存して再起動すれば読み込まれます。&lt;/p&gt;
+
+&lt;h2 id=&#34;参考:76f0a034b2b9c138b348d556e841115b&#34;&gt;参考&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.kanazawa-net.ne.jp/~pmansato/vs/vs_addin.htm#store&#34;&gt;アドインの格納 | Visual Studio アドイン&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
