@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wada811/blog</title>
+    <link>http://blog.wada811.com/</link>
+    <language>ja-JP</language>
+    <author>wada811</author>
+    <rights>(C) 2015</rights>
+    <updated>2015-03-04 22:40:40 &#43;0900 JST</updated>
+
+    
+      
+        <item>
+          <title>Hugo Getting Started</title>
+          <link>http://blog.wada811.com/post/hugo-getting-started/</link>
+          <pubDate>Wed, 04 Mar 2015 22:40:40 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/hugo-getting-started/</guid>
+          <description>
+
+&lt;h2 id=&#34;hugo-http-gohugo-io-とは:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; とは&lt;/h2&gt;
+
+&lt;p&gt;静的サイトジェネレータ。
+ブログを生成して GitHub Pages でホスティングしている人が多い印象。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugo-のインストール:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;Hugo のインストール&lt;/h2&gt;
+
+&lt;h3 id=&#34;mac-の場合:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;Mac の場合&lt;/h3&gt;
+
+&lt;p&gt;Homebrew でインストール&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;その他の場合:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;その他の場合&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/overview/quickstart&#34;&gt;Installing Hugo&lt;/a&gt; を読んで。&lt;/p&gt;
+
+&lt;h2 id=&#34;静的サイトの作成-http-gohugo-io-overview-quickstart-step-2-have-hugo-create-a-site-for-you-09c84f91027bd18b03251c05a0da4abb:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;&lt;a href=&#34;http://gohugo.io/overview/quickstart/#step-2-have-hugo-create-a-site-for-you:09c84f91027bd18b03251c05a0da4abb&#34;&gt;静的サイトの作成&lt;/a&gt;&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new blog
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;blog&lt;/code&gt; は何でも良い。好きな名前を付けて欲しい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tree blog
+├── archetypes/
+├── config.toml
+├── content/
+├── layouts/
+└── static/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上記のような構造が生成される。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd blog
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以降は作成されたディレクトリ内で作業を行う。&lt;/p&gt;
+
+&lt;h2 id=&#34;テーマのインストール-http-gohugo-io-overview-quickstart-step-4-install-some-themes-09c84f91027bd18b03251c05a0da4abb:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;&lt;a href=&#34;http://gohugo.io/overview/quickstart/#step-4-install-some-themes:09c84f91027bd18b03251c05a0da4abb&#34;&gt;テーマのインストール&lt;/a&gt;&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone --recursive https://github.com/spf13/hugoThemes.git themes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;まずはテーマをインストールして使いたいものがないか探す。
+あんまり種類はないので全部確認できると思う。&lt;/p&gt;
+
+&lt;h3 id=&#34;テーマの確認:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;テーマの確認&lt;/h3&gt;
+
+&lt;p&gt;以下のコマンドでテーマを選んでプレビューしよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo server -t &amp;quot;`ls themes | peco`&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;peco をインストールしていない場合は themes 以下のディレクトリ名を指定。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>git commit --amend でコミットメッセージを編集しない方法</title>
+          <link>http://blog.wada811.com/post/git-commit-amend-no-edit-message/</link>
+          <pubDate>Tue, 03 Mar 2015 08:51:30 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/git-commit-amend-no-edit-message/</guid>
+          <description>&lt;p&gt;&lt;code&gt;git commit --amend&lt;/code&gt; するとコミットメッセージを編集することになります。
+コミットメッセージは別に編集したくない場合や、
+シェルスクリプトで &lt;code&gt;git commit --amend&lt;/code&gt; を使いたい場合は
+いちいちコミットメッセージの編集画面になるのが面倒です。
+何か方法はないかと探してみると以下の方法がありました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git commit --amend --allow-empty-message -m &amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;-m &amp;quot;&amp;quot;&lt;/code&gt; で空のコミットメッセージで上書きされてしまうのではないかと心配になりますが大丈夫みたいです。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Markdown style check</title>
+          <link>http://blog.wada811.com/post/markdown-style-check/</link>
+          <pubDate>Mon, 23 Feb 2015 09:23:06 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/markdown-style-check/</guid>
+          <description>
+
+&lt;h2 id=&#34;references:713741fc5da2543b8d20b1add94e545e&#34;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://help.github.com/articles/markdown-basics/&#34;&gt;Markdown Basics - User Documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://help.github.com/articles/github-flavored-markdown/&#34;&gt;GitHub Flavored Markdown - User Documentation&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;basic-writing:713741fc5da2543b8d20b1add94e545e&#34;&gt;Basic writing&lt;/h2&gt;
+
+&lt;h3 id=&#34;paragraphs:713741fc5da2543b8d20b1add94e545e&#34;&gt;Paragraphs&lt;/h3&gt;
+
+&lt;p&gt;テキストを1行以上の改行でパラグラフを分ける。&lt;/p&gt;
+
+&lt;p&gt;パラグラフ１です。パラグラフ１です。パラグラフ１です。パラグラフ１です。パラグラフ１です。パラグラフ１です。パラグラフ１です。&lt;/p&gt;
+
+&lt;p&gt;パラグラフ２です。パラグラフ２です。パラグラフ２です。パラグラフ２です。パラグラフ２です。パラグラフ２です。パラグラフ２です。&lt;/p&gt;
+
+&lt;h3 id=&#34;headings:713741fc5da2543b8d20b1add94e545e&#34;&gt;Headings&lt;/h3&gt;
+
+&lt;h1 id=&#34;first-largest-headings:713741fc5da2543b8d20b1add94e545e&#34;&gt;First largest headings&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;#&lt;/code&gt; の後、テキストを記述する。&lt;/p&gt;
+
+&lt;h2 id=&#34;second-largest-headings:713741fc5da2543b8d20b1add94e545e&#34;&gt;Second largest headings&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;##&lt;/code&gt; の後、テキストを記述する。&lt;/p&gt;
+
+&lt;h3 id=&#34;third-largest-headings:713741fc5da2543b8d20b1add94e545e&#34;&gt;Third largest headings&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;###&lt;/code&gt; の後、テキストを記述する。&lt;/p&gt;
+
+&lt;h4 id=&#34;forth-largest-headings:713741fc5da2543b8d20b1add94e545e&#34;&gt;Forth largest headings&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;####&lt;/code&gt; の後、テキストを記述する。&lt;/p&gt;
+
+&lt;h5 id=&#34;fifth-largest-headings:713741fc5da2543b8d20b1add94e545e&#34;&gt;Fifth largest headings&lt;/h5&gt;
+
+&lt;p&gt;&lt;code&gt;#####&lt;/code&gt; の後、テキストを記述する。&lt;/p&gt;
+
+&lt;h6 id=&#34;sixth-largest-headings:713741fc5da2543b8d20b1add94e545e&#34;&gt;Sixth largest headings&lt;/h6&gt;
+
+&lt;p&gt;&lt;code&gt;######&lt;/code&gt; の後、テキストを記述する。&lt;/p&gt;
+
+&lt;h3 id=&#34;blockquotes:713741fc5da2543b8d20b1add94e545e&#34;&gt;Blockquotes&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;gt;&lt;/code&gt; の後、テキストを記述する。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;引用テキスト&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;styling-text:713741fc5da2543b8d20b1add94e545e&#34;&gt;Styling text&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;*&lt;/code&gt; で囲ったテキストはイタリックになる。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;**&lt;/code&gt; で囲ったテキストはボールドになる。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;~~&lt;/code&gt; で囲ったテキストは打ち消しになる。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This text will be italic&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;This text will be bold&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;This text will be strikethrough&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;組み合わせることも可能。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Everyone &lt;strong&gt;must&lt;/strong&gt; attend the meeting at 5 o&amp;rsquo;clock today.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Everyone &lt;em&gt;must&lt;/em&gt; attend the meeting at 5 o&amp;rsquo;clock today.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;lists:713741fc5da2543b8d20b1add94e545e&#34;&gt;Lists&lt;/h2&gt;
+
+&lt;h3 id=&#34;unordered-lists:713741fc5da2543b8d20b1add94e545e&#34;&gt;Unordered lists&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;-&lt;/code&gt; の後、テキストを記述する。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Item&lt;/li&gt;
+&lt;li&gt;Item&lt;/li&gt;
+&lt;li&gt;Item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;ordered-lists:713741fc5da2543b8d20b1add94e545e&#34;&gt;Ordered lists&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;数字.&lt;/code&gt; の後、テキストを記述する。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Item 1&lt;/li&gt;
+&lt;li&gt;Item 2&lt;/li&gt;
+&lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;nested-lists:713741fc5da2543b8d20b1add94e545e&#34;&gt;Nested lists&lt;/h3&gt;
+
+&lt;p&gt;2つスペースを開ければネストできる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;hoge
+
+&lt;ol&gt;
+&lt;li&gt;hoge&lt;/li&gt;
+&lt;li&gt;piyo&lt;/li&gt;
+&lt;li&gt;fuga&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;foo
+
+&lt;ol&gt;
+&lt;li&gt;foo&lt;/li&gt;
+&lt;li&gt;bar&lt;/li&gt;
+&lt;li&gt;baz&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;spam
+
+&lt;ol&gt;
+&lt;li&gt;spam&lt;/li&gt;
+&lt;li&gt;ham&lt;/li&gt;
+&lt;li&gt;eggs&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;code-formatting:713741fc5da2543b8d20b1add94e545e&#34;&gt;Code formatting&lt;/h2&gt;
+
+&lt;h3 id=&#34;inline-formats:713741fc5da2543b8d20b1add94e545e&#34;&gt;Inline formats&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;`&lt;/code&gt; で囲ったテキストはコードフォーマットされる。&lt;/p&gt;
+
+&lt;p&gt;This is &lt;code&gt;inline code&lt;/code&gt; or &lt;code&gt;inline variable&lt;/code&gt; example.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;``SELECT * FROM `users`;`` # Surround with double backquotes when escaping single backquote.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;SELECT * FROM `users`;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;multiple-lines:713741fc5da2543b8d20b1add94e545e&#34;&gt;Multiple lines&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;```&lt;/code&gt;  で囲ったテキストはコードブロックになる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;```
+```` ``` ````  で囲ったテキストはコードブロックになる。
+```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;syntax-highlighting:713741fc5da2543b8d20b1add94e545e&#34;&gt;Syntax highlighting&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;require &#39;redcarpet&#39;
+markdown = Redcarpet.new(&amp;quot;Hello World!&amp;quot;)
+puts markdown.to_html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;```ruby
+require &#39;redcarpet&#39;
+markdown = Redcarpet.new(&amp;quot;Hello World!&amp;quot;)
+puts markdown.to_html
+```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;links:713741fc5da2543b8d20b1add94e545e&#34;&gt;Links&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;[link text](link url)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wada811.com/&#34;&gt;wada811/blog&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;url-autolinking:713741fc5da2543b8d20b1add94e545e&#34;&gt;URL autolinking&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wada811.com/&#34;&gt;http://blog.wada811.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;tables:713741fc5da2543b8d20b1add94e545e&#34;&gt;Tables&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;First Header&lt;/th&gt;
+&lt;th&gt;Second Header&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;First Header&lt;/th&gt;
+&lt;th&gt;Second Header&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;| Name | Description          |
+| ------------- | ----------- |
+| Help      | Display the help window.|
+| Close     | Closes a window     |
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Help&lt;/td&gt;
+&lt;td&gt;Display the help window.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Close&lt;/td&gt;
+&lt;td&gt;Closes a window&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;| Name | Description          |
+| ------------- | ----------- |
+| Help      | ~~Display the~~ help window.|
+| Close     | _Closes_ a window     |
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Help&lt;/td&gt;
+&lt;td&gt;&lt;del&gt;Display the&lt;/del&gt; help window.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Close&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;Closes&lt;/em&gt; a window&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Left-Aligned&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Center Aligned&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Right Aligned&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;col 3 is&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;some wordy text&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$1600&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;col 2 is&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;centered&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$12&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;zebra stripes&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;are neat&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Hugoでブログを書くことにしました</title>
+          <link>http://blog.wada811.com/post/blog-powered-by-hugo/</link>
+          <pubDate>Sun, 22 Feb 2015 16:13:22 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/blog-powered-by-hugo/</guid>
+          <description>
+
+&lt;p&gt;今まで Blogger でブログを書いていましたが Hugo に移行しました。(過去記事は移行できていないけど…)&lt;/p&gt;
+
+&lt;p&gt;移行理由は、主に以下の2つ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Blogger のプレビューが重くて少し書いては1分くらいプレビューが表示されるのを待つという状況&lt;/li&gt;
+&lt;li&gt;最近は Qiita で Markdown を使って書くようになり、ブログも Markdown で書きたいという欲求&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hugo は Markdown で書いてすぐプレビューができるので最高っぽい。&lt;/p&gt;
+
+&lt;h3 id=&#34;参考:862c1fa61dd509d8503fc5aef0061056&#34;&gt;参考&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo :: A fast and modern static website engine&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://deeeet.com/writing/2014/12/25/hugo/&#34;&gt;OctopressからHugoへ移行した | SOTA&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://re-dzine.net/2015/01/hugo/&#34;&gt;MiddlemanからHugoへ移行した | REFLECTDESIGN&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://t32k.me/mol/log/hugo/&#34;&gt;Jekyllが許されるのは小学生までだよね - MOL&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://rakuishi.com/archives/wordpress-to-hugo/&#34;&gt;WordPress から Hugo に乗り換えました - rakuishi.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/&#34;&gt;ブログをOctopressからHugoに移行した | Unresolved&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://syui.github.io/blog/2015/01/08/hugo-github-pages/&#34;&gt;サイトジェネレーターのHUGOを使ってみた - MBA-HACK2&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wada811/blog</title>
+    <link>http://blog.wada811.com/</link>
+    <language>ja-JP</language>
+    <author>wada811</author>
+    <rights>(C) 2015</rights>
+    <updated>2015-03-04 22:40:40 &#43;0900 JST</updated>
+
+    
+      
+        <item>
+          <title>Hugo Getting Started</title>
+          <link>http://blog.wada811.com/post/hugo-getting-started/</link>
+          <pubDate>Wed, 04 Mar 2015 22:40:40 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/hugo-getting-started/</guid>
+          <description>
+
+&lt;h2 id=&#34;hugo-http-gohugo-io-とは:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; とは&lt;/h2&gt;
+
+&lt;p&gt;静的サイトジェネレータ。
+ブログを生成して GitHub Pages でホスティングしている人が多い印象。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugo-のインストール:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;Hugo のインストール&lt;/h2&gt;
+
+&lt;h3 id=&#34;mac-の場合:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;Mac の場合&lt;/h3&gt;
+
+&lt;p&gt;Homebrew でインストール&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;その他の場合:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;その他の場合&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/overview/quickstart&#34;&gt;Installing Hugo&lt;/a&gt; を読んで。&lt;/p&gt;
+
+&lt;h2 id=&#34;静的サイトの作成-http-gohugo-io-overview-quickstart-step-2-have-hugo-create-a-site-for-you-09c84f91027bd18b03251c05a0da4abb:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;&lt;a href=&#34;http://gohugo.io/overview/quickstart/#step-2-have-hugo-create-a-site-for-you:09c84f91027bd18b03251c05a0da4abb&#34;&gt;静的サイトの作成&lt;/a&gt;&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new blog
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;blog&lt;/code&gt; は何でも良い。好きな名前を付けて欲しい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tree blog
+├── archetypes/
+├── config.toml
+├── content/
+├── layouts/
+└── static/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上記のような構造が生成される。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd blog
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以降は作成されたディレクトリ内で作業を行う。&lt;/p&gt;
+
+&lt;h2 id=&#34;テーマのインストール-http-gohugo-io-overview-quickstart-step-4-install-some-themes-09c84f91027bd18b03251c05a0da4abb:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;&lt;a href=&#34;http://gohugo.io/overview/quickstart/#step-4-install-some-themes:09c84f91027bd18b03251c05a0da4abb&#34;&gt;テーマのインストール&lt;/a&gt;&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone --recursive https://github.com/spf13/hugoThemes.git themes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;まずはテーマをインストールして使いたいものがないか探す。
+あんまり種類はないので全部確認できると思う。&lt;/p&gt;
+
+&lt;h3 id=&#34;テーマの確認:1ed0ad5d32c7c542b4ef497f50bc0229&#34;&gt;テーマの確認&lt;/h3&gt;
+
+&lt;p&gt;以下のコマンドでテーマを選んでプレビューしよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo server -t &amp;quot;`ls themes | peco`&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;peco をインストールしていない場合は themes 以下のディレクトリ名を指定。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Hugoでブログを書くことにしました</title>
+          <link>http://blog.wada811.com/post/blog-powered-by-hugo/</link>
+          <pubDate>Sun, 22 Feb 2015 16:13:22 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/blog-powered-by-hugo/</guid>
+          <description>
+
+&lt;p&gt;今まで Blogger でブログを書いていましたが Hugo に移行しました。(過去記事は移行できていないけど…)&lt;/p&gt;
+
+&lt;p&gt;移行理由は、主に以下の2つ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Blogger のプレビューが重くて少し書いては1分くらいプレビューが表示されるのを待つという状況&lt;/li&gt;
+&lt;li&gt;最近は Qiita で Markdown を使って書くようになり、ブログも Markdown で書きたいという欲求&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hugo は Markdown で書いてすぐプレビューができるので最高っぽい。&lt;/p&gt;
+
+&lt;h3 id=&#34;参考:862c1fa61dd509d8503fc5aef0061056&#34;&gt;参考&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo :: A fast and modern static website engine&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://deeeet.com/writing/2014/12/25/hugo/&#34;&gt;OctopressからHugoへ移行した | SOTA&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://re-dzine.net/2015/01/hugo/&#34;&gt;MiddlemanからHugoへ移行した | REFLECTDESIGN&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://t32k.me/mol/log/hugo/&#34;&gt;Jekyllが許されるのは小学生までだよね - MOL&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://rakuishi.com/archives/wordpress-to-hugo/&#34;&gt;WordPress から Hugo に乗り換えました - rakuishi.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/&#34;&gt;ブログをOctopressからHugoに移行した | Unresolved&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://syui.github.io/blog/2015/01/08/hugo-github-pages/&#34;&gt;サイトジェネレーターのHUGOを使ってみた - MBA-HACK2&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>
