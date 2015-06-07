@@ -9,13 +9,13 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hugoでブログを書くことにしました &middot; wada811/blog">
+<meta property="og:title" content="[Android] DatePicker のレイアウトのフラグがカオスな件について &middot; wada811/blog">
 
 <meta property="og:site_name" content="wada811/blog">
 
 <title>
     
-    Hugoでブログを書くことにしました
+    [Android] DatePicker のレイアウトのフラグがカオスな件について
     
 </title>
 
@@ -91,44 +91,171 @@
             <header>
                 <div class="post-date">
                     <span class="glyphicon glyphicon-calendar"></span>
-                    <time datetime="2015-02-22">
-                        2015-02-22
+                    <time datetime="2015-06-07">
+                        2015-06-07
                     </time>
                 </div>
                 <h1 class="post-title">
-                    <a href="http://blog.wada811.com/post/blog-powered-by-hugo/">Hugoでブログを書くことにしました</a>
+                    <a href="http://blog.wada811.com/post/datepicker-layout-flag-in-android/">[Android] DatePicker のレイアウトのフラグがカオスな件について</a>
                 </h1>
             </header>
 
             <div class="post-content">
                 
 
-<p>今まで Blogger でブログを書いていましたが Hugo に移行しました。(過去記事は移行できていないけど…)</p>
+<h2 id="カオスな-datepicker-のレイアウトのフラグ:6fd935a4dd578ae815fb8cb261e243f7">カオスな DatePicker のレイアウトのフラグ</h2>
 
-<p>移行理由は、主に以下の2つ。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>値</th>
+<th>API Level</th>
+</tr>
+</thead>
 
-<ul>
-<li>Blogger のプレビューが重くて少し書いては1分くらいプレビューが表示されるのを待つという状況</li>
-<li>最近は Qiita で Markdown を使って書くようになり、ブログも Markdown で書きたいという欲求</li>
-</ul>
+<tbody>
+<tr>
+<td><code>android:calendarViewShown</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td>11</td>
+</tr>
 
-<p>Hugo は Markdown で書いてすぐプレビューができるので最高っぽい。</p>
+<tr>
+<td><code>android:spinnersShown</code></td>
+<td><code>true</code> or <code>false</code></td>
+<td>11</td>
+</tr>
 
-<h3 id="参考:862c1fa61dd509d8503fc5aef0061056">参考</h3>
+<tr>
+<td><code>android:datePickerMode</code></td>
+<td><code>spinner</code> or <code>calendar</code></td>
+<td>21</td>
+</tr>
+</tbody>
+</table>
 
-<p><a href="http://gohugo.io/">Hugo :: A fast and modern static website engine</a></p>
+<p><code>datePickerMode</code>は未指定もしくは<code>spinner</code>がLollipop 未満の表示です。<br>
+<code>calendar</code>が Lollipop からの表示になります。<br></p>
 
-<p><a href="http://deeeet.com/writing/2014/12/25/hugo/">OctopressからHugoへ移行した | SOTA</a></p>
+<p>レイアウトの切り替えにフラグが3種類って嫌な予感しかしませんね。</p>
 
-<p><a href="http://re-dzine.net/2015/01/hugo/">MiddlemanからHugoへ移行した | REFLECTDESIGN</a></p>
+<h2 id="各属性を設定した場合の表示の違い:6fd935a4dd578ae815fb8cb261e243f7">各属性を設定した場合の表示の違い</h2>
 
-<p><a href="http://t32k.me/mol/log/hugo/">Jekyllが許されるのは小学生までだよね - MOL</a></p>
+<p><code>Theme.AppCompat</code>を指定した<code>FragmentActivity</code>のスクリーンショットです。<br></p>
 
-<p><a href="http://rakuishi.com/archives/wordpress-to-hugo/">WordPress から Hugo に乗り換えました - rakuishi.com</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>DatePickerPattern1</th>
+<th>DatePickerPattern2</th>
+<th>DatePickerPattern3</th>
+<th>DatePickerPattern4</th>
+<th>DatePickerPattern5</th>
+<th>DatePickerPattern6</th>
+<th>DatePickerPattern7</th>
+<th>DatePickerPattern8</th>
+</tr>
+</thead>
 
-<p><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した | Unresolved</a></p>
+<tbody>
+<tr>
+<td><code>android:datePickerMode</code></td>
+<td>spinner</td>
+<td>spinner</td>
+<td>spinner</td>
+<td>spinner</td>
+<td>calendar</td>
+<td>calendar</td>
+<td>calendar</td>
+<td>calendar</td>
+</tr>
 
-<p><a href="http://syui.github.io/blog/2015/01/08/hugo-github-pages/">サイトジェネレーターのHUGOを使ってみた - MBA-HACK2</a></p>
+<tr>
+<td><code>android:calendarViewShown</code></td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td><code>android:spinnersShown</code></td>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+<td>true</td>
+<td>false</td>
+<td>true</td>
+</tr>
+
+<tr>
+<td>Screenshot</td>
+<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png" />
+</td>
+<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png" />
+</td>
+<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png" />
+</td>
+<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png" />
+</td>
+<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png" />
+</td>
+<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png" />
+</td>
+<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png" />
+</td>
+<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png" />
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>DatePickerPattern1~4 は Lollipop 未満の表示です。<br>
+DatePickerPattern5~8 は<code>android:datePickerMode=&quot;calendar&quot;</code>が
+<code>calendarViewShown</code>と<code>spinnersShown</code>より強いので全て Lollipop のカレンダー表示になっています。<br></p>
+
+<h2 id="どうしてこうなった:6fd935a4dd578ae815fb8cb261e243f7">どうしてこうなった</h2>
+
+<p>そもそも <code>bool</code> で定義すべきではない表示形式を
+<code>calendarViewShown</code> と <code>spinnersShown</code> の2種類の <code>bool</code> で表してしまったことが全ての元凶です。
+本来は3種類のレイアウトを2種類の <code>bool</code> で表現したため、4種類の状態が表現できるようになってしました。
+そこに <code>calendarViewShown</code> と <code>spinnersShown</code> よりも強い <code>datePickerMode</code> が追加されカオスな状況になりました。</p>
+
+<h2 id="どうすべきだったのか:6fd935a4dd578ae815fb8cb261e243f7">どうすべきだったのか</h2>
+
+<p><code>calendarViewShown</code>と<code>spinnersShown</code>の両方に<code>false</code>を指定した際に<br>
+何も表示しない状態がある時点で怪しいと思わなければならないと思います。<br>
+Lollipop 未満の時点で表示形式は以下のような<code>enum</code>で定義したほうが良かったと思います。</p>
+
+<pre><code>enum DatePickerMode {
+    spinenr,
+    calendar,
+    spinner_and_calendar
+}
+</code></pre>
+
+<p>そうすれば DatePickerPattern1 のような何も表示されない状態もなく、<br>
+Lollipop で追加された表示形式も、テーマ次第で<code>calendar</code>などの表示を変えてしまうとか<br>
+<code>material</code>とか何とかを<code>enum</code>の値に追加するだけで済んだと思います。<br></p>
+
+<h2 id="まとめ:6fd935a4dd578ae815fb8cb261e243f7">まとめ</h2>
+
+<p>怪しいフラグを増やしそうになったら抽象化して考えて<code>bool</code>が適切か考えましょう。</p>
+
+<p><blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="ja" dir="ltr">Android の DatePicker がクソとかそういう話はどうでもよくて、その bool 、本当に bool ですか？という話です</p>&mdash; あなたとReSharper (@wada811) <a href="https://twitter.com/wada811/status/608622501401223168">June 10, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="リポジトリ:6fd935a4dd578ae815fb8cb261e243f7">リポジトリ</h2>
+
+<p><a href="https://github.com/wada811/Android-DatePicker-Sample">wada811/Android-DatePicker-Sample</a></p>
 
             </div>
 
@@ -137,23 +264,9 @@
                 <ul class="list-inline post-tags">
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/blog">
+                        <a href="http://blog.wada811.com/tags/android">
                             <i class="fa fa-tags"></i>
-                            Blog
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="http://blog.wada811.com/tags/hugo">
-                            <i class="fa fa-tags"></i>
-                            Hugo
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="http://blog.wada811.com/tags/markdown">
-                            <i class="fa fa-tags"></i>
-                            Markdown
+                            Android
                         </a>
                     </li>
                     
@@ -169,13 +282,13 @@
                     <ul class="pager">
 
                         
-                        <li class="previous"><a href="http://blog.wada811.com/post/markdown-style-check/"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         
 
                         <li><a href="http://blog.wada811.com/post">All Posts</a></li>
 
                         
-                        <li class="next disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="next"><a href="http://blog.wada811.com/post/get-java.lang.class-on-xamarin.android/">Older <span aria-hidden="true">&rarr;</span></a></li>
                         
 
                     </ul>

@@ -2,12 +2,178 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wada811/blog</title>
-    <link>http://blog.wada811.com/</link>
+    <link>http://blog.wada811.com</link>
     <language>ja-JP</language>
     <author>wada811</author>
     <rights>(C) 2015</rights>
-    <updated>2015-05-22 22:51:27 &#43;0900 JST</updated>
+    <updated>2015-06-07 20:54:09 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>[Android] DatePicker のレイアウトのフラグがカオスな件について</title>
+          <link>http://blog.wada811.com/post/datepicker-layout-flag-in-android/</link>
+          <pubDate>Sun, 07 Jun 2015 20:54:09 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/datepicker-layout-flag-in-android/</guid>
+          <description>
+
+&lt;h2 id=&#34;カオスな-datepicker-のレイアウトのフラグ:6fd935a4dd578ae815fb8cb261e243f7&#34;&gt;カオスな DatePicker のレイアウトのフラグ&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;属性&lt;/th&gt;
+&lt;th&gt;値&lt;/th&gt;
+&lt;th&gt;API Level&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:calendarViewShown&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:spinnersShown&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:datePickerMode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;spinner&lt;/code&gt; or &lt;code&gt;calendar&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;code&gt;datePickerMode&lt;/code&gt;は未指定もしくは&lt;code&gt;spinner&lt;/code&gt;がLollipop 未満の表示です。&lt;br&gt;
+&lt;code&gt;calendar&lt;/code&gt;が Lollipop からの表示になります。&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;レイアウトの切り替えにフラグが3種類って嫌な予感しかしませんね。&lt;/p&gt;
+
+&lt;h2 id=&#34;各属性を設定した場合の表示の違い:6fd935a4dd578ae815fb8cb261e243f7&#34;&gt;各属性を設定した場合の表示の違い&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;Theme.AppCompat&lt;/code&gt;を指定した&lt;code&gt;FragmentActivity&lt;/code&gt;のスクリーンショットです。&lt;br&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;DatePickerPattern1&lt;/th&gt;
+&lt;th&gt;DatePickerPattern2&lt;/th&gt;
+&lt;th&gt;DatePickerPattern3&lt;/th&gt;
+&lt;th&gt;DatePickerPattern4&lt;/th&gt;
+&lt;th&gt;DatePickerPattern5&lt;/th&gt;
+&lt;th&gt;DatePickerPattern6&lt;/th&gt;
+&lt;th&gt;DatePickerPattern7&lt;/th&gt;
+&lt;th&gt;DatePickerPattern8&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:datePickerMode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;spinner&lt;/td&gt;
+&lt;td&gt;spinner&lt;/td&gt;
+&lt;td&gt;spinner&lt;/td&gt;
+&lt;td&gt;spinner&lt;/td&gt;
+&lt;td&gt;calendar&lt;/td&gt;
+&lt;td&gt;calendar&lt;/td&gt;
+&lt;td&gt;calendar&lt;/td&gt;
+&lt;td&gt;calendar&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:calendarViewShown&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:spinnersShown&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Screenshot&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png&#34; /&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png&#34; /&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png&#34; /&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png&#34; /&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png&#34; /&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png&#34; /&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png&#34; /&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png&#34; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;DatePickerPattern1~4 は Lollipop 未満の表示です。&lt;br&gt;
+DatePickerPattern5~8 は&lt;code&gt;android:datePickerMode=&amp;quot;calendar&amp;quot;&lt;/code&gt;が
+&lt;code&gt;calendarViewShown&lt;/code&gt;と&lt;code&gt;spinnersShown&lt;/code&gt;より強いので全て Lollipop のカレンダー表示になっています。&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;どうしてこうなった:6fd935a4dd578ae815fb8cb261e243f7&#34;&gt;どうしてこうなった&lt;/h2&gt;
+
+&lt;p&gt;そもそも &lt;code&gt;bool&lt;/code&gt; で定義すべきではない表示形式を
+&lt;code&gt;calendarViewShown&lt;/code&gt; と &lt;code&gt;spinnersShown&lt;/code&gt; の2種類の &lt;code&gt;bool&lt;/code&gt; で表してしまったことが全ての元凶です。
+本来は3種類のレイアウトを2種類の &lt;code&gt;bool&lt;/code&gt; で表現したため、4種類の状態が表現できるようになってしました。
+そこに &lt;code&gt;calendarViewShown&lt;/code&gt; と &lt;code&gt;spinnersShown&lt;/code&gt; よりも強い &lt;code&gt;datePickerMode&lt;/code&gt; が追加されカオスな状況になりました。&lt;/p&gt;
+
+&lt;h2 id=&#34;どうすべきだったのか:6fd935a4dd578ae815fb8cb261e243f7&#34;&gt;どうすべきだったのか&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;calendarViewShown&lt;/code&gt;と&lt;code&gt;spinnersShown&lt;/code&gt;の両方に&lt;code&gt;false&lt;/code&gt;を指定した際に&lt;br&gt;
+何も表示しない状態がある時点で怪しいと思わなければならないと思います。&lt;br&gt;
+Lollipop 未満の時点で表示形式は以下のような&lt;code&gt;enum&lt;/code&gt;で定義したほうが良かったと思います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;enum DatePickerMode {
+    spinenr,
+    calendar,
+    spinner_and_calendar
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そうすれば DatePickerPattern1 のような何も表示されない状態もなく、&lt;br&gt;
+Lollipop で追加された表示形式も、テーマ次第で&lt;code&gt;calendar&lt;/code&gt;などの表示を変えてしまうとか&lt;br&gt;
+&lt;code&gt;material&lt;/code&gt;とか何とかを&lt;code&gt;enum&lt;/code&gt;の値に追加するだけで済んだと思います。&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ:6fd935a4dd578ae815fb8cb261e243f7&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;怪しいフラグを増やしそうになったら抽象化して考えて&lt;code&gt;bool&lt;/code&gt;が適切か考えましょう。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-partner=&#34;tweetdeck&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Android の DatePicker がクソとかそういう話はどうでもよくて、その bool 、本当に bool ですか？という話です&lt;/p&gt;&amp;mdash; あなたとReSharper (@wada811) &lt;a href=&#34;https://twitter.com/wada811/status/608622501401223168&#34;&gt;June 10, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;リポジトリ:6fd935a4dd578ae815fb8cb261e243f7&#34;&gt;リポジトリ&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/wada811/Android-DatePicker-Sample&#34;&gt;wada811/Android-DatePicker-Sample&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>

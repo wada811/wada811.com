@@ -1,5 +1,9 @@
 body {
-    font-size: 16px;
+    font-size: 18px;
+}
+
+p {
+    margin: 0 0 1em 0;
 }
 
 pre {
@@ -21,6 +25,7 @@ header.nav {
 
 .post-content {
     margin-bottom: 20px;
+    overflow: scroll;
 }
 
 .post-content h1,
