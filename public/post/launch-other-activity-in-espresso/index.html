@@ -9,13 +9,13 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hugoでブログを書くことにしました &middot; wada811/blog">
+<meta property="og:title" content="[Android] Espresso で他の Activity を起動する &middot; wada811/blog">
 
 <meta property="og:site_name" content="wada811/blog">
 
 <title>
     
-    Hugoでブログを書くことにしました
+    [Android] Espresso で他の Activity を起動する
     
 </title>
 
@@ -91,44 +91,31 @@
             <header>
                 <div class="post-date">
                     <span class="glyphicon glyphicon-calendar"></span>
-                    <time datetime="2015-02-22">
-                        2015-02-22
+                    <time datetime="2015-06-15">
+                        2015-06-15
                     </time>
                 </div>
                 <h1 class="post-title">
-                    <a href="http://blog.wada811.com/post/blog-powered-by-hugo/">Hugoでブログを書くことにしました</a>
+                    <a href="http://blog.wada811.com/post/launch-other-activity-in-espresso/">[Android] Espresso で他の Activity を起動する</a>
                 </h1>
             </header>
 
             <div class="post-content">
                 
 
-<p>今まで Blogger でブログを書いていましたが Hugo に移行しました。(過去記事は移行できていないけど…)</p>
+<h2 id="activitytestrule-を使う:25ac792ae434c8df3a9a95e88e774068">ActivityTestRule を使う</h2>
 
-<p>移行理由は、主に以下の2つ。</p>
+<pre><code class="language-java">ActivityTestRule&lt;OtherActivity&gt; rule = new ActivityTestRule&lt;&gt;(clazz);
+rule.launchActivity(intent);
+</code></pre>
 
-<ul>
-<li>Blogger のプレビューが重くて少し書いては1分くらいプレビューが表示されるのを待つという状況</li>
-<li>最近は Qiita で Markdown を使って書くようになり、ブログも Markdown で書きたいという欲求</li>
-</ul>
+<p>あとは起動した画面をスクリーンショット撮るとかすれば画面のテストが出来ます。<br>
+<a href="https://github.com/wada811/Android-DatePicker-Sample/blob/master/app/src/androidTest/java/com/wada811/android_datepicker_sample/DatePickerTest.java">Android-DatePicker-Sample/DatePickerTest.java at master · wada811/Android-DatePicker-Sample</a></p>
 
-<p>Hugo は Markdown で書いてすぐプレビューができるので最高っぽい。</p>
+<h2 id="参考:25ac792ae434c8df3a9a95e88e774068">参考</h2>
 
-<h3 id="参考:862c1fa61dd509d8503fc5aef0061056">参考</h3>
-
-<p><a href="http://gohugo.io/">Hugo :: A fast and modern static website engine</a></p>
-
-<p><a href="http://deeeet.com/writing/2014/12/25/hugo/">OctopressからHugoへ移行した | SOTA</a></p>
-
-<p><a href="http://re-dzine.net/2015/01/hugo/">MiddlemanからHugoへ移行した | REFLECTDESIGN</a></p>
-
-<p><a href="http://t32k.me/mol/log/hugo/">Jekyllが許されるのは小学生までだよね - MOL</a></p>
-
-<p><a href="http://rakuishi.com/archives/wordpress-to-hugo/">WordPress から Hugo に乗り換えました - rakuishi.com</a></p>
-
-<p><a href="http://yet.unresolved.xyz/blog/2015/01/04/migrate-blog-to-hugo-from-octopress/">ブログをOctopressからHugoに移行した | Unresolved</a></p>
-
-<p><a href="http://syui.github.io/blog/2015/01/08/hugo-github-pages/">サイトジェネレーターのHUGOを使ってみた - MBA-HACK2</a></p>
+<p><a href="https://developer.android.com/reference/android/support/test/rule/ActivityTestRule.html">ActivityTestRule | Android Developers</a><br>
+<a href="http://blog.sqisland.com/2015/04/espresso-21-activitytestrule.html">Square Island: Espresso 2.1: ActivityTestRule</a></p>
 
             </div>
 
@@ -137,23 +124,16 @@
                 <ul class="list-inline post-tags">
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/blog">
+                        <a href="http://blog.wada811.com/tags/android">
                             <i class="fa fa-tags"></i>
-                            Blog
+                            Android
                         </a>
                     </li>
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/hugo">
+                        <a href="http://blog.wada811.com/tags/espresso">
                             <i class="fa fa-tags"></i>
-                            Hugo
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="http://blog.wada811.com/tags/markdown">
-                            <i class="fa fa-tags"></i>
-                            Markdown
+                            Espresso
                         </a>
                     </li>
                     
@@ -169,13 +149,13 @@
                     <ul class="pager">
 
                         
-                        <li class="previous"><a href="http://blog.wada811.com/post/markdown-style-check/"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         
 
                         <li><a href="http://blog.wada811.com/post">All Posts</a></li>
 
                         
-                        <li class="next disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="next"><a href="http://blog.wada811.com/post/datepicker-layout-flag-in-android/">Older <span aria-hidden="true">&rarr;</span></a></li>
                         
 
                     </ul>

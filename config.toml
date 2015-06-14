@@ -15,3 +15,4 @@ Title = "wada811/blog"
 
 [Permalinks]
     post = "/:section/:filename/"
+    article = "/:section/:year/:month/:filename/"
