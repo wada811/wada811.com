@@ -9,13 +9,13 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Android] DatePicker のレイアウトのフラグがカオスな件について &middot; wada811/blog">
+<meta property="og:title" content="[Android] Compound ListView のパフォーマンス、あるいは MergeAdapter が便利という話 &middot; wada811/blog">
 
 <meta property="og:site_name" content="wada811/blog">
 
 <title>
     
-    [Android] DatePicker のレイアウトのフラグがカオスな件について
+    [Android] Compound ListView のパフォーマンス、あるいは MergeAdapter が便利という話
     
 </title>
 
@@ -91,171 +91,138 @@
             <header>
                 <div class="post-date">
                     <span class="glyphicon glyphicon-calendar"></span>
-                    <time datetime="2015-06-07">
-                        2015-06-07
+                    <time datetime="2015-06-28">
+                        2015-06-28
                     </time>
                 </div>
                 <h1 class="post-title">
-                    <a href="http://blog.wada811.com/post/datepicker-layout-flag-in-android/">[Android] DatePicker のレイアウトのフラグがカオスな件について</a>
+                    <a href="http://blog.wada811.com/post/performance-of-compound-listview-in-android/">[Android] Compound ListView のパフォーマンス、あるいは MergeAdapter が便利という話</a>
                 </h1>
             </header>
 
             <div class="post-content">
                 
 
-<h2 id="カオスな-datepicker-のレイアウトのフラグ:6fd935a4dd578ae815fb8cb261e243f7">カオスな DatePicker のレイアウトのフラグ</h2>
+<h2 id="compound-listview-とは:7d366705399c35e2be3c9bc9a68a2ec1">Compound ListView とは</h2>
 
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>値</th>
-<th>API Level</th>
-</tr>
-</thead>
+<p>ListView に異なる種類のView、特に ListView を含む ListView のこと。（命名、俺）</p>
 
-<tbody>
-<tr>
-<td><code>android:calendarViewShown</code></td>
-<td><code>true</code> or <code>false</code></td>
-<td>11</td>
-</tr>
+<p>例↓</p>
 
-<tr>
-<td><code>android:spinnersShown</code></td>
-<td><code>true</code> or <code>false</code></td>
-<td>11</td>
-</tr>
-
-<tr>
-<td><code>android:datePickerMode</code></td>
-<td><code>spinner</code> or <code>calendar</code></td>
-<td>21</td>
-</tr>
-</tbody>
-</table>
-
-<p><code>datePickerMode</code>は未指定もしくは<code>spinner</code>がLollipop 未満の表示です。<br>
-<code>calendar</code>が Lollipop からの表示になります。<br></p>
-
-<p>レイアウトの切り替えにフラグが3種類って嫌な予感しかしませんね。</p>
-
-<h2 id="各属性を設定した場合の表示の違い:6fd935a4dd578ae815fb8cb261e243f7">各属性を設定した場合の表示の違い</h2>
-
-<p><code>Theme.AppCompat</code>を指定した<code>FragmentActivity</code>のスクリーンショットです。<br></p>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th>DatePickerPattern1</th>
-<th>DatePickerPattern2</th>
-<th>DatePickerPattern3</th>
-<th>DatePickerPattern4</th>
-<th>DatePickerPattern5</th>
-<th>DatePickerPattern6</th>
-<th>DatePickerPattern7</th>
-<th>DatePickerPattern8</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>android:datePickerMode</code></td>
-<td>spinner</td>
-<td>spinner</td>
-<td>spinner</td>
-<td>spinner</td>
-<td>calendar</td>
-<td>calendar</td>
-<td>calendar</td>
-<td>calendar</td>
-</tr>
-
-<tr>
-<td><code>android:calendarViewShown</code></td>
-<td>false</td>
-<td>false</td>
-<td>true</td>
-<td>true</td>
-<td>false</td>
-<td>false</td>
-<td>true</td>
-<td>true</td>
-</tr>
-
-<tr>
-<td><code>android:spinnersShown</code></td>
-<td>false</td>
-<td>true</td>
-<td>false</td>
-<td>true</td>
-<td>false</td>
-<td>true</td>
-<td>false</td>
-<td>true</td>
-</tr>
-
-<tr>
-<td>Screenshot</td>
-<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png" />
-</td>
-<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png" />
-</td>
-<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png" />
-</td>
-<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png" />
-</td>
-<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png" />
-</td>
-<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png" />
-</td>
-<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png" />
-</td>
-<td><img src="https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png" alt="DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png" />
-</td>
-</tr>
-</tbody>
-</table>
-
-<p>DatePickerPattern1~4 は Lollipop 未満の表示です。<br>
-DatePickerPattern5~8 は<code>android:datePickerMode=&quot;calendar&quot;</code>が
-<code>calendarViewShown</code>と<code>spinnersShown</code>より強いので全て Lollipop のカレンダー表示になっています。<br></p>
-
-<h2 id="どうしてこうなった:6fd935a4dd578ae815fb8cb261e243f7">どうしてこうなった</h2>
-
-<p>そもそも <code>bool</code> で定義すべきではない表示形式を
-<code>calendarViewShown</code> と <code>spinnersShown</code> の2種類の <code>bool</code> で表してしまったことが全ての元凶です。
-本来は3種類のレイアウトを2種類の <code>bool</code> で表現したため、4種類の状態が表現できるようになってしました。
-そこに <code>calendarViewShown</code> と <code>spinnersShown</code> よりも強い <code>datePickerMode</code> が追加されカオスな状況になりました。</p>
-
-<h2 id="どうすべきだったのか:6fd935a4dd578ae815fb8cb261e243f7">どうすべきだったのか</h2>
-
-<p><code>calendarViewShown</code>と<code>spinnersShown</code>の両方に<code>false</code>を指定した際に<br>
-何も表示しない状態がある時点で怪しいと思わなければならないと思います。<br>
-Lollipop 未満の時点で表示形式は以下のような<code>enum</code>で定義したほうが良かったと思います。</p>
-
-<pre><code>enum DatePickerMode {
-    spinenr,
-    calendar,
-    spinner_and_calendar
-}
+<pre><code>┌──────────────┐
+│┌────────────┐│
+││  TextView  ││
+│└────────────┘│
+│┌────────────┐│
+││  ListView  ││
+│└────────────┘│
+│┌────────────┐│
+││   Button   ││
+│└────────────┘│
+│┌────────────┐│
+││  TextView  ││
+│└────────────┘│
+│┌────────────┐│
+││  ListView  ││
+│└────────────┘│
+│┌────────────┐│
+││   Button   ││
+│└────────────┘│
+└──────────────┘
 </code></pre>
 
-<p>そうすれば DatePickerPattern1 のような何も表示されない状態もなく、<br>
-Lollipop で追加された表示形式も、テーマ次第で<code>calendar</code>などの表示を変えてしまうとか<br>
-<code>material</code>とか何とかを<code>enum</code>の値に追加するだけで済んだと思います。<br></p>
+<h2 id="sample-code:7d366705399c35e2be3c9bc9a68a2ec1">Sample Code</h2>
 
-<h2 id="まとめ:6fd935a4dd578ae815fb8cb261e243f7">まとめ</h2>
+<p><a href="https://github.com/wada811/Android-Compound-ListView-Sample">wada811/Android-Compound-ListView-Sample</a></p>
 
-<p>怪しいフラグを増やしそうになったら抽象化して考えて<code>bool</code>が適切か考えましょう。</p>
+<h2 id="実装方法:7d366705399c35e2be3c9bc9a68a2ec1">実装方法</h2>
 
-<p><blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="ja" dir="ltr">Android の DatePicker がクソとかそういう話はどうでもよくて、その bool 、本当に bool ですか？という話です</p>&mdash; あなたとReSharper (@wada811) <a href="https://twitter.com/wada811/status/608622501401223168">June 10, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<h3 id="views-in-scrollview:7d366705399c35e2be3c9bc9a68a2ec1">Views in ScrollView</h3>
 
-<h2 id="リポジトリ:6fd935a4dd578ae815fb8cb261e243f7">リポジトリ</h2>
+<p>普通に ScrollView に View を入れていく方法。<br>
+ListView は ScrollView の中ではアイテム１個分の高さしか表示されないので<br>
+以下のようなコードを書いて全件の高さを計算して ListView の高さを設定する必要がある。<br></p>
 
-<p><a href="https://github.com/wada811/Android-DatePicker-Sample">wada811/Android-DatePicker-Sample</a></p>
+<pre><code class="language-java">ListAdapter listAdapter = listView.getAdapter();
+if(listAdapter == null){
+    return;
+}
+int totalHeight = listView.getPaddingTop() + listView.getPaddingBottom();
+for(int i = 0; i &lt; listAdapter.getCount(); i++){
+    View listItem = listAdapter.getView(0, null, listView);
+    if(listItem instanceof ViewGroup){
+        listItem.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+    }
+    listItem.measure(0, 0);
+    totalHeight += listItem.getMeasuredHeight();
+}
+
+ViewGroup.LayoutParams params = listView.getLayoutParams();
+params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+listView.setLayoutParams(params);
+</code></pre>
+
+<h3 id="mergeadapter:7d366705399c35e2be3c9bc9a68a2ec1">MergeAdapter</h3>
+
+<p><a href="https://github.com/commonsguy/cwac-merge">commonsguy/cwac-merge</a></p>
+
+<p><a href="http://qiita.com/yyaammaa/items/d31dc8f67da87ca36574">Android - MergeAdapterが便利 - Qiita</a></p>
+
+<p>MergeAdapter というライブラリを使って ListView に様々な View を入れていく方法。<br></p>
+
+<pre><code class="language-java">ListView listView = (ListView)findViewById(R.id.ListView);
+
+MergeAdapter mergeAdapter = new MergeAdapter();
+
+View view = LayoutInflater.from(this).inflate(R.layout.list, null, false);
+
+TextView textView1 = (TextView)view.findViewById(R.id.TextView1);
+ListView listView1 = (ListView)view.findViewById(R.id.ListView1);
+Button button1 = (Button)view.findViewById(R.id.Button1);
+TextView textView2 = (TextView)view.findViewById(R.id.TextView2);
+ListView listView2 = (ListView)view.findViewById(R.id.ListView2);
+Button button2 = (Button)view.findViewById(R.id.Button2);
+
+mergeAdapter.addView(textView1);
+mergeAdapter.addAdapter(listView1.getAdapter());
+mergeAdapter.addView(button1);
+mergeAdapter.addView(textView2);
+mergeAdapter.addAdapter(listView2.getAdapter());
+mergeAdapter.addView(button2);
+
+listView.setAdapter(mergeAdapter);
+</code></pre>
+
+<h2 id="パフォーマンス:7d366705399c35e2be3c9bc9a68a2ec1">パフォーマンス</h2>
+
+<h3 id="views-in-scrollview-1:7d366705399c35e2be3c9bc9a68a2ec1">Views in ScrollView</h3>
+
+<p>実装方法を見て分かる通り、ListView の要素を全て getView して高さを計算するので<br>
+ListView の要素数が大きくなると描画までの時間が長くなる。</p>
+
+<h3 id="mergeadapter-1:7d366705399c35e2be3c9bc9a68a2ec1">MergeAdapter</h3>
+
+<p>MergeAdapter に追加しているのは Adapter なので画面に表示されない部分は描画されない。
+また、View も内部的に Adapter に変換されているのでパフォーマンスが良い。</p>
+
+<h2 id="クリックイベントのハンドリング:7d366705399c35e2be3c9bc9a68a2ec1">クリックイベントのハンドリング</h2>
+
+<h3 id="views-in-scrollview-2:7d366705399c35e2be3c9bc9a68a2ec1">Views in ScrollView</h3>
+
+<p>通常と変わらない。</p>
+
+<h3 id="mergeadapter-2:7d366705399c35e2be3c9bc9a68a2ec1">MergeAdapter</h3>
+
+<p><code>MergeAdapter</code>をセットした<code>ListView</code>で<code>setOnItemClickListener</code>をセットしても<br>
+クリックイベントが取得できるのは<code>addAdapter</code>で追加したものだけ。<br>
+<code>Button</code>などの<code>View</code>を追加した場合は、そちらにリスナーをセットしなければならない。<br>
+<code>Adapter</code>は追加した全ての<code>View</code>の中での<code>position</code>になっているので扱いにくい。<br>
+なので<code>Adapter</code>は内部で<code>View</code>に対してリスナーをセットしたほうが良いと思う。</p>
+
+<h2 id="まとめ:7d366705399c35e2be3c9bc9a68a2ec1">まとめ</h2>
+
+<p><code>MergeAdapter</code>は便利。
+だけどクリックイベントのハンドリングが少し微妙。</p>
 
             </div>
 
@@ -282,13 +249,13 @@ Lollipop で追加された表示形式も、テーマ次第で<code>calendar</c
                     <ul class="pager">
 
                         
-                        <li class="previous"><a href="http://blog.wada811.com/post/launch-other-activity-in-espresso/"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         
 
                         <li><a href="http://blog.wada811.com/post">All Posts</a></li>
 
                         
-                        <li class="next"><a href="http://blog.wada811.com/post/get-java.lang.class-on-xamarin.android/">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="next"><a href="http://blog.wada811.com/post/launch-other-activity-in-espresso/">Older <span aria-hidden="true">&rarr;</span></a></li>
                         
 
                     </ul>

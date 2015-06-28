@@ -6,8 +6,141 @@
     <language>ja-JP</language>
     <author>wada811</author>
     <rights>(C) 2015</rights>
-    <updated>2015-06-15 08:07:37 &#43;0900 JST</updated>
+    <updated>2015-06-28 09:05:54 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>[Android] Compound ListView のパフォーマンス、あるいは MergeAdapter が便利という話</title>
+          <link>http://blog.wada811.com/post/performance-of-compound-listview-in-android/</link>
+          <pubDate>Sun, 28 Jun 2015 09:05:54 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/performance-of-compound-listview-in-android/</guid>
+          <description>
+
+&lt;h2 id=&#34;compound-listview-とは:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;Compound ListView とは&lt;/h2&gt;
+
+&lt;p&gt;ListView に異なる種類のView、特に ListView を含む ListView のこと。（命名、俺）&lt;/p&gt;
+
+&lt;p&gt;例↓&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;┌──────────────┐
+│┌────────────┐│
+││  TextView  ││
+│└────────────┘│
+│┌────────────┐│
+││  ListView  ││
+│└────────────┘│
+│┌────────────┐│
+││   Button   ││
+│└────────────┘│
+│┌────────────┐│
+││  TextView  ││
+│└────────────┘│
+│┌────────────┐│
+││  ListView  ││
+│└────────────┘│
+│┌────────────┐│
+││   Button   ││
+│└────────────┘│
+└──────────────┘
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;sample-code:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;Sample Code&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/wada811/Android-Compound-ListView-Sample&#34;&gt;wada811/Android-Compound-ListView-Sample&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;実装方法:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;実装方法&lt;/h2&gt;
+
+&lt;h3 id=&#34;views-in-scrollview:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;Views in ScrollView&lt;/h3&gt;
+
+&lt;p&gt;普通に ScrollView に View を入れていく方法。&lt;br&gt;
+ListView は ScrollView の中ではアイテム１個分の高さしか表示されないので&lt;br&gt;
+以下のようなコードを書いて全件の高さを計算して ListView の高さを設定する必要がある。&lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;ListAdapter listAdapter = listView.getAdapter();
+if(listAdapter == null){
+    return;
+}
+int totalHeight = listView.getPaddingTop() + listView.getPaddingBottom();
+for(int i = 0; i &amp;lt; listAdapter.getCount(); i++){
+    View listItem = listAdapter.getView(0, null, listView);
+    if(listItem instanceof ViewGroup){
+        listItem.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+    }
+    listItem.measure(0, 0);
+    totalHeight += listItem.getMeasuredHeight();
+}
+
+ViewGroup.LayoutParams params = listView.getLayoutParams();
+params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+listView.setLayoutParams(params);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;mergeadapter:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;MergeAdapter&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/commonsguy/cwac-merge&#34;&gt;commonsguy/cwac-merge&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/yyaammaa/items/d31dc8f67da87ca36574&#34;&gt;Android - MergeAdapterが便利 - Qiita&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;MergeAdapter というライブラリを使って ListView に様々な View を入れていく方法。&lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;ListView listView = (ListView)findViewById(R.id.ListView);
+
+MergeAdapter mergeAdapter = new MergeAdapter();
+
+View view = LayoutInflater.from(this).inflate(R.layout.list, null, false);
+
+TextView textView1 = (TextView)view.findViewById(R.id.TextView1);
+ListView listView1 = (ListView)view.findViewById(R.id.ListView1);
+Button button1 = (Button)view.findViewById(R.id.Button1);
+TextView textView2 = (TextView)view.findViewById(R.id.TextView2);
+ListView listView2 = (ListView)view.findViewById(R.id.ListView2);
+Button button2 = (Button)view.findViewById(R.id.Button2);
+
+mergeAdapter.addView(textView1);
+mergeAdapter.addAdapter(listView1.getAdapter());
+mergeAdapter.addView(button1);
+mergeAdapter.addView(textView2);
+mergeAdapter.addAdapter(listView2.getAdapter());
+mergeAdapter.addView(button2);
+
+listView.setAdapter(mergeAdapter);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;パフォーマンス:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;パフォーマンス&lt;/h2&gt;
+
+&lt;h3 id=&#34;views-in-scrollview-1:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;Views in ScrollView&lt;/h3&gt;
+
+&lt;p&gt;実装方法を見て分かる通り、ListView の要素を全て getView して高さを計算するので&lt;br&gt;
+ListView の要素数が大きくなると描画までの時間が長くなる。&lt;/p&gt;
+
+&lt;h3 id=&#34;mergeadapter-1:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;MergeAdapter&lt;/h3&gt;
+
+&lt;p&gt;MergeAdapter に追加しているのは Adapter なので画面に表示されない部分は描画されない。
+また、View も内部的に Adapter に変換されているのでパフォーマンスが良い。&lt;/p&gt;
+
+&lt;h2 id=&#34;クリックイベントのハンドリング:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;クリックイベントのハンドリング&lt;/h2&gt;
+
+&lt;h3 id=&#34;views-in-scrollview-2:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;Views in ScrollView&lt;/h3&gt;
+
+&lt;p&gt;通常と変わらない。&lt;/p&gt;
+
+&lt;h3 id=&#34;mergeadapter-2:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;MergeAdapter&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;MergeAdapter&lt;/code&gt;をセットした&lt;code&gt;ListView&lt;/code&gt;で&lt;code&gt;setOnItemClickListener&lt;/code&gt;をセットしても&lt;br&gt;
+クリックイベントが取得できるのは&lt;code&gt;addAdapter&lt;/code&gt;で追加したものだけ。&lt;br&gt;
+&lt;code&gt;Button&lt;/code&gt;などの&lt;code&gt;View&lt;/code&gt;を追加した場合は、そちらにリスナーをセットしなければならない。&lt;br&gt;
+&lt;code&gt;Adapter&lt;/code&gt;は追加した全ての&lt;code&gt;View&lt;/code&gt;の中での&lt;code&gt;position&lt;/code&gt;になっているので扱いにくい。&lt;br&gt;
+なので&lt;code&gt;Adapter&lt;/code&gt;は内部で&lt;code&gt;View&lt;/code&gt;に対してリスナーをセットしたほうが良いと思う。&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ:7d366705399c35e2be3c9bc9a68a2ec1&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;MergeAdapter&lt;/code&gt;は便利。
+だけどクリックイベントのハンドリングが少し微妙。&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
