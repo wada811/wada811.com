@@ -17,3 +17,7 @@
 .language-ruby:before {
     content: 'Ruby';
 }
+
+.language-zsh:before {
+    content: 'zsh';
+}

@@ -6,8 +6,48 @@
     <language>ja-JP</language>
     <author>wada811</author>
     <rights>(C) 2015</rights>
-    <updated>2015-06-28 09:05:54 &#43;0900 JST</updated>
+    <updated>2015-08-19 15:26:05 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>Quick Command-line File Completion by peco</title>
+          <link>http://blog.wada811.com/post/quick-command-line-file-completion-by-peco/</link>
+          <pubDate>Wed, 19 Aug 2015 15:26:05 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/quick-command-line-file-completion-by-peco/</guid>
+          <description>
+
+&lt;h2 id=&#34;きっかけ:f11adac4d23e91fb43a637592828e7bc&#34;&gt;きっかけ&lt;/h2&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;これ、便利だな。peco 以来の life changing なツールかもしれない。 / Quick Command-line File Completion &lt;a href=&#34;https://t.co/8HH8nKDEa2&#34;&gt;https://t.co/8HH8nKDEa2&lt;/a&gt;&lt;/p&gt;&amp;mdash; Hiroshi Kurokawa (@hydrakecat) &lt;a href=&#34;https://twitter.com/hydrakecat/status/625112129272582144&#34;&gt;2015, 7月 26&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;それ-peco-でもできるよ:f11adac4d23e91fb43a637592828e7bc&#34;&gt;それ peco でもできるよ&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/wada811/dotfiles/commit/194702f&#34;&gt;https://github.com/wada811/dotfiles/commit/194702f&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;function peco-select-file() {
+    LBUFFER+=$(\find . | \peco)
+    CURSOR=$#LBUFFER
+}
+zle -N peco-select-file
+
+# 一覧からファイルを選択
+bindkey &#39;^f&#39; peco-select-file
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ctrl-f-でファイル選択:f11adac4d23e91fb43a637592828e7bc&#34;&gt;Ctrl + F でファイル選択&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gyazo.com/1534b6e12d9410287a003c81377515b6&#34;&gt;&lt;img src=&#34;http://blog.wada811.com/images/quick-command-line-file-completion-by-peco/quick-command-line-file-completion-by-peco.gif&#34; alt=&#34;quick-command-line-file-completion-by-peco&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;peco-が最強すぎるんだよなぁ:f11adac4d23e91fb43a637592828e7bc&#34;&gt;peco が最強すぎるんだよなぁ&lt;/h2&gt;
+
+&lt;p&gt;以上です。&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>

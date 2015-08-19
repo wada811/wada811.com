@@ -9,13 +9,13 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Visual Studio]アドインの読み込み &middot; wada811/blog">
+<meta property="og:title" content="Quick Command-line File Completion by peco &middot; wada811/blog">
 
 <meta property="og:site_name" content="wada811/blog">
 
 <title>
     
-    [Visual Studio]アドインの読み込み
+    Quick Command-line File Completion by peco
     
 </title>
 
@@ -91,72 +91,45 @@
             <header>
                 <div class="post-date">
                     <span class="glyphicon glyphicon-calendar"></span>
-                    <time datetime="2015-04-15">
-                        2015-04-15
+                    <time datetime="2015-08-19">
+                        2015-08-19
                     </time>
                 </div>
                 <h1 class="post-title">
-                    <a href="http://blog.wada811.com/post/visual-studio-addins-settings/">[Visual Studio]アドインの読み込み</a>
+                    <a href="http://blog.wada811.com/post/quick-command-line-file-completion-by-peco/">Quick Command-line File Completion by peco</a>
                 </h1>
             </header>
 
             <div class="post-content">
                 
 
-<h2 id="アドインの読み込み:76f0a034b2b9c138b348d556e841115b">アドインの読み込み</h2>
+<h2 id="きっかけ:f11adac4d23e91fb43a637592828e7bc">きっかけ</h2>
 
-<p>アドインを入手した場合、Visual Studio からアドインを読み込むためには Visual Studio が認識できるディレクトリに置く必要があります。</p>
+<p><blockquote class="twitter-tweet" lang="ja"><p lang="ja" dir="ltr">これ、便利だな。peco 以来の life changing なツールかもしれない。 / Quick Command-line File Completion <a href="https://t.co/8HH8nKDEa2">https://t.co/8HH8nKDEa2</a></p>&mdash; Hiroshi Kurokawa (@hydrakecat) <a href="https://twitter.com/hydrakecat/status/625112129272582144">2015, 7月 26</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
 
-<h3 id="visual-studio-が認識できるディレクトリ:76f0a034b2b9c138b348d556e841115b">Visual Studio が認識できるディレクトリ</h3>
+<h2 id="それ-peco-でもできるよ:f11adac4d23e91fb43a637592828e7bc">それ peco でもできるよ</h2>
 
-<p>[ツール] &gt; [オプション] &gt; [環境] &gt; [アドイン セキュリティ] を開くと、下図のようなダイアログボックスが開きます。</p>
+<p><a href="https://github.com/wada811/dotfiles/commit/194702f">https://github.com/wada811/dotfiles/commit/194702f</a></p>
 
-<p><img src="/images/visual-studio-addins-settings/VisualStudioAddinSettings.png" alt="" />
-</p>
+<pre><code class="language-zsh">function peco-select-file() {
+    LBUFFER+=$(\find . | \peco)
+    CURSOR=$#LBUFFER
+}
+zle -N peco-select-file
 
-<table>
-<thead>
-<tr>
-<th>変数</th>
-<th>パス</th>
-</tr>
-</thead>
+# 一覧からファイルを選択
+bindkey '^f' peco-select-file
+</code></pre>
 
-<tbody>
-<tr>
-<td>%ALLUSERSPROFILE%</td>
-<td>C:\Users\Public</td>
-</tr>
+<h2 id="ctrl-f-でファイル選択:f11adac4d23e91fb43a637592828e7bc">Ctrl + F でファイル選択</h2>
 
-<tr>
-<td>%APPDATA%</td>
-<td>C:\Users\<strong>username</strong></td>
-</tr>
+<p><a href="https://gyazo.com/1534b6e12d9410287a003c81377515b6"><img src="/images/quick-command-line-file-completion-by-peco/quick-command-line-file-completion-by-peco.gif" alt="quick-command-line-file-completion-by-peco" />
+</a></p>
 
-<tr>
-<td>%VSAPPDATA%</td>
-<td>C:\Users\<strong>username</strong></td>
-</tr>
+<h2 id="peco-が最強すぎるんだよなぁ:f11adac4d23e91fb43a637592828e7bc">peco が最強すぎるんだよなぁ</h2>
 
-<tr>
-<td>%VSCOMMONAPPDATA%</td>
-<td>C:\Users\Public</td>
-</tr>
-
-<tr>
-<td>%VSMYDOCUMENTS%</td>
-<td>C:\Users\<strong>username</strong>\Documents\Visual Studio 2013</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="読み込み:76f0a034b2b9c138b348d556e841115b">読み込み</h3>
-
-<p><code>C:\Users\username\Documents\Visual Studio 2013\Addins</code> に保存して再起動すれば読み込まれます。</p>
-
-<h2 id="参考:76f0a034b2b9c138b348d556e841115b">参考</h2>
-
-<p><a href="http://www.kanazawa-net.ne.jp/~pmansato/vs/vs_addin.htm#store">アドインの格納 | Visual Studio アドイン</a></p>
+<p>以上です。</p>
 
             </div>
 
@@ -165,30 +138,16 @@
                 <ul class="list-inline post-tags">
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/windows">
+                        <a href="http://blog.wada811.com/tags/peco">
                             <i class="fa fa-tags"></i>
-                            Windows
+                            peco
                         </a>
                     </li>
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/windows-8.1">
+                        <a href="http://blog.wada811.com/tags/zsh">
                             <i class="fa fa-tags"></i>
-                            Windows 8.1
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="http://blog.wada811.com/tags/visual-studio">
-                            <i class="fa fa-tags"></i>
-                            Visual Studio
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="http://blog.wada811.com/tags/visual-studio-2013">
-                            <i class="fa fa-tags"></i>
-                            Visual Studio 2013
+                            zsh
                         </a>
                     </li>
                     
@@ -204,13 +163,13 @@
                     <ul class="pager">
 
                         
-                        <li class="previous"><a href="http://blog.wada811.com/post/get-java.lang.class-on-xamarin.android/"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         
 
                         <li><a href="http://blog.wada811.com/post">All Posts</a></li>
 
                         
-                        <li class="next"><a href="http://blog.wada811.com/post/hugo-getting-started/">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="next"><a href="http://blog.wada811.com/post/performance-of-compound-listview-in-android/">Older <span aria-hidden="true">&rarr;</span></a></li>
                         
 
                     </ul>
