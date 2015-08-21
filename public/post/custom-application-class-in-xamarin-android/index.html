@@ -9,13 +9,13 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hugo Getting Started &middot; wada811/blog">
+<meta property="og:title" content="Custom application class in Xamarin.Android &middot; wada811/blog">
 
 <meta property="og:site_name" content="wada811/blog">
 
 <title>
     
-    Hugo Getting Started
+    Custom application class in Xamarin.Android
     
 </title>
 
@@ -91,74 +91,35 @@
             <header>
                 <div class="post-date">
                     <span class="glyphicon glyphicon-calendar"></span>
-                    <time datetime="2015-03-04">
-                        2015-03-04
+                    <time datetime="2015-08-21">
+                        2015-08-21
                     </time>
                 </div>
                 <h1 class="post-title">
-                    <a href="http://blog.wada811.com/post/hugo-getting-started/">Hugo Getting Started</a>
+                    <a href="http://blog.wada811.com/post/custom-application-class-in-xamarin-android/">Custom application class in Xamarin.Android</a>
                 </h1>
             </header>
 
             <div class="post-content">
                 
 
-<h2 id="hugo-http-gohugo-io-とは:1ed0ad5d32c7c542b4ef497f50bc0229"><a href="http://gohugo.io/">Hugo</a> とは</h2>
+<h2 id="implement-custom-application-class:1290c20d3d444cf326da594cdc171eb6">Implement custom application class</h2>
 
-<p>静的サイトジェネレータ。
-ブログを生成して GitHub Pages でホスティングしている人が多い印象。</p>
-
-<h2 id="hugo-のインストール:1ed0ad5d32c7c542b4ef497f50bc0229">Hugo のインストール</h2>
-
-<h3 id="mac-の場合:1ed0ad5d32c7c542b4ef497f50bc0229">Mac の場合</h3>
-
-<p>Homebrew でインストール</p>
-
-<pre><code>brew install hugo
+<pre><code class="language-csharp">[Application]
+public class MyApplication : Application
+{
+    public MyApplication(IntPtr handle, JniHandleOwnership ownerShip) : base(handle, ownerShip)
+    {
+    }
+}
 </code></pre>
 
-<h3 id="その他の場合:1ed0ad5d32c7c542b4ef497f50bc0229">その他の場合</h3>
+<p>普通に実装して <code>AndroidManifest.xml</code> に追記してもダメで、
+<code>[Application]</code> 属性とコンストラクタが必要でした。</p>
 
-<p><a href="http://gohugo.io/overview/quickstart">Installing Hugo</a> を読んで。</p>
+<h2 id="reference:1290c20d3d444cf326da594cdc171eb6">Reference</h2>
 
-<h2 id="静的サイトの作成-http-gohugo-io-overview-quickstart-step-2-have-hugo-create-a-site-for-you-09c84f91027bd18b03251c05a0da4abb:1ed0ad5d32c7c542b4ef497f50bc0229"><a href="http://gohugo.io/overview/quickstart/#step-2-have-hugo-create-a-site-for-you:09c84f91027bd18b03251c05a0da4abb">静的サイトの作成</a></h2>
-
-<pre><code>hugo new blog
-</code></pre>
-
-<p><code>blog</code> は何でも良い。好きな名前を付けて欲しい。</p>
-
-<pre><code>tree blog
-├── archetypes/
-├── config.toml
-├── content/
-├── layouts/
-└── static/
-</code></pre>
-
-<p>上記のような構造が生成される。</p>
-
-<pre><code>cd blog
-</code></pre>
-
-<p>以降は作成されたディレクトリ内で作業を行う。</p>
-
-<h2 id="テーマのインストール-http-gohugo-io-overview-quickstart-step-4-install-some-themes-09c84f91027bd18b03251c05a0da4abb:1ed0ad5d32c7c542b4ef497f50bc0229"><a href="http://gohugo.io/overview/quickstart/#step-4-install-some-themes:09c84f91027bd18b03251c05a0da4abb">テーマのインストール</a></h2>
-
-<pre><code>git clone --recursive https://github.com/spf13/hugoThemes.git themes
-</code></pre>
-
-<p>まずはテーマをインストールして使いたいものがないか探す。
-あんまり種類はないので全部確認できると思う。</p>
-
-<h3 id="テーマの確認:1ed0ad5d32c7c542b4ef497f50bc0229">テーマの確認</h3>
-
-<p>以下のコマンドでテーマを選んでプレビューしよう。</p>
-
-<pre><code>hugo server -t &quot;`ls themes | peco`&quot;
-</code></pre>
-
-<p>peco をインストールしていない場合は themes 以下のディレクトリ名を指定。</p>
+<p><a href="http://stackoverflow.com/questions/21427981/how-to-register-my-own-application-subclass-in-xamarin-android">monodroid - How to register my own Application subclass in Xamarin.Android? - Stack Overflow</a></p>
 
             </div>
 
@@ -167,23 +128,23 @@
                 <ul class="list-inline post-tags">
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/hugo">
+                        <a href="http://blog.wada811.com/tags/android">
                             <i class="fa fa-tags"></i>
-                            Hugo
+                            Android
                         </a>
                     </li>
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/blog">
+                        <a href="http://blog.wada811.com/tags/xamarin.android">
                             <i class="fa fa-tags"></i>
-                            Blog
+                            Xamarin.Android
                         </a>
                     </li>
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/mac-os-x">
+                        <a href="http://blog.wada811.com/tags/xamarin">
                             <i class="fa fa-tags"></i>
-                            Mac OS X
+                            Xamarin
                         </a>
                     </li>
                     
@@ -199,13 +160,13 @@
                     <ul class="pager">
 
                         
-                        <li class="previous"><a href="http://blog.wada811.com/post/visual-studio-addins-settings/"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         
 
                         <li><a href="http://blog.wada811.com/post">All Posts</a></li>
 
                         
-                        <li class="next"><a href="http://blog.wada811.com/post/git-commit-amend-no-edit-message/">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="next"><a href="http://blog.wada811.com/post/quick-command-line-file-completion-by-peco/">Older <span aria-hidden="true">&rarr;</span></a></li>
                         
 
                     </ul>

@@ -6,8 +6,38 @@
     <language>ja-JP</language>
     <author>wada811</author>
     <rights>(C) 2015</rights>
-    <updated>2015-06-28 09:05:54 &#43;0900 JST</updated>
+    <updated>2015-08-21 15:00:24 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>Custom application class in Xamarin.Android</title>
+          <link>http://blog.wada811.com/post/custom-application-class-in-xamarin-android/</link>
+          <pubDate>Fri, 21 Aug 2015 15:00:24 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/custom-application-class-in-xamarin-android/</guid>
+          <description>
+
+&lt;h2 id=&#34;implement-custom-application-class:1290c20d3d444cf326da594cdc171eb6&#34;&gt;Implement custom application class&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;[Application]
+public class MyApplication : Application
+{
+    public MyApplication(IntPtr handle, JniHandleOwnership ownerShip) : base(handle, ownerShip)
+    {
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;普通に実装して &lt;code&gt;AndroidManifest.xml&lt;/code&gt; に追記してもダメで、
+&lt;code&gt;[Application]&lt;/code&gt; 属性とコンストラクタが必要でした。&lt;/p&gt;
+
+&lt;h2 id=&#34;reference:1290c20d3d444cf326da594cdc171eb6&#34;&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/21427981/how-to-register-my-own-application-subclass-in-xamarin-android&#34;&gt;monodroid - How to register my own Application subclass in Xamarin.Android? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
     
       
         <item>
