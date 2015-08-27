@@ -9,13 +9,13 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="git commit --amend でコミットメッセージを編集しない方法 | wada811/blog">
+<meta property="og:title" content="tail しながら grep する | wada811/blog">
 
 <meta property="og:site_name" content="wada811/blog">
 
 <title>
     
-    git commit --amend でコミットメッセージを編集しない方法 | wada811/blog
+    tail しながら grep する | wada811/blog
     
 </title>
 
@@ -91,26 +91,23 @@
             <header>
                 <div class="post-date">
                     <span class="glyphicon glyphicon-calendar"></span>
-                    <time datetime="2015-03-03">
-                        2015-03-03
+                    <time datetime="2015-08-27">
+                        2015-08-27
                     </time>
                 </div>
                 <h1 class="post-title">
-                    <a href="http://blog.wada811.com/post/git-commit-amend-no-edit-message/">git commit --amend でコミットメッセージを編集しない方法</a>
+                    <a href="http://blog.wada811.com/post/grep-while-tailing/">tail しながら grep する</a>
                 </h1>
             </header>
 
             <div class="post-content">
-                <p><code>git commit --amend</code> するとコミットメッセージを編集することになります。
-コミットメッセージは別に編集したくない場合や、
-シェルスクリプトで <code>git commit --amend</code> を使いたい場合は
-いちいちコミットメッセージの編集画面になるのが面倒です。
-何か方法はないかと探してみると以下の方法がありました。</p>
+                <p>アクセスログを <code>tail -f</code> でリアルタイム監視しながら、
+その結果を <code>grep</code> でフィルタリングしたいという事ありますよね。</p>
 
-<pre><code>git commit --amend --allow-empty-message -m &quot;&quot;
+<p>そんな時は <code>grep</code> のオプションの <code>--line-buffered</code> をつければよいです。</p>
+
+<pre><code>tail -f access.log | grep --line-buffered &quot;Status: 500&quot;
 </code></pre>
-
-<p><code>-m &quot;&quot;</code> で空のコミットメッセージで上書きされてしまうのではないかと心配になりますが大丈夫みたいです。</p>
 
             </div>
 
@@ -119,9 +116,16 @@
                 <ul class="list-inline post-tags">
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/git">
+                        <a href="http://blog.wada811.com/tags/linux">
                             <i class="fa fa-tags"></i>
-                            Git
+                            Linux
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://blog.wada811.com/tags/linux-command">
+                            <i class="fa fa-tags"></i>
+                            Linux Command
                         </a>
                     </li>
                     
@@ -137,13 +141,13 @@
                     <ul class="pager">
 
                         
-                        <li class="previous"><a href="http://blog.wada811.com/post/hugo-getting-started/"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         
 
                         <li><a href="http://blog.wada811.com/post">All Posts</a></li>
 
                         
-                        <li class="next"><a href="http://blog.wada811.com/post/markdown-style-check/">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="next"><a href="http://blog.wada811.com/post/custom-application-class-in-xamarin-android/">Older <span aria-hidden="true">&rarr;</span></a></li>
                         
 
                     </ul>

@@ -12,14 +12,14 @@
 {{ end }}
 {{ else if eq .URL "/post/" }}
 <!-- Post -->
-<meta property="og:title" content="All Entries &middot; {{ .Site.Title }}">
+<meta property="og:title" content="All Posts | {{ .Site.Title }}">
 {{ else if in .URL "/tags/" }}
 <!-- Category -->
 <meta property="og:title" content="{{ .Site.Title }}">
 {{ else }}
 <!-- Article -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="{{ .Title }} &middot; {{ .Site.Title }}">
+<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}">
 {{ end }}
 <meta property="og:site_name" content="{{ .Site.Title }}">
 
@@ -27,11 +27,11 @@
     {{ if eq .URL "/" }}
     {{ .Site.Title }}
     {{ else if eq .URL "/post/" }}
-    All Entries &middot; {{ .Site.Title }}
+    All Posts | {{ .Site.Title }}
     {{ else if in .URL "/tags/" }}
-    {{ .Site.Title }}
+    {{ .Title }} | {{ .Site.Title }}
     {{ else }}
-    {{ .Title }}
+    {{ .Title }} | {{ .Site.Title }}
     {{ end }}
 </title>
 
