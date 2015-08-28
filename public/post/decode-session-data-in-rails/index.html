@@ -104,7 +104,7 @@
                 <p>Rails の Session データは marshal して base64 されている。<br>
 <code>marshal</code>: オブジェクトのシリアライズ関数</p>
 
-<p>Session の中身を見たいときは以下のコードで復元できる。</p>
+<p>Session の中身を見たいときは以下のコードでデコードできる。</p>
 
 <pre><code class="language-ruby">data = &quot;BAhJIhFzZXNzaW9uIGRhdGEGOgZFVA==\n&quot; # session data
 Rack::Session::Cookie::Base64::Marshal.new.decode(data)

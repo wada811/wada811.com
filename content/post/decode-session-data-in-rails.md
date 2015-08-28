@@ -12,7 +12,7 @@ tags = [
 Rails の Session データは marshal して base64 されている。<br>
 `marshal`: オブジェクトのシリアライズ関数
 
-Session の中身を見たいときは以下のコードで復元できる。
+Session の中身を見たいときは以下のコードでデコードできる。
 
 ```ruby
 data = "BAhJIhFzZXNzaW9uIGRhdGEGOgZFVA==\n" # session data
