@@ -9,13 +9,13 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown style check | wada811/blog">
+<meta property="og:title" content="Decode session data in Rails | wada811/blog">
 
 <meta property="og:site_name" content="wada811/blog">
 
 <title>
     
-    Markdown style check | wada811/blog
+    Decode session data in Rails | wada811/blog
     
 </title>
 
@@ -91,330 +91,24 @@
             <header>
                 <div class="post-date">
                     <span class="glyphicon glyphicon-calendar"></span>
-                    <time datetime="2015-02-23">
-                        2015-02-23
+                    <time datetime="2015-08-28">
+                        2015-08-28
                     </time>
                 </div>
                 <h1 class="post-title">
-                    <a href="http://blog.wada811.com/post/markdown-style-check/">Markdown style check</a>
+                    <a href="http://blog.wada811.com/post/decode-session-data-in-rails/">Decode session data in Rails</a>
                 </h1>
             </header>
 
             <div class="post-content">
-                
+                <p>Rails の Session データは marshal して base64 されている。<br>
+<code>marshal</code>: オブジェクトのシリアライズ関数</p>
 
-<h2 id="references:713741fc5da2543b8d20b1add94e545e">References</h2>
+<p>Session の中身を見たいときは以下のコードで復元できる。</p>
 
-<p><a href="https://help.github.com/articles/markdown-basics/">Markdown Basics - User Documentation</a></p>
-
-<p><a href="https://help.github.com/articles/github-flavored-markdown/">GitHub Flavored Markdown - User Documentation</a></p>
-
-<h2 id="basic-writing:713741fc5da2543b8d20b1add94e545e">Basic writing</h2>
-
-<h3 id="paragraphs:713741fc5da2543b8d20b1add94e545e">Paragraphs</h3>
-
-<p>テキストを1行以上の改行でパラグラフを分ける。</p>
-
-<p>パラグラフ１です。パラグラフ１です。パラグラフ１です。パラグラフ１です。パラグラフ１です。パラグラフ１です。パラグラフ１です。</p>
-
-<p>パラグラフ２です。パラグラフ２です。パラグラフ２です。パラグラフ２です。パラグラフ２です。パラグラフ２です。パラグラフ２です。</p>
-
-<h3 id="headings:713741fc5da2543b8d20b1add94e545e">Headings</h3>
-
-<h1 id="first-largest-headings:713741fc5da2543b8d20b1add94e545e">First largest headings</h1>
-
-<p><code>#</code> の後、テキストを記述する。</p>
-
-<h2 id="second-largest-headings:713741fc5da2543b8d20b1add94e545e">Second largest headings</h2>
-
-<p><code>##</code> の後、テキストを記述する。</p>
-
-<h3 id="third-largest-headings:713741fc5da2543b8d20b1add94e545e">Third largest headings</h3>
-
-<p><code>###</code> の後、テキストを記述する。</p>
-
-<h4 id="forth-largest-headings:713741fc5da2543b8d20b1add94e545e">Forth largest headings</h4>
-
-<p><code>####</code> の後、テキストを記述する。</p>
-
-<h5 id="fifth-largest-headings:713741fc5da2543b8d20b1add94e545e">Fifth largest headings</h5>
-
-<p><code>#####</code> の後、テキストを記述する。</p>
-
-<h6 id="sixth-largest-headings:713741fc5da2543b8d20b1add94e545e">Sixth largest headings</h6>
-
-<p><code>######</code> の後、テキストを記述する。</p>
-
-<h3 id="blockquotes:713741fc5da2543b8d20b1add94e545e">Blockquotes</h3>
-
-<p><code>&gt;</code> の後、テキストを記述する。</p>
-
-<blockquote>
-<p>引用テキスト</p>
-</blockquote>
-
-<h3 id="styling-text:713741fc5da2543b8d20b1add94e545e">Styling text</h3>
-
-<p><code>*</code> で囲ったテキストはイタリックになる。</p>
-
-<p><code>**</code> で囲ったテキストはボールドになる。</p>
-
-<p><code>~~</code> で囲ったテキストは打ち消しになる。</p>
-
-<p><em>This text will be italic</em></p>
-
-<p><strong>This text will be bold</strong></p>
-
-<p><del>This text will be strikethrough</del></p>
-
-<p>組み合わせることも可能。</p>
-
-<p><em>Everyone <strong>must</strong> attend the meeting at 5 o&rsquo;clock today.</em></p>
-
-<p><strong>Everyone <em>must</em> attend the meeting at 5 o&rsquo;clock today.</strong></p>
-
-<h2 id="lists:713741fc5da2543b8d20b1add94e545e">Lists</h2>
-
-<h3 id="unordered-lists:713741fc5da2543b8d20b1add94e545e">Unordered lists</h3>
-
-<p><code>-</code> の後、テキストを記述する。</p>
-
-<ul>
-<li>Item</li>
-<li>Item</li>
-<li>Item</li>
-</ul>
-
-<h3 id="ordered-lists:713741fc5da2543b8d20b1add94e545e">Ordered lists</h3>
-
-<p><code>数字.</code> の後、テキストを記述する。</p>
-
-<ol>
-<li>Item 1</li>
-<li>Item 2</li>
-<li>Item 3</li>
-</ol>
-
-<h3 id="nested-lists:713741fc5da2543b8d20b1add94e545e">Nested lists</h3>
-
-<p>2つスペースを開ければネストできる。</p>
-
-<ul>
-<li>hoge
-
-<ol>
-<li>hoge</li>
-<li>piyo</li>
-<li>fuga</li>
-</ol></li>
-<li>foo
-
-<ol>
-<li>foo</li>
-<li>bar</li>
-<li>baz</li>
-</ol></li>
-<li>spam
-
-<ol>
-<li>spam</li>
-<li>ham</li>
-<li>eggs</li>
-</ol></li>
-</ul>
-
-<h2 id="code-formatting:713741fc5da2543b8d20b1add94e545e">Code formatting</h2>
-
-<h3 id="inline-formats:713741fc5da2543b8d20b1add94e545e">Inline formats</h3>
-
-<p><code>`</code> で囲ったテキストはコードフォーマットされる。</p>
-
-<p>This is <code>inline code</code> or <code>inline variable</code> example.</p>
-
-<pre><code>``SELECT * FROM `users`;`` # Surround with double backquotes when escaping single backquote.
+<pre><code class="language-ruby">data = &quot;BAhJIhFzZXNzaW9uIGRhdGEGOgZFVA==\n&quot; # session data
+Rack::Session::Cookie::Base64::Marshal.new.decode(data)
 </code></pre>
-
-<p><code>SELECT * FROM `users`;</code></p>
-
-<h3 id="multiple-lines:713741fc5da2543b8d20b1add94e545e">Multiple lines</h3>
-
-<p><code>```</code>  で囲ったテキストはコードブロックになる。</p>
-
-<pre><code>```
-```` ``` ````  で囲ったテキストはコードブロックになる。
-```
-</code></pre>
-
-<h3 id="syntax-highlighting:713741fc5da2543b8d20b1add94e545e">Syntax highlighting</h3>
-
-<pre><code class="language-ruby">require 'redcarpet'
-markdown = Redcarpet.new(&quot;Hello World!&quot;)
-puts markdown.to_html
-</code></pre>
-
-<pre><code>```ruby
-require 'redcarpet'
-markdown = Redcarpet.new(&quot;Hello World!&quot;)
-puts markdown.to_html
-```
-</code></pre>
-
-<h2 id="links:713741fc5da2543b8d20b1add94e545e">Links</h2>
-
-<p><code>[link text](link url)</code></p>
-
-<p><a href="http://blog.wada811.com/">wada811/blog</a></p>
-
-<h3 id="url-autolinking:713741fc5da2543b8d20b1add94e545e">URL autolinking</h3>
-
-<p><a href="http://blog.wada811.com/">http://blog.wada811.com/</a></p>
-
-<h2 id="tables:713741fc5da2543b8d20b1add94e545e">Tables</h2>
-
-<pre><code>First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-</tbody>
-</table>
-
-<pre><code>| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>First Header</th>
-<th>Second Header</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-
-<tr>
-<td>Content Cell</td>
-<td>Content Cell</td>
-</tr>
-</tbody>
-</table>
-
-<pre><code>| Name | Description          |
-| ------------- | ----------- |
-| Help      | Display the help window.|
-| Close     | Closes a window     |
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Help</td>
-<td>Display the help window.</td>
-</tr>
-
-<tr>
-<td>Close</td>
-<td>Closes a window</td>
-</tr>
-</tbody>
-</table>
-
-<pre><code>| Name | Description          |
-| ------------- | ----------- |
-| Help      | ~~Display the~~ help window.|
-| Close     | _Closes_ a window     |
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Help</td>
-<td><del>Display the</del> help window.</td>
-</tr>
-
-<tr>
-<td>Close</td>
-<td><em>Closes</em> a window</td>
-</tr>
-</tbody>
-</table>
-
-<pre><code>| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ |:---------------:| -----:|
-| col 3 is      | some wordy text | $1600 |
-| col 2 is      | centered        |   $12 |
-| zebra stripes | are neat        |    $1 |
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th align="left">Left-Aligned</th>
-<th align="center">Center Aligned</th>
-<th align="right">Right Aligned</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">col 3 is</td>
-<td align="center">some wordy text</td>
-<td align="right">$1600</td>
-</tr>
-
-<tr>
-<td align="left">col 2 is</td>
-<td align="center">centered</td>
-<td align="right">$12</td>
-</tr>
-
-<tr>
-<td align="left">zebra stripes</td>
-<td align="center">are neat</td>
-<td align="right">$1</td>
-</tr>
-</tbody>
-</table>
 
             </div>
 
@@ -423,16 +117,16 @@ Content Cell  | Content Cell
                 <ul class="list-inline post-tags">
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/blog">
+                        <a href="http://blog.wada811.com/tags/ruby">
                             <i class="fa fa-tags"></i>
-                            Blog
+                            Ruby
                         </a>
                     </li>
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/markdown">
+                        <a href="http://blog.wada811.com/tags/rails">
                             <i class="fa fa-tags"></i>
-                            Markdown
+                            Rails
                         </a>
                     </li>
                     
@@ -448,13 +142,13 @@ Content Cell  | Content Cell
                     <ul class="pager">
 
                         
-                        <li class="previous"><a href="http://blog.wada811.com/post/git-commit-amend-no-edit-message/"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         
 
                         <li><a href="http://blog.wada811.com/post">All Posts</a></li>
 
                         
-                        <li class="next"><a href="http://blog.wada811.com/post/blog-powered-by-hugo/">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="next"><a href="http://blog.wada811.com/post/grep-while-tailing/">Older <span aria-hidden="true">&rarr;</span></a></li>
                         
 
                     </ul>
