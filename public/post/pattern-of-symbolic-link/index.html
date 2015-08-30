@@ -9,13 +9,13 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Visual Studio]アドインの読み込み | wada811/blog">
+<meta property="og:title" content="Pattern of symbolic link | wada811/blog">
 
 <meta property="og:site_name" content="wada811/blog">
 
 <title>
     
-    [Visual Studio]アドインの読み込み | wada811/blog
+    Pattern of symbolic link | wada811/blog
     
 </title>
 
@@ -91,72 +91,44 @@
             <header>
                 <div class="post-date">
                     <span class="glyphicon glyphicon-calendar"></span>
-                    <time datetime="2015-04-15">
-                        2015-04-15
+                    <time datetime="2015-08-31">
+                        2015-08-31
                     </time>
                 </div>
                 <h1 class="post-title">
-                    <a href="http://blog.wada811.com/post/visual-studio-addins-settings/">[Visual Studio]アドインの読み込み</a>
+                    <a href="http://blog.wada811.com/post/pattern-of-symbolic-link/">Pattern of symbolic link</a>
                 </h1>
             </header>
 
             <div class="post-content">
                 
 
-<h2 id="アドインの読み込み:76f0a034b2b9c138b348d556e841115b">アドインの読み込み</h2>
+<h2 id="シンボリックリンクの作成:8cee3ad8099ef0c8ef17afd60cab78cc">シンボリックリンクの作成</h2>
 
-<p>アドインを入手した場合、Visual Studio からアドインを読み込むためには Visual Studio が認識できるディレクトリに置く必要があります。</p>
+<h3 id="ファイルのシンボリックリンクを作成する:8cee3ad8099ef0c8ef17afd60cab78cc">ファイルのシンボリックリンクを作成する</h3>
 
-<h3 id="visual-studio-が認識できるディレクトリ:76f0a034b2b9c138b348d556e841115b">Visual Studio が認識できるディレクトリ</h3>
+<pre><code>ln -s ./path/to/source/file ./path/to/target/file
+</code></pre>
 
-<p>[ツール] &gt; [オプション] &gt; [環境] &gt; [アドイン セキュリティ] を開くと、下図のようなダイアログボックスが開きます。</p>
+<h3 id="ディレクトリのシンボリックリンクを作成する:8cee3ad8099ef0c8ef17afd60cab78cc">ディレクトリのシンボリックリンクを作成する</h3>
 
-<p><img src="/images/visual-studio-addins-settings/VisualStudioAddinSettings.png" alt="" />
-</p>
+<pre><code>ln -s ./path/to/source/directory/ ./path/to/target/directory
+</code></pre>
 
-<table>
-<thead>
-<tr>
-<th>変数</th>
-<th>パス</th>
-</tr>
-</thead>
+<p>注意点</p>
 
-<tbody>
-<tr>
-<td>%ALLUSERSPROFILE%</td>
-<td>C:\Users\Public</td>
-</tr>
+<ul>
+<li>元ディレクトリの末尾のスラッシュがないとエラーになる</li>
+<li>リンク先ディレクトリの末尾のスラッシュがあるとエラーになる</li>
+<li>既にリンク先に同名のディレクトリが存在する場合は上手く作成できない</li>
+</ul>
 
-<tr>
-<td>%APPDATA%</td>
-<td>C:\Users\<strong>username</strong></td>
-</tr>
+<h2 id="シンボリックリンクの削除:8cee3ad8099ef0c8ef17afd60cab78cc">シンボリックリンクの削除</h2>
 
-<tr>
-<td>%VSAPPDATA%</td>
-<td>C:\Users\<strong>username</strong></td>
-</tr>
+<pre><code>unlink ./path/to/target/file
+</code></pre>
 
-<tr>
-<td>%VSCOMMONAPPDATA%</td>
-<td>C:\Users\Public</td>
-</tr>
-
-<tr>
-<td>%VSMYDOCUMENTS%</td>
-<td>C:\Users\<strong>username</strong>\Documents\Visual Studio 2013</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="読み込み:76f0a034b2b9c138b348d556e841115b">読み込み</h3>
-
-<p><code>C:\Users\username\Documents\Visual Studio 2013\Addins</code> に保存して再起動すれば読み込まれます。</p>
-
-<h2 id="参考:76f0a034b2b9c138b348d556e841115b">参考</h2>
-
-<p><a href="http://www.kanazawa-net.ne.jp/~pmansato/vs/vs_addin.htm#store">アドインの格納 | Visual Studio アドイン</a></p>
+<p>こちらはファイルもディレクトリも同じ。</p>
 
             </div>
 
@@ -165,30 +137,16 @@
                 <ul class="list-inline post-tags">
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/windows">
+                        <a href="http://blog.wada811.com/tags/linux">
                             <i class="fa fa-tags"></i>
-                            Windows
+                            Linux
                         </a>
                     </li>
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/windows-8.1">
+                        <a href="http://blog.wada811.com/tags/linux-command">
                             <i class="fa fa-tags"></i>
-                            Windows 8.1
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="http://blog.wada811.com/tags/visual-studio">
-                            <i class="fa fa-tags"></i>
-                            Visual Studio
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="http://blog.wada811.com/tags/visual-studio-2013">
-                            <i class="fa fa-tags"></i>
-                            Visual Studio 2013
+                            Linux Command
                         </a>
                     </li>
                     
@@ -204,13 +162,13 @@
                     <ul class="pager">
 
                         
-                        <li class="previous"><a href="http://blog.wada811.com/post/get-java.lang.class-on-xamarin.android/"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         
 
                         <li><a href="http://blog.wada811.com/post">All Posts</a></li>
 
                         
-                        <li class="next"><a href="http://blog.wada811.com/post/hugo-getting-started/">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="next"><a href="http://blog.wada811.com/post/decode-session-data-in-rails/">Older <span aria-hidden="true">&rarr;</span></a></li>
                         
 
                     </ul>
