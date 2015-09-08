@@ -9,13 +9,13 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="tail しながら grep する | wada811/blog">
+<meta property="og:title" content="Install Ruby on CentOS | wada811/blog">
 
 <meta property="og:site_name" content="wada811/blog">
 
 <title>
     
-    tail しながら grep する | wada811/blog
+    Install Ruby on CentOS | wada811/blog
     
 </title>
 
@@ -91,22 +91,92 @@
             <header>
                 <div class="post-date">
                     <span class="glyphicon glyphicon-calendar"></span>
-                    <time datetime="2015-08-27">
-                        2015-08-27
+                    <time datetime="2015-09-09">
+                        2015-09-09
                     </time>
                 </div>
                 <h1 class="post-title">
-                    <a href="http://blog.wada811.com/post/grep-while-tailing/">tail しながら grep する</a>
+                    <a href="http://blog.wada811.com/post/install-ruby-on-centos/">Install Ruby on CentOS</a>
                 </h1>
             </header>
 
             <div class="post-content">
-                <p>アクセスログを <code>tail -f</code> でリアルタイム監視しながら、
-その結果を <code>grep</code> でフィルタリングしたいという事ありますよね。</p>
+                
 
-<p>そんな時は <code>grep</code> のオプションの <code>--line-buffered</code> をつければよいです。</p>
+<p>バージョンによる違いはないと思う。<br>
+実行したのは Amazon Linux だけど CentOS も同じかと。</p>
 
-<pre><code>tail -f access.log | grep --line-buffered &quot;Status: 500&quot;
+<h2 id="git-のインストール:fbdc783f65e943e91a1771365b63edd8">Git のインストール</h2>
+
+<pre><code>sudo yum install -y git
+</code></pre>
+
+<p>もし入ってなかったら。</p>
+
+<h2 id="rbenv-のインストール:fbdc783f65e943e91a1771365b63edd8">rbenv のインストール</h2>
+
+<pre><code>git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+</code></pre>
+
+<h3 id="bash-profile-の編集:fbdc783f65e943e91a1771365b63edd8">~/.bash_profile の編集</h3>
+
+<pre><code>vim .bash_profile
+</code></pre>
+
+<p><code>PATH=$PATH:$HOME/bin:$HOME/.rbenv/bin</code> に変更。</p>
+
+<p><a href="https://github.com/sstephenson/rbenv">sstephenson/rbenv</a> だと先頭に追加しているけど問題なさそうなので末尾に追加した。</p>
+
+<p><code>eval &quot;$(rbenv init -)&quot;</code> も追加。</p>
+
+<h3 id="bash-profile-の変更の反映:fbdc783f65e943e91a1771365b63edd8">~/.bash_profile の変更の反映</h3>
+
+<pre><code>source .bash_profile
+</code></pre>
+
+<h3 id="ruby-build-のインストール:fbdc783f65e943e91a1771365b63edd8">ruby-build のインストール</h3>
+
+<pre><code>git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+</code></pre>
+
+<p><code>rbenv install</code> が使えるようになる。</p>
+
+<h2 id="ruby-のインストール:fbdc783f65e943e91a1771365b63edd8">Ruby のインストール</h2>
+
+<pre><code>rbenv rehash
+</code></pre>
+
+<p>なんかやったら <code>rbenv rehash</code> が必要。</p>
+
+<pre><code>rbenv install -l
+</code></pre>
+
+<p>バージョンのリストアップ。</p>
+
+<pre><code>rbenv install 2.2.3
+</code></pre>
+
+<p>バージョンを指定してインストール。</p>
+
+<pre><code>sudo yum install -y gcc openssl-devel readline-devel zlib-devel
+</code></pre>
+
+<p>エラーになるので必要な物をインストール。<br>
+成功するまで Ruby のインストールを繰り返す。</p>
+
+<pre><code>rbenv rehash
+</code></pre>
+
+<p>インストール成功したら <code>rbenv rehash</code></p>
+
+<pre><code>rbenv versions
+</code></pre>
+
+<p>バージョン一覧を表示してインストール成功を確認。</p>
+
+<h2 id="ruby-のバージョンを指定:fbdc783f65e943e91a1771365b63edd8">Ruby のバージョンを指定</h2>
+
+<pre><code>rbenv global 2.2.3
 </code></pre>
 
             </div>
@@ -123,9 +193,23 @@
                     </li>
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/linux-command">
+                        <a href="http://blog.wada811.com/tags/centos">
                             <i class="fa fa-tags"></i>
-                            Linux Command
+                            CentOS
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://blog.wada811.com/tags/ruby">
+                            <i class="fa fa-tags"></i>
+                            Ruby
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://blog.wada811.com/tags/rbenv">
+                            <i class="fa fa-tags"></i>
+                            rbenv
                         </a>
                     </li>
                     
@@ -141,13 +225,13 @@
                     <ul class="pager">
 
                         
-                        <li class="previous"><a href="http://blog.wada811.com/post/decode-session-data-in-rails/"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         
 
                         <li><a href="http://blog.wada811.com/post">All Posts</a></li>
 
                         
-                        <li class="next"><a href="http://blog.wada811.com/post/custom-application-class-in-xamarin-android/">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="next"><a href="http://blog.wada811.com/post/pattern-of-symbolic-link/">Older <span aria-hidden="true">&rarr;</span></a></li>
                         
 
                     </ul>
