@@ -9,13 +9,13 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="tail しながら grep する | wada811/blog">
+<meta property="og:title" content="[Android]アプリのレビューを Slack に通知する | wada811/blog">
 
 <meta property="og:site_name" content="wada811/blog">
 
 <title>
     
-    tail しながら grep する | wada811/blog
+    [Android]アプリのレビューを Slack に通知する | wada811/blog
     
 </title>
 
@@ -91,23 +91,37 @@
             <header>
                 <div class="post-date">
                     <span class="glyphicon glyphicon-calendar"></span>
-                    <time datetime="2015-08-27">
-                        2015-08-27
+                    <time datetime="2015-09-16">
+                        2015-09-16
                     </time>
                 </div>
                 <h1 class="post-title">
-                    <a href="http://blog.wada811.com/post/grep-while-tailing/">tail しながら grep する</a>
+                    <a href="http://blog.wada811.com/post/post-android-app-review-to-slack/">[Android]アプリのレビューを Slack に通知する</a>
                 </h1>
             </header>
 
             <div class="post-content">
-                <p>アクセスログを <code>tail -f</code> でリアルタイム監視しながら、
-その結果を <code>grep</code> でフィルタリングしたいという事ありますよね。</p>
+                
 
-<p>そんな時は <code>grep</code> のオプションの <code>--line-buffered</code> をつければよいです。</p>
+<blockquote>
+<p><a href="https://gist.github.com/wada811/5f6469f043daea5bcb5b">Post Google Play App. Reviews to Slack | wada811&rsquo;s gist </a></p>
 
-<pre><code>tail -f access.log | grep --line-buffered &quot;Status: 500&quot;
-</code></pre>
+<h3 id="参考:57774e5bb873b39d080c5ada4130e46b">参考</h3>
+
+<ul>
+<li>Android - アプリのレビューを HipChat で自動通知する - Qiita <a href="http://qiita.com/hkurokawa/items/9241055f5d34b4dd4782">http://qiita.com/hkurokawa/items/9241055f5d34b4dd4782</a></li>
+<li>Google Play のレビューを自動通知する // Speaker Deck <a href="https://speakerdeck.com/hkurokawa/google-play-falserebiyuwozi-dong-tong-zhi-suru">https://speakerdeck.com/hkurokawa/google-play-falserebiyuwozi-dong-tong-zhi-suru</a></li>
+</ul>
+
+<h3 id="修正箇所:57774e5bb873b39d080c5ada4130e46b">修正箇所</h3>
+
+<ul>
+<li>mktemp が GNU 版で引数が不要だった。</li>
+<li>パス通すのが面倒だったので同じ場所においてあれば動くようにした。</li>
+<li>各種定数について環境変数を設定するのが面倒だったのでベタ書きした。</li>
+<li>Slack に投稿する際のフォーマットを調整した。</li>
+</ul>
+</blockquote>
 
             </div>
 
@@ -116,16 +130,16 @@
                 <ul class="list-inline post-tags">
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/linux">
+                        <a href="http://blog.wada811.com/tags/android">
                             <i class="fa fa-tags"></i>
-                            Linux
+                            Android
                         </a>
                     </li>
                     
                     <li>
-                        <a href="http://blog.wada811.com/tags/linux-command">
+                        <a href="http://blog.wada811.com/tags/slack">
                             <i class="fa fa-tags"></i>
-                            Linux Command
+                            Slack
                         </a>
                     </li>
                     
@@ -141,13 +155,13 @@
                     <ul class="pager">
 
                         
-                        <li class="previous"><a href="http://blog.wada811.com/post/decode-session-data-in-rails/"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         
 
                         <li><a href="http://blog.wada811.com/post">All Posts</a></li>
 
                         
-                        <li class="next"><a href="http://blog.wada811.com/post/custom-application-class-in-xamarin-android/">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="next"><a href="http://blog.wada811.com/post/install-ruby-on-centos/">Older <span aria-hidden="true">&rarr;</span></a></li>
                         
 
                     </ul>

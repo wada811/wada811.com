@@ -6,8 +6,40 @@
     <language>ja-JP</language>
     <author>wada811</author>
     <rights>(C) 2015</rights>
-    <updated>2015-09-09 08:44:56 &#43;0900 JST</updated>
+    <updated>2015-09-16 20:14:49 &#43;0900 JST</updated>
 
+    
+      
+        <item>
+          <title>[Android]アプリのレビューを Slack に通知する</title>
+          <link>http://blog.wada811.com/post/post-android-app-review-to-slack/</link>
+          <pubDate>Wed, 16 Sep 2015 20:14:49 JST</pubDate>
+          <author>wada811</author>
+          <guid>http://blog.wada811.com/post/post-android-app-review-to-slack/</guid>
+          <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/wada811/5f6469f043daea5bcb5b&#34;&gt;Post Google Play App. Reviews to Slack | wada811&amp;rsquo;s gist &lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;参考:57774e5bb873b39d080c5ada4130e46b&#34;&gt;参考&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Android - アプリのレビューを HipChat で自動通知する - Qiita &lt;a href=&#34;http://qiita.com/hkurokawa/items/9241055f5d34b4dd4782&#34;&gt;http://qiita.com/hkurokawa/items/9241055f5d34b4dd4782&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Google Play のレビューを自動通知する // Speaker Deck &lt;a href=&#34;https://speakerdeck.com/hkurokawa/google-play-falserebiyuwozi-dong-tong-zhi-suru&#34;&gt;https://speakerdeck.com/hkurokawa/google-play-falserebiyuwozi-dong-tong-zhi-suru&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;修正箇所:57774e5bb873b39d080c5ada4130e46b&#34;&gt;修正箇所&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mktemp が GNU 版で引数が不要だった。&lt;/li&gt;
+&lt;li&gt;パス通すのが面倒だったので同じ場所においてあれば動くようにした。&lt;/li&gt;
+&lt;li&gt;各種定数について環境変数を設定するのが面倒だったのでベタ書きした。&lt;/li&gt;
+&lt;li&gt;Slack に投稿する際のフォーマットを調整した。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+      
     
       
         <item>
