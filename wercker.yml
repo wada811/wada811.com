@@ -28,24 +28,12 @@ build:
 
     # Gets the dependencies
     - script:
-        name: go get
-        code: |
-          go get
-          
-    # Gets the dependencies
-    - script:
         name: go get hugo
         code: |
           go get -u -v github.com/spf13/hugo
 
     # Build the project
     - script:
-        name: go build
+        name: hugo build
         code: |
-          go build ./...
-
-    # Test the project
-    - script:
-        name: go test
-        code: |
-          go test ./...
+          hugo
