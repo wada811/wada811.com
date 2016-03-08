@@ -32,8 +32,18 @@ build:
         code: |
           go get -u -v github.com/spf13/hugo
 
-    # Build the project
+    # Build the blog
     - script:
         name: hugo build
         code: |
           hugo
+
+    # Deploy the blog
+    - script:
+        name: deploy blog
+        code: |
+          git config --global user.name "wercker"
+          git config --global user.email "wada811@wercker.com"
+          git add .
+          git commit -m "[wercker] publish"
+          git push origin master
