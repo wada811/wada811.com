@@ -11,5 +11,5 @@ deploy:
         packages: git ssh-client
     - lukevivier/gh-pages@0.2.1:
         token: $GITHUB_TOKEN
-        domain: hugo-wercker.ig.nore.me
+        domain: blog.wada811.com
         basedir: public
