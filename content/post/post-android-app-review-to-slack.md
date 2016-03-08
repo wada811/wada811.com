@@ -14,7 +14,7 @@ tags = [
 > - Android - アプリのレビューを HipChat で自動通知する - Qiita http://qiita.com/hkurokawa/items/9241055f5d34b4dd4782
 > - Google Play のレビューを自動通知する // Speaker Deck https://speakerdeck.com/hkurokawa/google-play-falserebiyuwozi-dong-tong-zhi-suru
 >
-> ### 修正箇所
+> ### 修正箇所一覧
 > - mktemp が GNU 版で引数が不要だった。
 > - パス通すのが面倒だったので同じ場所においてあれば動くようにした。
 > - 各種定数について環境変数を設定するのが面倒だったのでベタ書きした。
