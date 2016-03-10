@@ -1,6 +1,7 @@
 BaseURL = "http://blog.wada811.com"
 LanguageCode = "ja-JP"
 Title = "wada811/blog"
+Theme = "wada811"
 
 [Params]
     Author = "wada811"
