@@ -1,6 +1,10 @@
 box: debian
 build:
   steps:
+    - script:
+        name: export BUILD_DATE
+        code: |
+          export BUILD_DATE=`date`
     - arjen/hugo-build:
         version: "0.14"
         theme: wada811

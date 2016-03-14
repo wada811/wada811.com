@@ -40,8 +40,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/{{ .Site.Params.SyntaxHighlightTheme }}">
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/styles.css">
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/code.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/styles.css?v={{ getenv "BUILD_DATE" }}">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/code.css?v={{ getenv "BUILD_DATE" }}">
 
 <!-- Icons -->
 <link rel="shortcut icon" href="{{ .Site.BaseURL }}/assets/favicon.ico">
