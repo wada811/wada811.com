@@ -2,6 +2,10 @@ box: debian
 build:
   steps:
     - script:
+        name: export BUILD_YEAR
+        code: |
+          export BUILD_YEAR=`date +%Y`
+    - script:
         name: export BUILD_DATE
         code: |
           export BUILD_DATE=`date`

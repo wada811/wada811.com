@@ -2,7 +2,7 @@
 <hr>
 
 <footer class="container copy">
-    <p>&copy; {{ .Site.LastChange.Year }} {{ if isset .Site.Params "Author" }} {{ .Site.Params.Author }} {{ else }} {{ .Site.Title }} {{ end }}</p>
+    <p>&copy; {{ getenv "BUILD_YEAR" }} {{ if isset .Site.Params "Author" }} {{ .Site.Params.Author }} {{ else }} {{ .Site.Title }} {{ end }}</p>
 	<p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>, Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
 </footer>
 
