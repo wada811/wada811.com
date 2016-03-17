@@ -3,12 +3,12 @@
 <div class="row">
     <div class="col-md-8">
         <div class="posts">
-            {{ range first 10 (where .Data.Pages "Type" "post") }}
+            {{ range first 10 (where .Data.Pages "Type" "blog") }}
             {{ .Render "li" }}
             {{ end }}
             <nav>
                 <ul class="pager">
-                    <li><a href="{{ .Site.BaseURL }}/post">All Posts</a></li>
+                    <li><a href="{{ .Site.BaseURL }}/blog">Blog Archive</a></li>
                 </ul>
             </nav>
         </div>

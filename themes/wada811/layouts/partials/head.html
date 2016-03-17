@@ -10,9 +10,9 @@
 {{ range first 1 .Data.Pages }}
 <meta property="og:title" content="{{ .Site.Title }}">
 {{ end }}
-{{ else if eq .URL "/post/" }}
-<!-- Post -->
-<meta property="og:title" content="All Posts | {{ .Site.Title }}">
+{{ else if eq .URL "/blog/" }}
+<!-- Blog -->
+<meta property="og:title" content="Blog Archive | {{ .Site.Title }}">
 {{ else if in .URL "/tags/" }}
 <!-- Category -->
 <meta property="og:title" content="{{ .Site.Title }}">
@@ -26,8 +26,8 @@
 <title>
     {{ if eq .URL "/" }}
     {{ .Site.Title }}
-    {{ else if eq .URL "/post/" }}
-    All Posts | {{ .Site.Title }}
+    {{ else if eq .URL "/blog/" }}
+    Blog Archive | {{ .Site.Title }}
     {{ else if in .URL "/tags/" }}
     {{ .Title }} | {{ .Site.Title }}
     {{ else }}

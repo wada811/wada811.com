@@ -150,7 +150,7 @@ puts markdown.to_html
 
 `[link text](link url)`
 
-[wada811/blog](http://blog.wada811.com/)
+[wada811/blog](https://wada811.com/blog/)
 
 ### URL autolinking
 

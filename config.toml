@@ -15,5 +15,4 @@ Theme = "wada811"
     tag = "tags"
 
 [Permalinks]
-    post = "/:section/:filename/"
-    article = "/:section/:year/:month/:filename/"
+    blog = "/:section/:filename/"
