@@ -8,7 +8,7 @@
     <updated>{{ .Date }}</updated>
 
     {{ range .Data.Pages }}
-      {{ if eq .Type "post"}}
+      {{ if eq .Type "blog"}}
         <item>
           <title>{{ .Title }}</title>
           <link>{{ .Permalink }}</link>
