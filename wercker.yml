@@ -8,7 +8,7 @@ build:
     - script:
         name: export BUILD_DATE
         code: |
-          export BUILD_DATE=`date`
+          export BUILD_DATE=`date -u "+%Y-%m-%dT%H:%M:%SZ"`
     - arjen/hugo-build:
         version: "0.14"
         theme: wada811

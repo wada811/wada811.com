@@ -4,8 +4,8 @@
     <link>{{ .Site.BaseURL }}</link>
     <language>{{ .Site.LanguageCode }}</language>
     <author>{{ .Site.Params.Author }}</author>
-    <rights>(C) {{ .Site.LastChange.Year }}</rights>
-    <updated>{{ .Date }}</updated>
+    <rights>(C) {{ getenv "BUILD_YEAR" }}</rights>
+    <updated>{{ getenv "BUILD_DATE" }}</updated>
 
     {{ range .Data.Pages }}
       {{ if eq .Type "blog"}}
