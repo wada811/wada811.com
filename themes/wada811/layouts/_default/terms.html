@@ -1,0 +1,18 @@
+{{ partial "default_head.html" . }}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">{{ .Title }}</h2>
+    </div>
+    <div class="list-group">
+        {{ $plural := .Data.Plural }}
+        {{ range $key, $value := .Data.Terms.ByCount }}
+        <a href="/{{ $plural }}/{{ $value.Name | urlize }}" class="list-group-item">
+            <span class="badge">{{ $value.Count }}</span>
+            {{ $value.Name }}
+        </a>
+        {{ end }}
+    </div>
+</div>
+
+{{ partial "default_foot.html" . }}
