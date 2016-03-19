@@ -3,7 +3,7 @@ date = "2015-05-22T22:51:27+09:00"
 draft = false
 title = "Get java.lang.Class on Xamarin.Android"
 tags = [
-    "C#",
+    "CSharp",
     "Xamarin",
     "Xamarin.Android",
 ]
