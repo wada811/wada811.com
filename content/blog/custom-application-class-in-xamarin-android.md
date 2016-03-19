@@ -4,7 +4,7 @@ draft = false
 title = "Custom application class in Xamarin.Android"
 tags = [
     "Android",
-    "Xamarin.Android",
+    "Xamarin Android",
     "Xamarin",
 ]
 

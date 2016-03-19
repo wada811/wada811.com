@@ -4,7 +4,6 @@ draft = false
 title = "[Visual Studio]アドインの読み込み"
 tags = [
     "Windows",
-    "Windows 8.1",
     "Visual Studio",
     "Visual Studio 2013"
 ]
