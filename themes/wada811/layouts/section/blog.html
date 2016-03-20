@@ -4,7 +4,7 @@
     <div class="col-md-8">
         <div class="posts">
 
-            {{ range first 10 (where .Data.Pages "Type" "blog") }}
+            {{ range (.Paginator 10).Pages }}
             {{ .Render "li" }}
             {{ end }}
 
@@ -12,7 +12,7 @@
                 <ul class="pager">
 
                     {{ if .Paginator.HasPrev }}
-                    <li class="previous"><a href="/blog{{ .Paginator.Prev.URL }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                    <li class="previous"><a href="{{ .Paginator.Prev.URL }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
                     {{ else }}
                     <li class="previous disabled"><span aria-hidden="true">&larr; Newer</span></li>
                     {{ end }}
@@ -20,7 +20,7 @@
                     <li><a href="/blog">All</a></li>
 
                     {{ if .Paginator.HasNext }}
-                    <li class="next"><a href="/blog{{ .Paginator.Next.URL }}">Older <span aria-hidden="true">&rarr;</span></a></li>
+                    <li class="next"><a href="{{ .Paginator.Next.URL }}">Older <span aria-hidden="true">&rarr;</span></a></li>
                     {{ else }}
                     <li class="next disabled"><span aria-hidden="true">Older &rarr;</span></li>
                     {{ end }}
