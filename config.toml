@@ -10,6 +10,7 @@ Theme = "wada811"
     Twitter = "wada811"
     Github = "wada811"
     SyntaxHighlightTheme = "solarized_dark.min.css"
+    GoogleAnalyticsUserID = "UA-41423152-2"
 
 [Indexes]
     tag = "tags"
