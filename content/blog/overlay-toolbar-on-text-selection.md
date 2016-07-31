@@ -9,7 +9,7 @@ tags = [ "Android" ]
 テーマに以下を追加すれば Contextual Action Bar が表示されている時は Toolbar が表示されないようになります。
 
 ```
-<item name="windowActionMode">true</item>
+<item name="windowActionModeOverlay">true</item>
 ```
 
 ### 参考
