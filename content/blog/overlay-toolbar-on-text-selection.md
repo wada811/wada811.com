@@ -8,6 +8,9 @@ tags = [  ]
 
 テーマに以下を追加すれば Contextual Action Bar が表示されている時は Toolbar が表示されないようになります。
 
-```xml
+```
 <item name="windowActionMode">true</item>
 ```
+
+### 参考
+[android - Overlay or hide Toolbar on copy/cut selection - Stack Overflow](http://stackoverflow.com/questions/27064335/overlay-or-hide-toolbar-on-copy-cut-selection)
