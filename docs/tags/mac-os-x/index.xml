@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wada811.com</title>
+    <link>https://wada811.com</link>
+    <language>ja-JP</language>
+    <author>wada811</author>
+    <rights>(C) 2016</rights>
+    <updated>2015-03-04 22:40:40 &#43;0900 JST</updated>
+
+    
+      
+        <item>
+          <title>Hugo Getting Started</title>
+          <link>https://wada811.com/blog/hugo-getting-started/</link>
+          <pubDate>Wed, 04 Mar 2015 22:40:40 JST</pubDate>
+          <author>wada811</author>
+          <guid>https://wada811.com/blog/hugo-getting-started/</guid>
+          <description>
+
+&lt;h2 id=&#34;hugo-http-gohugo-io-とは&#34;&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; とは&lt;/h2&gt;
+
+&lt;p&gt;静的サイトジェネレータ。
+ブログを生成して GitHub Pages でホスティングしている人が多い印象。&lt;/p&gt;
+
+&lt;h2 id=&#34;hugo-のインストール&#34;&gt;Hugo のインストール&lt;/h2&gt;
+
+&lt;h3 id=&#34;mac-の場合&#34;&gt;Mac の場合&lt;/h3&gt;
+
+&lt;p&gt;Homebrew でインストール&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install hugo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;その他の場合&#34;&gt;その他の場合&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/overview/quickstart&#34;&gt;Installing Hugo&lt;/a&gt; を読んで。&lt;/p&gt;
+
+&lt;h2 id=&#34;静的サイトの作成-http-gohugo-io-overview-quickstart-step-2-have-hugo-create-a-site-for-you-09c84f91027bd18b03251c05a0da4abb&#34;&gt;&lt;a href=&#34;http://gohugo.io/overview/quickstart/#step-2-have-hugo-create-a-site-for-you:09c84f91027bd18b03251c05a0da4abb&#34;&gt;静的サイトの作成&lt;/a&gt;&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new blog
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;blog&lt;/code&gt; は何でも良い。好きな名前を付けて欲しい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tree blog
+├── archetypes/
+├── config.toml
+├── content/
+├── layouts/
+└── static/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上記のような構造が生成される。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd blog
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以降は作成されたディレクトリ内で作業を行う。&lt;/p&gt;
+
+&lt;h2 id=&#34;テーマのインストール-http-gohugo-io-overview-quickstart-step-4-install-some-themes-09c84f91027bd18b03251c05a0da4abb&#34;&gt;&lt;a href=&#34;http://gohugo.io/overview/quickstart/#step-4-install-some-themes:09c84f91027bd18b03251c05a0da4abb&#34;&gt;テーマのインストール&lt;/a&gt;&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone --recursive https://github.com/spf13/hugoThemes.git themes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;まずはテーマをインストールして使いたいものがないか探す。
+あんまり種類はないので全部確認できると思う。&lt;/p&gt;
+
+&lt;h3 id=&#34;テーマの確認&#34;&gt;テーマの確認&lt;/h3&gt;
+
+&lt;p&gt;以下のコマンドでテーマを選んでプレビューしよう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo server -t &amp;quot;`ls themes | peco`&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;peco をインストールしていない場合は themes 以下のディレクトリ名を指定。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>

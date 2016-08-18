@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wada811.com</title>
+    <link>https://wada811.com</link>
+    <language>ja-JP</language>
+    <author>wada811</author>
+    <rights>(C) 2016</rights>
+    <updated>2016-07-31 22:19:29.407 &#43;0900 JST</updated>
+
+    
+      
+        <item>
+          <title>[Android]テキスト選択時に Toolbar を隠す</title>
+          <link>https://wada811.com/blog/overlay-toolbar-on-text-selection/</link>
+          <pubDate>Sun, 31 Jul 2016 22:19:29 JST</pubDate>
+          <author>wada811</author>
+          <guid>https://wada811.com/blog/overlay-toolbar-on-text-selection/</guid>
+          <description>
+
+&lt;p&gt;テキスト選択時に Contextual Action Bar が表示されますが、Toolbar と二重に表示されてしまいました。&lt;/p&gt;
+
+&lt;p&gt;テーマに以下を追加すれば Contextual Action Bar が表示されている時は Toolbar が表示されないようになります。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;item name=&amp;quot;windowActionModeOverlay&amp;quot;&amp;gt;true&amp;lt;/item&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;参考&#34;&gt;参考&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/27064335/overlay-or-hide-toolbar-on-copy-cut-selection&#34;&gt;android - Overlay or hide Toolbar on copy/cut selection - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>[Android]アプリのレビューを Slack に通知する</title>
+          <link>https://wada811.com/blog/post-android-app-review-to-slack/</link>
+          <pubDate>Wed, 16 Sep 2015 20:14:49 JST</pubDate>
+          <author>wada811</author>
+          <guid>https://wada811.com/blog/post-android-app-review-to-slack/</guid>
+          <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/wada811/5f6469f043daea5bcb5b&#34;&gt;Post Google Play App. Reviews to Slack | wada811&amp;rsquo;s gist &lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;参考&#34;&gt;参考&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Android - アプリのレビューを HipChat で自動通知する - Qiita &lt;a href=&#34;http://qiita.com/hkurokawa/items/9241055f5d34b4dd4782&#34;&gt;http://qiita.com/hkurokawa/items/9241055f5d34b4dd4782&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Google Play のレビューを自動通知する // Speaker Deck &lt;a href=&#34;https://speakerdeck.com/hkurokawa/google-play-falserebiyuwozi-dong-tong-zhi-suru&#34;&gt;https://speakerdeck.com/hkurokawa/google-play-falserebiyuwozi-dong-tong-zhi-suru&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;修正箇所一覧&#34;&gt;修正箇所一覧&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mktemp が GNU 版で引数が不要だった。&lt;/li&gt;
+&lt;li&gt;パス通すのが面倒だったので同じ場所においてあれば動くようにした。&lt;/li&gt;
+&lt;li&gt;各種定数について環境変数を設定するのが面倒だったのでベタ書きした。&lt;/li&gt;
+&lt;li&gt;Slack に投稿する際のフォーマットを調整した。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Custom application class in Xamarin.Android</title>
+          <link>https://wada811.com/blog/custom-application-class-in-xamarin-android/</link>
+          <pubDate>Fri, 21 Aug 2015 15:00:24 JST</pubDate>
+          <author>wada811</author>
+          <guid>https://wada811.com/blog/custom-application-class-in-xamarin-android/</guid>
+          <description>
+
+&lt;h2 id=&#34;implement-custom-application-class&#34;&gt;Implement custom application class&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;[Application]
+public class MyApplication : Application
+{
+    public MyApplication(IntPtr handle, JniHandleOwnership ownerShip) : base(handle, ownerShip)
+    {
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;普通に実装して &lt;code&gt;AndroidManifest.xml&lt;/code&gt; に追記してもダメで、
+&lt;code&gt;[Application]&lt;/code&gt; 属性とコンストラクタが必要でした。&lt;/p&gt;
+
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/21427981/how-to-register-my-own-application-subclass-in-xamarin-android&#34;&gt;monodroid - How to register my own Application subclass in Xamarin.Android? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>[Android] Compound ListView のパフォーマンス、あるいは MergeAdapter が便利という話</title>
+          <link>https://wada811.com/blog/performance-of-compound-listview-in-android/</link>
+          <pubDate>Sun, 28 Jun 2015 09:05:54 JST</pubDate>
+          <author>wada811</author>
+          <guid>https://wada811.com/blog/performance-of-compound-listview-in-android/</guid>
+          <description>
+
+&lt;h2 id=&#34;compound-listview-とは&#34;&gt;Compound ListView とは&lt;/h2&gt;
+
+&lt;p&gt;ListView に異なる種類のView、特に ListView を含む ListView のこと。（命名、俺）&lt;/p&gt;
+
+&lt;p&gt;例↓&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;┌──────────────┐
+│┌────────────┐│
+││  TextView  ││
+│└────────────┘│
+│┌────────────┐│
+││  ListView  ││
+│└────────────┘│
+│┌────────────┐│
+││   Button   ││
+│└────────────┘│
+│┌────────────┐│
+││  TextView  ││
+│└────────────┘│
+│┌────────────┐│
+││  ListView  ││
+│└────────────┘│
+│┌────────────┐│
+││   Button   ││
+│└────────────┘│
+└──────────────┘
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;sample-code&#34;&gt;Sample Code&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/wada811/Android-Compound-ListView-Sample&#34;&gt;wada811/Android-Compound-ListView-Sample&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;実装方法&#34;&gt;実装方法&lt;/h2&gt;
+
+&lt;h3 id=&#34;views-in-scrollview&#34;&gt;Views in ScrollView&lt;/h3&gt;
+
+&lt;p&gt;普通に ScrollView に View を入れていく方法。&lt;br&gt;
+ListView は ScrollView の中ではアイテム１個分の高さしか表示されないので&lt;br&gt;
+以下のようなコードを書いて全件の高さを計算して ListView の高さを設定する必要がある。&lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;ListAdapter listAdapter = listView.getAdapter();
+if(listAdapter == null){
+    return;
+}
+int totalHeight = listView.getPaddingTop() + listView.getPaddingBottom();
+for(int i = 0; i &amp;lt; listAdapter.getCount(); i++){
+    View listItem = listAdapter.getView(0, null, listView);
+    if(listItem instanceof ViewGroup){
+        listItem.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+    }
+    listItem.measure(0, 0);
+    totalHeight += listItem.getMeasuredHeight();
+}
+
+ViewGroup.LayoutParams params = listView.getLayoutParams();
+params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+listView.setLayoutParams(params);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;mergeadapter&#34;&gt;MergeAdapter&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/commonsguy/cwac-merge&#34;&gt;commonsguy/cwac-merge&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/yyaammaa/items/d31dc8f67da87ca36574&#34;&gt;Android - MergeAdapterが便利 - Qiita&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;MergeAdapter というライブラリを使って ListView に様々な View を入れていく方法。&lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;ListView listView = (ListView)findViewById(R.id.ListView);
+
+MergeAdapter mergeAdapter = new MergeAdapter();
+
+View view = LayoutInflater.from(this).inflate(R.layout.list, null, false);
+
+TextView textView1 = (TextView)view.findViewById(R.id.TextView1);
+ListView listView1 = (ListView)view.findViewById(R.id.ListView1);
+Button button1 = (Button)view.findViewById(R.id.Button1);
+TextView textView2 = (TextView)view.findViewById(R.id.TextView2);
+ListView listView2 = (ListView)view.findViewById(R.id.ListView2);
+Button button2 = (Button)view.findViewById(R.id.Button2);
+
+mergeAdapter.addView(textView1);
+mergeAdapter.addAdapter(listView1.getAdapter());
+mergeAdapter.addView(button1);
+mergeAdapter.addView(textView2);
+mergeAdapter.addAdapter(listView2.getAdapter());
+mergeAdapter.addView(button2);
+
+listView.setAdapter(mergeAdapter);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;パフォーマンス&#34;&gt;パフォーマンス&lt;/h2&gt;
+
+&lt;h3 id=&#34;views-in-scrollview-1&#34;&gt;Views in ScrollView&lt;/h3&gt;
+
+&lt;p&gt;実装方法を見て分かる通り、ListView の要素を全て getView して高さを計算するので&lt;br&gt;
+ListView の要素数が大きくなると描画までの時間が長くなる。&lt;/p&gt;
+
+&lt;h3 id=&#34;mergeadapter-1&#34;&gt;MergeAdapter&lt;/h3&gt;
+
+&lt;p&gt;MergeAdapter に追加しているのは Adapter なので画面に表示されない部分は描画されない。
+また、View も内部的に Adapter に変換されているのでパフォーマンスが良い。&lt;/p&gt;
+
+&lt;h2 id=&#34;クリックイベントのハンドリング&#34;&gt;クリックイベントのハンドリング&lt;/h2&gt;
+
+&lt;h3 id=&#34;views-in-scrollview-2&#34;&gt;Views in ScrollView&lt;/h3&gt;
+
+&lt;p&gt;通常と変わらない。&lt;/p&gt;
+
+&lt;h3 id=&#34;mergeadapter-2&#34;&gt;MergeAdapter&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;MergeAdapter&lt;/code&gt;をセットした&lt;code&gt;ListView&lt;/code&gt;で&lt;code&gt;setOnItemClickListener&lt;/code&gt;をセットしても&lt;br&gt;
+クリックイベントが取得できるのは&lt;code&gt;addAdapter&lt;/code&gt;で追加したものだけ。&lt;br&gt;
+&lt;code&gt;Button&lt;/code&gt;などの&lt;code&gt;View&lt;/code&gt;を追加した場合は、そちらにリスナーをセットしなければならない。&lt;br&gt;
+&lt;code&gt;Adapter&lt;/code&gt;は追加した全ての&lt;code&gt;View&lt;/code&gt;の中での&lt;code&gt;position&lt;/code&gt;になっているので扱いにくい。&lt;br&gt;
+なので&lt;code&gt;Adapter&lt;/code&gt;は内部で&lt;code&gt;View&lt;/code&gt;に対してリスナーをセットしたほうが良いと思う。&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;MergeAdapter&lt;/code&gt;は便利。
+だけどクリックイベントのハンドリングが少し微妙。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>[Android] Espresso で他の Activity を起動する</title>
+          <link>https://wada811.com/blog/launch-other-activity-in-espresso/</link>
+          <pubDate>Mon, 15 Jun 2015 08:07:37 JST</pubDate>
+          <author>wada811</author>
+          <guid>https://wada811.com/blog/launch-other-activity-in-espresso/</guid>
+          <description>
+
+&lt;h2 id=&#34;activitytestrule-を使う&#34;&gt;ActivityTestRule を使う&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;ActivityTestRule&amp;lt;OtherActivity&amp;gt; rule = new ActivityTestRule&amp;lt;&amp;gt;(clazz);
+rule.launchActivity(intent);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あとは起動した画面をスクリーンショット撮るとかすれば画面のテストが出来ます。&lt;br&gt;
+&lt;a href=&#34;https://github.com/wada811/Android-DatePicker-Sample/blob/master/app/src/androidTest/java/com/wada811/android_datepicker_sample/DatePickerTest.java&#34;&gt;Android-DatePicker-Sample/DatePickerTest.java at master · wada811/Android-DatePicker-Sample&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developer.android.com/reference/android/support/test/rule/ActivityTestRule.html&#34;&gt;ActivityTestRule | Android Developers&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://blog.sqisland.com/2015/04/espresso-21-activitytestrule.html&#34;&gt;Square Island: Espresso 2.1: ActivityTestRule&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>[Android] DatePicker のレイアウトのフラグがカオスな件について</title>
+          <link>https://wada811.com/blog/datepicker-layout-flag-in-android/</link>
+          <pubDate>Sun, 07 Jun 2015 20:54:09 JST</pubDate>
+          <author>wada811</author>
+          <guid>https://wada811.com/blog/datepicker-layout-flag-in-android/</guid>
+          <description>
+
+&lt;h2 id=&#34;カオスな-datepicker-のレイアウトのフラグ&#34;&gt;カオスな DatePicker のレイアウトのフラグ&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;属性&lt;/th&gt;
+&lt;th&gt;値&lt;/th&gt;
+&lt;th&gt;API Level&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:calendarViewShown&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:spinnersShown&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:datePickerMode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;spinner&lt;/code&gt; or &lt;code&gt;calendar&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;code&gt;datePickerMode&lt;/code&gt;は未指定もしくは&lt;code&gt;spinner&lt;/code&gt;がLollipop 未満の表示です。&lt;br&gt;
+&lt;code&gt;calendar&lt;/code&gt;が Lollipop からの表示になります。&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;レイアウトの切り替えにフラグが3種類って嫌な予感しかしませんね。&lt;/p&gt;
+
+&lt;h2 id=&#34;各属性を設定した場合の表示の違い&#34;&gt;各属性を設定した場合の表示の違い&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;Theme.AppCompat&lt;/code&gt;を指定した&lt;code&gt;FragmentActivity&lt;/code&gt;のスクリーンショットです。&lt;br&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;DatePickerPattern1&lt;/th&gt;
+&lt;th&gt;DatePickerPattern2&lt;/th&gt;
+&lt;th&gt;DatePickerPattern3&lt;/th&gt;
+&lt;th&gt;DatePickerPattern4&lt;/th&gt;
+&lt;th&gt;DatePickerPattern5&lt;/th&gt;
+&lt;th&gt;DatePickerPattern6&lt;/th&gt;
+&lt;th&gt;DatePickerPattern7&lt;/th&gt;
+&lt;th&gt;DatePickerPattern8&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:datePickerMode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;spinner&lt;/td&gt;
+&lt;td&gt;spinner&lt;/td&gt;
+&lt;td&gt;spinner&lt;/td&gt;
+&lt;td&gt;spinner&lt;/td&gt;
+&lt;td&gt;calendar&lt;/td&gt;
+&lt;td&gt;calendar&lt;/td&gt;
+&lt;td&gt;calendar&lt;/td&gt;
+&lt;td&gt;calendar&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:calendarViewShown&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;android:spinnersShown&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Screenshot&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Spinner_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Spinner_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_false_Theme_AppCompat.png&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Calendar_isCalendarViewShown_false_isSpinnersShown_true_Theme_AppCompat.png&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_false_Theme_AppCompat.png&#34; /&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://github.com/wada811/Android-DatePicker-Sample/raw/master/screenshots/DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png&#34; alt=&#34;DatePickerInFragmentActivity_Calendar_isCalendarViewShown_true_isSpinnersShown_true_Theme_AppCompat.png&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;DatePickerPattern1~4 は Lollipop 未満の表示です。&lt;br&gt;
+DatePickerPattern5~8 は&lt;code&gt;android:datePickerMode=&amp;quot;calendar&amp;quot;&lt;/code&gt;が
+&lt;code&gt;calendarViewShown&lt;/code&gt;と&lt;code&gt;spinnersShown&lt;/code&gt;より強いので全て Lollipop のカレンダー表示になっています。&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;どうしてこうなった&#34;&gt;どうしてこうなった&lt;/h2&gt;
+
+&lt;p&gt;そもそも &lt;code&gt;bool&lt;/code&gt; で定義すべきではない表示形式を
+&lt;code&gt;calendarViewShown&lt;/code&gt; と &lt;code&gt;spinnersShown&lt;/code&gt; の2種類の &lt;code&gt;bool&lt;/code&gt; で表してしまったことが全ての元凶です。
+本来は3種類のレイアウトを2種類の &lt;code&gt;bool&lt;/code&gt; で表現したため、4種類の状態が表現できるようになってしました。
+そこに &lt;code&gt;calendarViewShown&lt;/code&gt; と &lt;code&gt;spinnersShown&lt;/code&gt; よりも強い &lt;code&gt;datePickerMode&lt;/code&gt; が追加されカオスな状況になりました。&lt;/p&gt;
+
+&lt;h2 id=&#34;どうすべきだったのか&#34;&gt;どうすべきだったのか&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;calendarViewShown&lt;/code&gt;と&lt;code&gt;spinnersShown&lt;/code&gt;の両方に&lt;code&gt;false&lt;/code&gt;を指定した際に&lt;br&gt;
+何も表示しない状態がある時点で怪しいと思わなければならないと思います。&lt;br&gt;
+Lollipop 未満の時点で表示形式は以下のような&lt;code&gt;enum&lt;/code&gt;で定義したほうが良かったと思います。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;enum DatePickerMode {
+    spinenr,
+    calendar,
+    spinner_and_calendar
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;そうすれば DatePickerPattern1 のような何も表示されない状態もなく、&lt;br&gt;
+Lollipop で追加された表示形式も、テーマ次第で&lt;code&gt;calendar&lt;/code&gt;などの表示を変えてしまうとか&lt;br&gt;
+&lt;code&gt;material&lt;/code&gt;とか何とかを&lt;code&gt;enum&lt;/code&gt;の値に追加するだけで済んだと思います。&lt;br&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;怪しいフラグを増やしそうになったら抽象化して考えて&lt;code&gt;bool&lt;/code&gt;が適切か考えましょう。&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-partner=&#34;tweetdeck&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Android の DatePicker がクソとかそういう話はどうでもよくて、その bool 、本当に bool ですか？という話です&lt;/p&gt;&amp;mdash; あなたとReSharper (@wada811) &lt;a href=&#34;https://twitter.com/wada811/status/608622501401223168&#34;&gt;June 10, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;リポジトリ&#34;&gt;リポジトリ&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/wada811/Android-DatePicker-Sample&#34;&gt;wada811/Android-DatePicker-Sample&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>

@@ -10,14 +10,6 @@ build:
         code: |
           export BUILD_DATE=`date`
     - arjen/hugo-build:
-        version: "0.14"
+        version: "0.16"
         theme: wada811
         flags: --buildDrafts=true
-deploy:
-  steps:
-    - install-packages:
-        packages: git ssh-client
-    - lukevivier/gh-pages@0.2.1:
-        token: $GITHUB_TOKEN
-        domain: wada811.com
-        basedir: public

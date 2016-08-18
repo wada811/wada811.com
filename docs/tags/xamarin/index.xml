@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wada811.com</title>
+    <link>https://wada811.com</link>
+    <language>ja-JP</language>
+    <author>wada811</author>
+    <rights>(C) 2016</rights>
+    <updated>2015-08-21 15:00:24 &#43;0900 JST</updated>
+
+    
+      
+        <item>
+          <title>Custom application class in Xamarin.Android</title>
+          <link>https://wada811.com/blog/custom-application-class-in-xamarin-android/</link>
+          <pubDate>Fri, 21 Aug 2015 15:00:24 JST</pubDate>
+          <author>wada811</author>
+          <guid>https://wada811.com/blog/custom-application-class-in-xamarin-android/</guid>
+          <description>
+
+&lt;h2 id=&#34;implement-custom-application-class&#34;&gt;Implement custom application class&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;[Application]
+public class MyApplication : Application
+{
+    public MyApplication(IntPtr handle, JniHandleOwnership ownerShip) : base(handle, ownerShip)
+    {
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;普通に実装して &lt;code&gt;AndroidManifest.xml&lt;/code&gt; に追記してもダメで、
+&lt;code&gt;[Application]&lt;/code&gt; 属性とコンストラクタが必要でした。&lt;/p&gt;
+
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/21427981/how-to-register-my-own-application-subclass-in-xamarin-android&#34;&gt;monodroid - How to register my own Application subclass in Xamarin.Android? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>Get java.lang.Class on Xamarin.Android</title>
+          <link>https://wada811.com/blog/get-java.lang.class-on-xamarin.android/</link>
+          <pubDate>Fri, 22 May 2015 22:51:27 JST</pubDate>
+          <author>wada811</author>
+          <guid>https://wada811.com/blog/get-java.lang.class-on-xamarin.android/</guid>
+          <description>
+
+&lt;h2 id=&#34;xamarin-android-で-intent-を生成するためにクラスを取得したい&#34;&gt;Xamarin.Android で Intent を生成するためにクラスを取得したい&lt;/h2&gt;
+
+&lt;p&gt;Java だったら以下のように &lt;code&gt;MainActivity.class&lt;/code&gt; で取得できる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static Intent createIntent(Context context){
+    Intent intent = new Intent(context, MainActivity.class);
+    return intent;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;しかし、 Xamarin.Android は C# なので Java の java.lang.Class は &lt;code&gt;.class&lt;/code&gt; で取得できない。&lt;/p&gt;
+
+&lt;p&gt;代わりに以下のように &lt;code&gt;typeof(MainActivity)&lt;/code&gt; で取得する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static Intent createIntent(Context context){
+    var intent = new Intent(context, typeof(MainActivity));
+    return intent;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>

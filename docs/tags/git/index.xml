@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wada811.com</title>
+    <link>https://wada811.com</link>
+    <language>ja-JP</language>
+    <author>wada811</author>
+    <rights>(C) 2016</rights>
+    <updated>2016-06-06 20:00:00 &#43;0900 JST</updated>
+
+    
+      
+        <item>
+          <title>git reset コマンドで取り消してしまったコミットを元に戻す</title>
+          <link>https://wada811.com/blog/undo-git-reset/</link>
+          <pubDate>Mon, 06 Jun 2016 20:00:00 JST</pubDate>
+          <author>wada811</author>
+          <guid>https://wada811.com/blog/undo-git-reset/</guid>
+          <description>
+
+&lt;p&gt;コミットを取り消したいと思ったら &lt;code&gt;git reset&lt;/code&gt; を使いますが、
+慣れてきてカジュアルに使っていると間違えて消したくないコミットまで消してしまうことがあります。&lt;/p&gt;
+
+&lt;p&gt;大事なコミットを取り消すととてもツラい。
+でも、 git ならそんな時でも大丈夫！&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git reflog&lt;/code&gt; で取り消したい操作の &lt;code&gt;HEAD@{x}&lt;/code&gt; を確認します。
+以下のコマンドを実行すれば操作の取り消しを行うことが出来ます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git reset --hard &amp;quot;HEAD@{x}&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;直前の操作なら &lt;code&gt;HEAD@{1}&lt;/code&gt; で取り消すことが出来ます。&lt;/p&gt;
+
+&lt;h3 id=&#34;参考&#34;&gt;参考&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://devlights.hatenablog.com/entry/20121121/p1&#34;&gt;git reset &amp;ndash;hardした内容を取り消す (git reset &amp;ndash;hard, reflog, HEAD@{x}, 取り消してしまったコミットを元に戻す) - いろいろ備忘録日記&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
+        <item>
+          <title>git commit --amend でコミットメッセージを編集しない方法</title>
+          <link>https://wada811.com/blog/git-commit-amend-no-edit-message/</link>
+          <pubDate>Tue, 03 Mar 2015 08:51:30 JST</pubDate>
+          <author>wada811</author>
+          <guid>https://wada811.com/blog/git-commit-amend-no-edit-message/</guid>
+          <description>&lt;p&gt;&lt;code&gt;git commit --amend&lt;/code&gt; するとコミットメッセージを編集することになります。
+コミットメッセージは別に編集したくない場合や、
+シェルスクリプトで &lt;code&gt;git commit --amend&lt;/code&gt; を使いたい場合は
+いちいちコミットメッセージの編集画面になるのが面倒です。
+何か方法はないかと探してみると以下の方法がありました。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git commit --amend --allow-empty-message -m &amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;-m &amp;quot;&amp;quot;&lt;/code&gt; で空のコミットメッセージで上書きされてしまうのではないかと心配になりますが大丈夫みたいです。&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>
