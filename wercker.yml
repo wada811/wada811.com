@@ -13,3 +13,11 @@ build:
         version: "0.16"
         theme: wada811
         flags: --buildDrafts=true
+    - script:
+        name: ls
+        code: |
+          ls
+    - script:
+        name: ls docs
+        code: |
+          ls docs
