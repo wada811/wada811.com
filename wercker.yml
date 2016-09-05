@@ -10,7 +10,7 @@ build:
         code: |
           export BUILD_DATE=`date`
     - arjen/hugo-build:
-        version: "0.14"
+        version: "0.16"
         theme: wada811
         flags: --buildDrafts=true
 deploy:
