@@ -21,3 +21,7 @@
 .language-zsh:before {
     content: 'zsh';
 }
+
+.language-PowerShell:before {
+    content: 'PowerShell';
+}

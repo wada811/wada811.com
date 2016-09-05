@@ -16,34 +16,32 @@ tags = [
 そんな面倒なことは自動化したいですね。<br>
 そんな時は 以下の PowerShell スクリプトで一気に変換しましょう。
 
-<div class="file"><p class="file--name">Convert-ExcelToPdf.ps1</p>
+`Convert-ExcelToPdf.ps1`
 ```PowerShell
 function Convert-ExcelToPdf([string]$path)
 {
-	$xlFixedFormat = "Microsoft.Office.Interop.Excel.xlFixedFormatType" -as [type]
+    $xlFixedFormat = "Microsoft.Office.Interop.Excel.xlFixedFormatType" -as [type]
 
-	# Excelオブジェクトの作成
-	$objExcel = New-Object -ComObject Excel.Application
-	$objExcel.Visible = $False
+    # Excelオブジェクトの作成
+    $objExcel = New-Object -ComObject Excel.Application
+    $objExcel.Visible = $False
 
-	$workbook = $objExcel.workbooks.Open($path)
-	$workbook.Saved = $True
+    $workbook = $objExcel.workbooks.Open($path)
+    $workbook.Saved = $True
 
-	# PDFとして保存する
-	$workbook.ExportAsFixedFormat($xlFixedFormat::xlTypePDF, $path + ".pdf")
+    # PDFとして保存する
+    $workbook.ExportAsFixedFormat($xlFixedFormat::xlTypePDF, $path + ".pdf")
 
-	# Excelの終了
-	$objExcel.Workbooks.Close()
-	[void]$objExcel.Quit
+    # Excelの終了
+    $objExcel.Workbooks.Close()
+    [void]$objExcel.Quit
 }
 $fileName = $Args[0]
 $path = Convert-Path($fileName)
 Convert-ExcelToPdf($path)
 ```
-</div>
 
-`Convert-ExcelToPdf.ps1` を作成して、
-変換したい Excel ファイルがあるディレクトリで以下を実行すれば
+変換したい Excel ファイルがあるディレクトリで以下を実行すれば<br>
 一気に Excel ファイルが PDF に変換されていきます。
 
 ```PowerShell
