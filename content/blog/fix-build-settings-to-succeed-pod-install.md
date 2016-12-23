@@ -16,7 +16,7 @@ tags = [
 |ツール|バージョン|
 |---|---|
 |XCode|7.3.1|
-|Swift|2.3|
+|Swift|2.2|
 |CocoaPods|1.1.1|
 
 ## EMBEDDED_CONTENT_CONTAINS_SWIFT
