@@ -15,12 +15,20 @@ pre code {
     display: block;
 }
 
-header.nav {
-    margin: 20px 0;
+.navbar-brand {
+    background: url("/assets/logo.png") no-repeat left center;
+    background-size: 32px 32px;
+    padding-left: 36px;
 }
 
 .post-title {
     margin-top: 0;
+}
+
+.seeOnGitHub img {
+    width: 1em;
+    height: 1em;
+    vertical-align: text-top;
 }
 
 .post-content {

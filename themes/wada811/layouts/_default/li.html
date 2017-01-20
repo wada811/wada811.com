@@ -1,15 +1,28 @@
 
 <article class="post">
     <header>
-        <div class="post-date">
+        <div class="post-meta">
+            <a class="seeOnGitHub" href="https://github.com/wada811/wada811.com/blob/master/content/{{ .File.Path }}" target="_blank" title="See on GitHub"><img src="/assets/git.png" alt="See on GitHub"  /></a>
             <span class="glyphicon glyphicon-calendar"></span>
             <time datetime="{{ .Date.Format .Site.Params.DateForm }}">
                 {{ .Date.Format .Site.Params.DateForm }}
             </time>
+            <ul class="list-inline post-tags">
+                {{ range .Params.tags }}
+                <li>
+                    <a href="/tags/{{ . | urlize }}">
+                        <i class="fa fa-tags"></i>
+                        {{ . }}
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
         </div>
-        <h1 class="post-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h1>
+        <div class="markdown">
+            <h1 class="post-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h1>
+        </div>
     </header>
 </article>
 <hr>

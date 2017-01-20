@@ -1,81 +1,86 @@
 {{ partial "default_head.html" . }}
 
-<div class="row">
-    <div class="col-md-8">
-        <article class="post">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <article class="post">
 
-            <header>
-                <div class="post-date">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                    <time datetime="{{ .Date.Format .Site.Params.DateForm }}">
-                        {{ .Date.Format .Site.Params.DateForm }}
-                    </time>
-                    <ul class="list-inline post-tags">
-                        {{ range .Params.tags }}
-                        <li>
-                            <a href="/tags/{{ . | urlize }}">
-                                <i class="fa fa-tags"></i>
-                                {{ . }}
-                            </a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                </div>
-                <h1 class="post-title">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                </h1>
-            </header>
-
-            <div class="post-content">
-                {{ .Content }}
-            </div>
-
-            <aside>
-                {{ if .Site.Params.ShowRelatedPost }}
-                    <!-- Related post. -->
-                    <h3>関連記事</h3>
-                    <ul class="post-rels">
-                        {{ $page_link := .Permalink }}
-                        {{ $tags := .Params.tags }}
-                        {{ range .Site.Pages }}
-                        {{ $page := . }}
-                        {{ $has_common_tags := intersect $tags .Params.tags | len | lt 0 }}
-                            {{ if and $has_common_tags (ne $page_link $page.Permalink) }}
-                                <li><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
+                <header>
+                    <div class="post-meta">
+                        <a class="seeOnGitHub" href="https://github.com/wada811/wada811.com/blob/master/content/{{ .File.Path }}" target="_blank" title="See on GitHub"><img src="/assets/git.png" alt="See on GitHub"  /></a>
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        <time datetime="{{ .Date.Format .Site.Params.DateForm }}">
+                            {{ .Date.Format .Site.Params.DateForm }}
+                        </time>
+                        <ul class="list-inline post-tags">
+                            {{ range .Params.tags }}
+                            <li>
+                                <a href="/tags/{{ . | urlize }}">
+                                    <i class="fa fa-tags"></i>
+                                    {{ . }}
+                                </a>
+                            </li>
                             {{ end }}
-                        {{ end }}
-                    </ul>
-                {{ end }}
-            </aside>
+                        </ul>
+                    </div>
+                    <div class="markdown">
+                        <h1 class="post-title">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </h1>
+                    </div>
+                </header>
 
-            <!-- Pagination. -->
-            <footer>
+                <div class="markdown post-content">{{ .Content }}</div>
 
-                <nav>
-                    <ul class="pager">
+                <aside class="markdown">
+                    {{ if .Site.Params.ShowRelatedPost }}
+                        <!-- Related post. -->
+                        <h3>関連記事</h3>
+                        <ul class="post-rels">
+                            {{ $page_link := .Permalink }}
+                            {{ $tags := .Params.tags }}
+                            {{ range .Site.Pages }}
+                            {{ $page := . }}
+                            {{ $has_common_tags := intersect $tags .Params.tags | len | lt 0 }}
+                                {{ if and $has_common_tags (ne $page_link $page.Permalink) }}
+                                    <li><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
+                                {{ end }}
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                </aside>
 
-                        {{ if .Prev }}
-                        <li class="previous"><a href="{{ .Prev.Permalink }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
-                        {{ else }}
-                        <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
-                        {{ end }}
+                <!-- Pagination. -->
+                <footer>
 
-                        <li><a href="/blog">All</a></li>
+                    <nav>
+                        <ul class="pager">
 
-                        {{ if .Next }}
-                        <li class="next"><a href="{{ .Next.Permalink }}">Older <span aria-hidden="true">&rarr;</span></a></li>
-                        {{ else }}
-                        <li class="next disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
-                        {{ end }}
+                            {{ if .Prev }}
+                            <li class="previous"><a href="{{ .Prev.Permalink }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                            {{ else }}
+                            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                            {{ end }}
 
-                    </ul>
-                </nav>
-            </footer>
+                            <li><a href="/blog">All</a></li>
 
-        </article>
-    </div>
-    <div class="col-md-4">
-        {{ partial "sidebar.html" . }}
+                            {{ if .Next }}
+                            <li class="next"><a href="{{ .Next.Permalink }}">Older <span aria-hidden="true">&rarr;</span></a></li>
+                            {{ else }}
+                            <li class="next disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
+                            {{ end }}
+
+                        </ul>
+                    </nav>
+                </footer>
+
+            </article>
+        </div>
+        <!--
+        <div class="col-md-4">
+            {{ partial "sidebar.html" . }}
+        </div>
+        -->
     </div>
 </div>
 

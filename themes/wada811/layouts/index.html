@@ -1,37 +1,41 @@
 {{ partial "default_head.html" . }}
 
-<div class="row">
-    <div class="col-md-8">
-        <div class="posts">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="posts">
 
-            {{ range first 10 (where .Data.Pages "Type" "blog") }}
-            {{ .Render "li" }}
-            {{ end }}
+                {{ range first 10 (where .Data.Pages "Type" "blog") }}
+                {{ .Render "li" }}
+                {{ end }}
 
-            <nav>
-                <ul class="pager">
+                <nav>
+                    <ul class="pager">
 
-                    {{ if .Paginator.HasPrev }}
-                    <li class="previous"><a href="/blog{{ .Paginator.Prev.URL }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
-                    {{ else }}
-                    <li class="previous disabled"><span aria-hidden="true">&larr; Newer</span></li>
-                    {{ end }}
+                        {{ if .Paginator.HasPrev }}
+                        <li class="previous"><a href="/blog{{ .Paginator.Prev.URL }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        {{ else }}
+                        <li class="previous disabled"><span aria-hidden="true">&larr; Newer</span></li>
+                        {{ end }}
 
-                    <li><a href="/blog">All</a></li>
+                        <li><a href="/blog">All</a></li>
 
-                    {{ if .Paginator.HasNext }}
-                    <li class="next"><a href="/blog{{ .Paginator.Next.URL }}">Older <span aria-hidden="true">&rarr;</span></a></li>
-                    {{ else }}
-                    <li class="next disabled"><span aria-hidden="true">Older &rarr;</span></li>
-                    {{ end }}
+                        {{ if .Paginator.HasNext }}
+                        <li class="next"><a href="/blog{{ .Paginator.Next.URL }}">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        {{ else }}
+                        <li class="next disabled"><span aria-hidden="true">Older &rarr;</span></li>
+                        {{ end }}
 
-                </ul>
-            </nav>
+                    </ul>
+                </nav>
 
+            </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        {{ partial "sidebar.html" . }}
+        <!--
+        <div class="col-md-4">
+            {{ partial "sidebar.html" . }}
+        </div>
+        -->
     </div>
 </div>
 
