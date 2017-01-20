@@ -21,6 +21,10 @@ pre code {
     padding-left: 36px;
 }
 
+.glyphicon {
+    font-size: 0.8em;
+}
+
 .post-title {
     margin-top: 0;
 }
