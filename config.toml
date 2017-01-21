@@ -6,7 +6,6 @@ Theme = "wada811"
 [Params]
     Author = "wada811"
     DateForm = "2006-01-02" # time - The Go Programming Language http://golang.org/pkg/time/#Time.Format
-    Facebook = "takumi.wada.92"
     Twitter = "wada811"
     Github = "wada811"
     SyntaxHighlightTheme = "solarized_dark.min.css"

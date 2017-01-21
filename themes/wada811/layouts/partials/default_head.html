@@ -20,13 +20,6 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        {{ if isset .Site.Params "Facebook" }}
-                        <li>
-                            <a href="https://www.facebook.com/{{ .Site.Params.Facebook }}" target="_blank">
-                                <i class="fa fa-facebook-square"></i>
-                                Facebook</a>
-                        </li>
-                        {{ end }}
                         {{ if isset .Site.Params "Twitter" }}
                         <li>
                             <a href="https://twitter.com/{{ .Site.Params.Twitter }}" target="_blank">
