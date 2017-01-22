@@ -17,3 +17,4 @@ Theme = "wada811"
 
 [Permalinks]
     blog = "/:section/:filename/"
+    slide = "/:section/:filename/"

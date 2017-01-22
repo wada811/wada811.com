@@ -1,0 +1,9 @@
+{{ partial "head.html" . }}
+
+<textarea id="source" class="shide-content">{{ .RawContent }}</textarea>
+
+<script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+<script>
+  var slideshow = remark.create();
+</script>
+

@@ -2,7 +2,11 @@
 <article class="post">
     <header>
         <div class="post-meta">
-            <a class="seeOnGitHub" href="https://github.com/wada811/wada811.com/blob/master/content/{{ .File.Path }}" target="_blank" title="See on GitHub"><i class="fa fa-github-square"></i></a>
+            {{ if eq .Type "blog" }}
+                <i class="fa fa-pencil"></i>
+            {{ else if eq .Type "slide" }}
+                <i class="fa fa-caret-square-o-right"></i>
+            {{ end }}
             <span class="glyphicon glyphicon-calendar"></span>
             <time datetime="{{ .Date.Format .Site.Params.DateForm }}">
                 {{ .Date.Format .Site.Params.DateForm }}
