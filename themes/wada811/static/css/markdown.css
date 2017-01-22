@@ -16,6 +16,7 @@
     content: "- ";
 }
 
+/*
 .markdown ol {
     counter-reset: list;
 }
@@ -24,6 +25,7 @@
     counter-increment: list;
     content: counter(list) ". ";
 }
+*/
 
 .markdown dl dt::after {
     content: ":";
