@@ -24,6 +24,7 @@ Save Actions プラグインを導入することにより、ファイル保存�
 ## Settings
 - Android Studio の Preference > Other Settings > Save Actions を開く
 - 以下の設定を確認する
+
 ![Android Studio の Preference > Other Settings > Save Actions](/images/android-studio-plugin-save-actions/SaveActionsSettings.png)
 
 ## References
