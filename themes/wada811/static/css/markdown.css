@@ -11,8 +11,8 @@
     list-style: none;
     padding: 0;
 }
-.markdown ul:not(.layout) li::before,
-.markdown ul:not(.layout) li::before {
+.markdown ul > li::before,
+.markdown ul > li::before {
     content: "- ";
 }
 
@@ -27,7 +27,7 @@
 }
 */
 
-.markdown dl dt::after {
+.markdown dl > dt::after {
     content: ":";
 }
 
