@@ -8,14 +8,18 @@ tags = [
 
 +++
 
-`git commit --amend` するとコミットメッセージを編集することになります。
-コミットメッセージは別に編集したくない場合や、
+`git commit --amend` すると `vim` などでコミットメッセージの編集画面が開きます。
+コミットメッセージは別に修正したくない場合や、
 シェルスクリプトで `git commit --amend` を使いたい場合は
 いちいちコミットメッセージの編集画面になるのが面倒です。
-何か方法はないかと探してみると以下の方法がありました。
+何か方法はないかと探してみると以下のオプションがありました。
 
 ```
-git commit --amend --allow-empty-message -m ""
+-C, --reuse-message <commit>	reuse message from specified commit
 ```
 
-`-m ""` で空のコミットメッセージで上書きされてしまうのではないかと心配になりますが大丈夫みたいです。
+## コマンド
+
+```
+git commit --amend -C @
+```
