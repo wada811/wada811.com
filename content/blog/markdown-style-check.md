@@ -154,7 +154,7 @@ puts markdown.to_html
 
 ### URL autolinking
 
-http://blog.wada811.com/
+https://wada811.com/
 
 ## Tables
 
