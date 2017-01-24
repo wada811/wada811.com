@@ -39,29 +39,6 @@ pre code {
     margin-bottom: 20px;
 }
 
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4,
-.post-content h5 {
-    margin-top: 40px;
-}
-
-.post-content h1 {
-    font-size: 48px;
-}
-.post-content h2 {
-    font-size: 36px;
-}
-.post-content h3 {
-    font-size: 24px;
-}
-.post-content h4,
-.post-content h5,
-.post-content h6 {
-    font-size: 16px;
-}
-
 .post-tags {
     display: inline;
 }
