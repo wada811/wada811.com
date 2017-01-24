@@ -11,7 +11,7 @@
             <time datetime="{{ .Date.Format .Site.Params.DateForm }}">
                 {{ .Date.Format .Site.Params.DateForm }}
             </time>
-            <ul class="list-inline post-tags">
+            <ul class="list-inline visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline">
                 {{ range .Params.tags }}
                 <li>
                     <a href="/tags/{{ . | urlize }}">
