@@ -103,10 +103,15 @@ tags = [
     1. foo
     2. bar
     3. baz
-- spam
-    1. spam
-    2. ham
-    3. eggs
+
+1. hoge
+    1. hoge
+    1. piyo
+    1. fuga
+1. foo
+    1. foo
+    1. bar
+    1. baz
 
 ## Code formatting
 

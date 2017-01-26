@@ -26,16 +26,3 @@
     content: counter(list) ". ";
 }
 */
-
-.markdown dl > dt::after {
-    content: ":";
-}
-
-.markdown blockquote::before {
-    content: "> ";
-}
-
-.markdown code::before, code::after {
-    /* うざかった */
-    /* content: "`"; */
-}
