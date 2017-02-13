@@ -1,5 +1,6 @@
 +++
 draft = false
+date = "2017-02-13T17:54:00+09:00"
 title = "PowerShell のバージョンを確認する"
 tags = [
     "Microsoft",
