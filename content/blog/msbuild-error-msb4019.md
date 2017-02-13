@@ -1,5 +1,6 @@
 +++
 draft = false
+date = "2017-02-13T17:54:00+09:00"
 title = "MSBuild error MSB4019: Microsoft.WebApplication.targets が見つかりませんでした。"
 tags = [
     "Microsoft",
