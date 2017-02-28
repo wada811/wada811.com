@@ -29,7 +29,8 @@ Get-Item Env:Path | Format-Table -AutoSize
 ```
 
 ```PowerShell
- [Environment]::GetEnvironmentVariable('PATH', 'Machine')
+
+[Environment]::GetEnvironmentVariable('PATH', 'Machine')
 ```
 
 ### 追加する
