@@ -5,26 +5,26 @@
         <div class="col-md-12">
             <div class="slides">
 
-                {{ range first 10 (where .Data.Pages "Type" "slide") }}
+                {{ $paginator := .Paginate (where .Data.Pages.ByLastmod.Reverse "Type" "slide") 10 }}
+                {{ range $paginator.Pages }}
                 {{ .Render "li" }}
                 {{ end }}
 
                 <nav>
                     <ul class="pager">
-                        {{ if .Paginator.HasPrev }}
-                        <li class="previous"><a href="/{{ .Paginator.Prev.URL }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        {{ if $paginator.HasPrev }}
+                        <li class="previous"><a href="{{ $paginator.Prev.URL }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         {{ else }}
                         <li class="previous disabled"><span aria-hidden="true">&larr; Newer</span></li>
                         {{ end }}
 
                         <li><a href="/slide">All</a></li>
 
-                        {{ if .Paginator.HasNext }}
-                        <li class="next"><a href="/{{ .Paginator.Next.URL }}">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        {{ if $paginator.HasNext }}
+                        <li class="next"><a href="{{ $paginator.Next.URL }}">Older <span aria-hidden="true">&rarr;</span></a></li>
                         {{ else }}
                         <li class="next disabled"><span aria-hidden="true">Older &rarr;</span></li>
                         {{ end }}
-
                     </ul>
                 </nav>
 
