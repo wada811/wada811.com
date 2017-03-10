@@ -2,6 +2,7 @@ BaseURL = "https://wada811.com"
 LanguageCode = "ja-JP"
 Title = "wada811.com"
 Theme = "wada811"
+EnableGitInfo = true
 
 [Params]
     Author = "wada811"

@@ -1,6 +1,9 @@
 box: debian
 build:
   steps:
+  steps:
+    - install-packages:
+        packages: git
     - script:
         name: export BUILD_YEAR
         code: |
@@ -10,7 +13,7 @@ build:
         code: |
           export BUILD_DATE=`date`
     - arjen/hugo-build:
-        version: "0.16"
+        version: "0.18.1"
         theme: wada811
         flags: --buildDrafts=true
 deploy:
