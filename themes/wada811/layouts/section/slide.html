@@ -13,15 +13,15 @@
                 <nav>
                     <ul class="pager">
                         {{ if $paginator.HasPrev }}
-                        <li class="previous"><a href="{{ $paginator.Prev.URL }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                        <li class="previous"><a href="{{ $paginator.Prev.URL | absURL }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
                         {{ else }}
                         <li class="previous disabled"><span aria-hidden="true">&larr; Newer</span></li>
                         {{ end }}
 
-                        <li><a href="/slide">All</a></li>
+                        <li><a href="/slide/">All</a></li>
 
                         {{ if $paginator.HasNext }}
-                        <li class="next"><a href="{{ $paginator.Next.URL }}">Older <span aria-hidden="true">&rarr;</span></a></li>
+                        <li class="next"><a href="{{ $paginator.Next.URL | absURL }}">Older <span aria-hidden="true">&rarr;</span></a></li>
                         {{ else }}
                         <li class="next disabled"><span aria-hidden="true">Older &rarr;</span></li>
                         {{ end }}
