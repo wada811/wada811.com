@@ -25,7 +25,7 @@ Git のコミット日時が設定されたら最高だよね。
 ## Diff
 [日付をGitのコミット日で表示する · wada811/wada811.com@12c8572](https://github.com/wada811/wada811.com/commit/12c857219904f842cbbfab5fe991cdf6afee41a5)
 
-## Refernces
+## References
 
 - [Displaying GIT metadata in Hugo templates](http://rac.su/post/hugo/gitinfo/)
 - [https://raw\.githubusercontent\.com/rac2030/rac\.su/master/content/post/hugo/gitinfo\.md](https://raw.githubusercontent.com/rac2030/rac.su/master/content/post/hugo/gitinfo.md) (※上記記事の元ファイル)
