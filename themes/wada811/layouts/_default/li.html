@@ -8,10 +8,10 @@
                 <i class="fa fa-caret-square-o-right"></i>
             {{ end }}
             <span class="glyphicon glyphicon-calendar"></span>
+            <time datetime="{{ .Date.Format .Site.Params.DateForm }}" data-type="date">{{ .Date.Format .Site.Params.DateForm }}</time>
             {{ if .GitInfo }}
-                <time datetime="{{ .GitInfo.AuthorDate.Format .Site.Params.DateForm }}">{{ .GitInfo.AuthorDate.Format .Site.Params.DateForm }}</time>
-            {{ else }}
-                <time datetime="{{ .Date.Format .Site.Params.DateForm }}">{{ .Date.Format .Site.Params.DateForm }}</time>
+                <span class="glyphicon glyphicon-refresh"></span>
+                <time datetime="{{ .GitInfo.AuthorDate.Format .Site.Params.DateForm }}" data-type="git">{{ .GitInfo.AuthorDate.Format .Site.Params.DateForm }}</time>
             {{ end }}
             <ul class="list-inline visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline">
                 {{ range .Params.tags }}

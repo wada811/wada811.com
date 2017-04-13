@@ -9,10 +9,10 @@
                     <div class="post-meta">
                         <a class="seeOnGitHub" href="https://github.com/wada811/wada811.com/blob/master/content/{{ .File.Path }}" target="_blank" title="See on GitHub"><i class="fa fa-github-square"></i></a>
                         <span class="glyphicon glyphicon-calendar"></span>
+                        <time datetime="{{ .Date.Format .Site.Params.DateForm }}" data-type="date">{{ .Date.Format .Site.Params.DateForm }}</time>
                         {{ if .GitInfo }}
+                            <span class="glyphicon glyphicon-refresh"></span>
                             <time datetime="{{ .GitInfo.AuthorDate.Format .Site.Params.DateForm }}" data-type="git">{{ .GitInfo.AuthorDate.Format .Site.Params.DateForm }}</time>
-                        {{ else }}
-                            <time datetime="{{ .Date.Format .Site.Params.DateForm }}" data-type="date">{{ .Date.Format .Site.Params.DateForm }}</time>
                         {{ end }}
                         <ul class="list-inline visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline">
                             {{ range .Params.tags }}
