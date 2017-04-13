@@ -5,7 +5,6 @@ title = "log4net"
 tags = [
     "log4net",
     "C#",
-    "ASP.NET",
 ]
 
 +++
