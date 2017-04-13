@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="slides">
 
-                {{ $paginator := .Paginate (where .Data.Pages.ByLastmod.Reverse "Type" "slide") 10 }}
+                {{ $paginator := .Paginate (where .Data.Pages "Type" "slide") 10 }}
                 {{ range $paginator.Pages }}
                 {{ .Render "li" }}
                 {{ end }}

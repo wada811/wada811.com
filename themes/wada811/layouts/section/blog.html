@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="posts">
 
-                {{ $paginator := .Paginate (where .Data.Pages.ByLastmod.Reverse "Type" "blog") 10 }}
+                {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") 10 }}
                 {{ range $paginator.Pages }}
                 {{ .Render "li" }}
                 {{ end }}
