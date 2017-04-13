@@ -10,6 +10,14 @@ tags = [
 
 +++
 
+> # Updated: 2017-04-13
+> 
+> アンインストールしました。
+> 
+> ## Why uninstall?
+> 
+> インストール後、気がついたら build.gradle を編集中に入力もままならないほど遅くなってしまったため。
+
 ## Why
 
 Android Studio の標準機能では Eclipse のようにファイル保存時にフォーマッタをかけてくれる Save Action がありません。<br>
