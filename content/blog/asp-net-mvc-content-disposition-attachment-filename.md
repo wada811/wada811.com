@@ -17,7 +17,8 @@ IE で開くとファイル名が文字化けしてしまいます。
 Response.AddHeader("Content-Disposition", $"attachment; filename={fileName}.xlsx");
 ```
 
-調べると、`Content-Disposition`ヘッダーに非 ASCII 文字を含む場合、本来は`filename*`値にエンコードした値を指定する必要があるそうです。<br>
+調べると、`Content-Disposition`ヘッダーに非 ASCII 文字を含む場合、<br>
+本来は`filename*`値にエンコードした値を指定する必要があるそうです。<br>
 そのため、以下のように記述して文字化けを防ぎます。
 
 ```csharp
