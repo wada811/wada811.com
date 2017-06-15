@@ -15,3 +15,17 @@ tags = [
 var unixTimestamp = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds; // milliseconds since the Unix epoch
 var ticks = new TimeSpan(DateTime.UtcNow.Ticks).TotalMilliseconds; // 処理時間の計測だったらこっちでも良い
 ```
+
+`Stopwatch` クラスを使うと処理時間の計測が楽ちん。
+
+```csharp
+var stopwatch = new System.Diagnostics.Stopwatch();
+stopwatch.Start();
+Thread.Sleep(3 * 1000);
+stopwatch.Stop();
+TimeSpan elapsed = stopwatch.Elapsed;
+long elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
+```
+
+## Reference
+[Stopwatch クラス \(System\.Diagnostics\)](https://msdn.microsoft.com/ja-jp/library/system.diagnostics.stopwatch(v=vs.110).aspx)
