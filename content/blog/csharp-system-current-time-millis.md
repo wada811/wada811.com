@@ -12,6 +12,6 @@ tags = [
 楽にミリ秒単位で現在時刻を取得する Java のアレを C# で。
 
 ```csharp
-var unixTimestamp = (DateTime.UtcNow.Ticks - new DateTime(1970, 1, 1)).TotalMilliseconds; // milliseconds since the Unix epoch
+var unixTimestamp = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds; // milliseconds since the Unix epoch
 var ticks = new TimeSpan(DateTime.UtcNow.Ticks).TotalMilliseconds; // 処理時間の計測だったらこっちでも良い
 ```
