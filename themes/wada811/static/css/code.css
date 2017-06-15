@@ -1,9 +1,10 @@
 [class^="language"]:before {
     content: '';
     display: block;
-    border-bottom: 1px dotted #ccc;
-    padding: 0 0 .5em 0;
-    margin: 0 0 .5em 0;
+    padding: .5em;
+    margin: -0.5em -0.5em 0.5em -0.5em;
+    background-color: #00566c;
+    color: #c5dee1;
 }
 
 .language-java:before {
@@ -24,4 +25,12 @@
 
 .language-PowerShell:before {
     content: 'PowerShell';
+}
+
+.language-html:before {
+    content: 'HTML';
+}
+
+.language-css:before {
+    content: 'CSS';
 }
