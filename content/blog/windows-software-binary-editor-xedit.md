@@ -1,9 +1,10 @@
 +++
 date = "2017-01-25T12:54:00+09:00"
 draft = false
-title = "Binary Editor: xedit"
+title = "[Windows][フリーソフト][バイナリエディタ] xedit"
 tags = [
     "Windows",
+    "フリーソフト",
     "バイナリエディタ",
 ]
 
