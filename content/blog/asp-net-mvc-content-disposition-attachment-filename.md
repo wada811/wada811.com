@@ -14,7 +14,7 @@ tags = [
 IE で開くとファイル名が文字化けしてしまいます。
 
 ```csharp
-Response.AddHeader("Content-Disposition", $"attachment; filename="{fileName}.xlsx");
+Response.AddHeader("Content-Disposition", $"attachment; filename={fileName}.xlsx");
 ```
 
 調べると、`Content-Disposition`ヘッダーに非 ASCII 文字を含む場合、本来は`filename*`値にエンコードした値を指定する必要があるそうです。<br>
