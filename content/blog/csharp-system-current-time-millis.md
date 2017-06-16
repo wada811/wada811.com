@@ -16,7 +16,9 @@ var unixTimestamp = (DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMillisecon
 var ticks = new TimeSpan(DateTime.UtcNow.Ticks).TotalMilliseconds; // 処理時間の計測だったらこっちでも良い
 ```
 
-`Stopwatch` クラスを使うと処理時間の計測が楽ちん。
+## 処理時間の計測が行いたい場合
+
+`Stopwatch` クラスを使う良い。
 
 ```csharp
 var stopwatch = new System.Diagnostics.Stopwatch();
