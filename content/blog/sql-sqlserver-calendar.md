@@ -1,9 +1,10 @@
 +++
 date = "2017-06-15T18:52:44+09:00"
 draft = false
-title = "[SQL][SQLServer] 特定期間の日付を取得する"
+title = "[SQLServer][Transact-SQL] 特定期間の日付を取得する"
 tags = [
 	"SQL",
+	"Transact-SQL",
 	"SQLServer"
 ]
 
