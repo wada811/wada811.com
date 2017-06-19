@@ -79,3 +79,11 @@ public class FileEntity : IDataModel
 
 `ColumnAttribute` は自分で定義しても良いが、同様の用途なので<br>
 Entity Framework の `System.ComponentModel.DataAnnotations.Schema.ColumnAttribute` を使用しました。
+
+## 補足: スネークケースとキャメルケースのマッピング
+
+Attribute で定義しなくてもオプション一つで対応可能。
+
+```
+Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
+```
