@@ -34,3 +34,7 @@
 .language-css:before {
     content: 'CSS';
 }
+
+.language-sql:before {
+    content: 'SQL';
+}
