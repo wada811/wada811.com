@@ -25,6 +25,6 @@ Response.AddHeader("Content-Disposition", $"attachment; filename={fileName}.xlsx
 Response.AddHeader("Content-Disposition", $"attachment; filename*=UTF-8''{Server.UrlEncode($"{fileName}.xlsx")}");
 ```
 
-## Refeerence
+## Reference
 - [ファイルをダウンロードする ASP\.NET ページで日本語ファイル名が文字化けする](https://support.microsoft.com/ja-jp/help/436616)
 - [Content\-Disposition \- HTTP \| MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Content-Disposition)

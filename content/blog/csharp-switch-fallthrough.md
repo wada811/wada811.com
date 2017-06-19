@@ -42,5 +42,5 @@ switch(x)
 よく考えればなるほど確かにという感じですが、まさかの方法でびっくり。
 初めて `goto` 書きました。
 
-## Refeerence
+## Reference
 [条件分岐 \- C\# によるプログラミング入門 \| \+\+C\+\+; // 未確認飛行 C](http://ufcpp.net/study/csharp/st_branch.html#fallthrough)
