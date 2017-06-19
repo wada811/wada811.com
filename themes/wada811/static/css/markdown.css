@@ -9,7 +9,10 @@
 
 .markdown ul {
     list-style: none;
-    padding: 0;
+    padding-left: 2em;
+}
+.markdown > ul {
+    padding-left: 0;
 }
 .markdown ul > li::before,
 .markdown ul > li::before {
