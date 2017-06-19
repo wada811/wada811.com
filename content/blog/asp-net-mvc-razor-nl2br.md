@@ -18,5 +18,5 @@ PHP のいわゆる nl2br が欲しい場合、以下のように記述する。
 改行コードの前に br タグを挿入する、という動作なのに<br>
 nl2br という名前なのはおかしいと思うが使い慣れてて馴染んでしまった。
 
-## Refeerence
+## Reference
 [PHP: nl2br \- Manual](http://php.net/manual/ja/function.nl2br.php)
