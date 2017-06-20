@@ -1,7 +1,7 @@
 +++
 date = "2017-06-15T18:52:44+09:00"
 draft = false
-title = ".Net Framework のバージョンの確認方法"
+title = "[Windows] .Net Framework のバージョンの確認方法"
 tags = [
 	"Windows",
 	".NET Framework"
