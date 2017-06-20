@@ -17,7 +17,7 @@ fsutil file createnew
 
 > 使用法 : fsutil file createnew <ファイル名> <長さ>
 
->     例 : fsutil file createnew C:\testfile.txt 1000
+> 例 : fsutil file createnew C:\testfile.txt 1000
 
 ### 100MiB のファイルを作成する
 ```
