@@ -21,7 +21,7 @@ fsutil file createnew
 
 ### 100MiB のファイルを作成する
 ```
-fsutil file createnew ./100MB.txt $(1024*1024*100)
+fsutil file createnew ./100MiB.txt $(1024*1024*100)
 ```
 
 ## Reference
