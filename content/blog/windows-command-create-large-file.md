@@ -14,9 +14,15 @@ tags = [
 ```
 fsutil file createnew
 ```
+
 > 使用法 : fsutil file createnew <ファイル名> <長さ>
+
 >     例 : fsutil file createnew C:\testfile.txt 1000
 
+### 100MiB のファイルを作成する
+```
+fsutil file createnew ./100MB.txt $(1024*1024*100)
+```
 
 ## Reference
 
