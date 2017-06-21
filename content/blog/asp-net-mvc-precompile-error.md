@@ -53,6 +53,9 @@ tags = [
 
 直ったが理屈は分からないのでモヤモヤする。
 
-`ぜんぜんわからない
-俺達は雰囲気で ASP.NET をやっている`
+**ぜんぜんわからない**
+**俺達は雰囲気で ASP.NET をやっている**
+
+## Reference
+[\[Windows\] 常に管理者権限を得る \| wada811\.com](https://wada811.com/blog/windows-always-admin/)
 
