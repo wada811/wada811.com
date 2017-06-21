@@ -5,7 +5,7 @@ title = "Get java.lang.Class on Xamarin.Android"
 tags = [
     "CSharp",
     "Xamarin",
-    "Xamarin Android",
+    "Xamarin.Android",
 ]
 
 +++
