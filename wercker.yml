@@ -16,6 +16,7 @@ build:
         version: "HEAD"
         theme: wada811
         flags: --buildDrafts=true
+        disable_pygments: true
 deploy:
   steps:
     - install-packages:
