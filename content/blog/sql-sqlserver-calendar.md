@@ -11,7 +11,7 @@ tags = [
 +++
 
 ## SQL
-```SQL
+```sql
 DECLARE
     @開始日 datetime,
     @終了日 datetime;
