@@ -100,7 +100,7 @@ tags = [
 <a name="2"></a>
 ## display: inline-block; + letter-spacing: -1em;
 
-```
+```css
 .holizontal2__parent {
 	letter-spacing: -1em;
 }
@@ -174,7 +174,7 @@ tags = [
 <a name="3"></a>
 ## display: table-cell;
 
-```
+```css
 .holizontal3 {
 	display: table-cell;
 }
@@ -210,7 +210,7 @@ tags = [
 <a name="4"></a>
 ## display: flex;
 
-```
+```css
 .holizontal4 {
 	display: flex;
 }
