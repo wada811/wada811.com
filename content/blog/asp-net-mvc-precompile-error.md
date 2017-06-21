@@ -20,7 +20,7 @@ tags = [
 
 上記の2ファイルから以下の記述を削除すれば動く。
 
-```xml
+```
 <remove assembly="Microsoft.VisualStudio.Web.PageInspector.Loader, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
 <add assembly="Microsoft.VisualStudio.Web.PageInspector.Loader, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
 ```
@@ -28,7 +28,7 @@ tags = [
 という記述を見て試すも、同様のエラーが次々発生する。<br/>
 同様に削除していくと最終的に以下のようになった。
 
-```xml
+```
 <assemblies>
     <add assembly="mscorlib" />
     <add assembly="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
