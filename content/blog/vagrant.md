@@ -8,7 +8,7 @@ draft = false
 
 ## Vagrant とは
 
-仮想環境 ( Virtual Machine; VM ) を構築・管理するツール。
+仮想マシン ( Virtual Machine; VM ) を構築・管理するツール。
 
 
 ### 利点
