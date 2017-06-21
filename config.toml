@@ -3,6 +3,7 @@ LanguageCode = "ja-JP"
 Title = "wada811.com"
 Theme = "wada811"
 EnableGitInfo = true
+PreserveTaxonomyNames = true
 
 [Params]
     Author = "wada811"
