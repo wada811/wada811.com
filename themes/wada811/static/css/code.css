@@ -38,3 +38,7 @@
 .language-sql:before {
     content: 'SQL';
 }
+
+.language-javascript:before {
+    content: 'JavaScript';
+}
