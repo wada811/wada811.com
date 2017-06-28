@@ -22,6 +22,6 @@ var isIE = (userAgent.indexOf('msie') >= 0 || userAgent.indexOf('trident') >= 0)
 var version = userAgent.match(/(msie\s|rv:)([\d\.]+)/)[2];
 ```
 
-## 参考
+## Reference
 
 - [UserAgent を 用いた IE11 の判別方法 \- galife](https://garafu.blogspot.jp/2013/08/useragent-ie11.html)
