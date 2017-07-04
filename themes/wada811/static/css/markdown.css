@@ -2,11 +2,11 @@
 .markdown h2::before { content: "## "; }
 .markdown h3::before { content: "### "; }
 .markdown h4::before { content: "#### "; }
-
+/*
 .markdown strong::before, strong::after {
     content: "**";
 }
-
+*/
 .markdown ul {
     list-style: none;
     padding-left: 2em;
