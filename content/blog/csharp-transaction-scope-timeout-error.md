@@ -18,7 +18,7 @@ tags = [
 ## Solution
 
 `TransactionScope` のコンストラクタで `Timeout` の値を設定する。<br>
-最大10分までしか設定できないので注意。
+最大10分までしか設定できない。10分以上を設定しても10分になる。
 
 ```csharp
 using(var transactionScope = new TransactionScope(TransactionScopeOption.Required, TimeSpan.FromMinutes(10.0)))
@@ -29,7 +29,7 @@ using(var transactionScope = new TransactionScope(TransactionScopeOption.Require
 
 ## 10分以上を設定したい場合
 `machine.config` に以下の設定を追加する必要がある。<br>
-サーバー単位での設定になるので注意。
+サーバー単位での設定になる。
 
 ```
 <configuration>
