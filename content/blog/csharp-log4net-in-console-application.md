@@ -32,9 +32,9 @@ class Program
 また、`log4net.config` として設定ファイルを分割できなくて<br>
 `App.config` に記述するしかないっぽい。
 
-### App.config
+`App.config`
 
-```App.config
+```
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <configSections>
@@ -49,4 +49,37 @@ class Program
 </configuration>
 ```
 
+## `log4net.config` の分離
 
+いろいろ試したら `log4net.config` を分離できた。
+
+### `AssemblyInfo.cs`
+
+`ConfigFile` を指定する。
+
+```
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "log4net.config")]
+```
+
+### `App.config`
+
+特に記述する必要はない。
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1"/>
+  </startup>
+</configuration>
+```
+
+### `log4net.config`
+
+プロパティの `出力ディレクトリにコピー` を `常にコピー` にする。**(重要)**
+
+```
+<log4net>
+  <!-- log4net settings -->
+</log4net>
+```
