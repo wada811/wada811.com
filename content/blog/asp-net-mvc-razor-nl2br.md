@@ -12,7 +12,7 @@ tags = [
 PHP のいわゆる nl2br が欲しい場合、以下のように記述する。
 
 ```csharp
-@Html.Raw(string.Join($"<br />{Environment.NewLine}", Html.Encode(rawText).Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None))
+@Html.Raw(string.Join($"<br />{Environment.NewLine}", Html.Encode(rawText).Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None)))
 ```
 
 改行コードの前に br タグを挿入する、という動作なのに<br>
