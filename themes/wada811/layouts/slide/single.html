@@ -1,5 +1,23 @@
 {{ partial "head.html" . }}
 
+<style>
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+.background-contain {
+	background-size: contain;
+}
+.background-top {
+	background-position: center top;
+}
+.background-bottom {
+	background-position: center bottom;
+}
+.fullwidth img {
+	width: 100%;
+}
+</style>
+
 <textarea id="source" class="shide-content">{{ .RawContent }}</textarea>
 
 <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
