@@ -101,7 +101,34 @@ Machine Learning: 機械学習
 
 ---
 
-## Machine Learning: 機械学習
+## Machine Learning
+
+.fullwidth[![機械学習 とは](/images/microsoft-decode-2017/About_Machine_Learning_1.png)]
+
+#### References
+[AI を手軽に使える時代がやってきた！”人工知能パーツ” Cognitive Services 入門](https://doc.co/xrCf79)
+
+---
+
+## Machine Learning
+
+.fullwidth[![機械学習でできること](/images/microsoft-decode-2017/About_Machine_Learning_2.png)]
+
+#### References
+[AI を手軽に使える時代がやってきた！”人工知能パーツ” Cognitive Services 入門](https://doc.co/xrCf79)
+
+---
+
+## Machine Learning
+
+.fullwidth[![機械学習の利用例](/images/microsoft-decode-2017/About_Machine_Learning_3.png)]
+
+#### References
+[AI を手軽に使える時代がやってきた！”人工知能パーツ” Cognitive Services 入門](https://doc.co/xrCf79)
+
+---
+
+## Machine Learning
 
 ### プログラムと機械学習の違い
 
@@ -254,7 +281,7 @@ Cognitive Services の活用事例でどんなことができるか把握でき�
 - [いまさら聞けない、エンジニアのための機械学習のキホン \| de:code 2017 \| Channel 9](https://channel9.msdn.com/Events/de-code/2017/AI01)
 
 AI やっていきたいけど機械学習は全然わかりませんという人向け。<br>
-基本的な知識が得られる。話がうまい。
+基本的な知識が得られる。話がうまい。おもしろい。
 
 - [50 分でわかるテスト駆動開発 \| de:code 2017 \| Channel 9](https://channel9.msdn.com/Events/de-code/2017/DO03)
 
