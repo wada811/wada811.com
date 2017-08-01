@@ -4,7 +4,7 @@ draft = false
 title = "Microsoft de:code 2017 参加報告"
 tags = [
     "Microsoft",
-    "decode",
+    "de:code",
 ]
 
 +++
