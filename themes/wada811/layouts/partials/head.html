@@ -14,7 +14,10 @@
 {{ end }}
 {{ else if eq .URL "/blog/" }}
 <!-- Blog -->
-<meta property="og:title" content="Blog Archive | {{ .Site.Title }}">
+<meta property="og:title" content="Blog | {{ .Site.Title }}">
+{{ else if eq .URL "/slide/" }}
+<!-- Slide -->
+<meta property="og:title" content="Slide | {{ .Site.Title }}">
 {{ else if in .URL "/tags/" }}
 <!-- Category -->
 <meta property="og:title" content="{{ .Site.Title }}">
@@ -29,7 +32,9 @@
     {{ if eq .URL "/" }}
     {{ .Site.Title }}
     {{ else if eq .URL "/blog/" }}
-    Blog Archive | {{ .Site.Title }}
+    Blog | {{ .Site.Title }}
+    {{ else if eq .URL "/slide/" }}
+    Slide | {{ .Site.Title }}
     {{ else if in .URL "/tags/" }}
     {{ .Title }} | {{ .Site.Title }}
     {{ else }}
