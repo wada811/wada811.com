@@ -1,11 +1,11 @@
 +++
 date = "2017-06-19T20:52:44+09:00"
 draft = false
-title = "[SQLServer][Transact-SQL] Indentity の値を調べる・設定する"
+title = "[SQL Server][Transact-SQL] Indentity の値を調べる・設定する"
 tags = [
 	"SQL",
 	"Transact-SQL",
-	"SQLServer"
+	"SQL Server"
 ]
 
 +++

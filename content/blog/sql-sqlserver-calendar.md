@@ -1,11 +1,11 @@
 +++
 date = "2017-06-15T18:52:44+09:00"
 draft = false
-title = "[SQLServer][Transact-SQL] 特定期間の日付を取得する"
+title = "[SQL Server][Transact-SQL] 特定期間の日付を取得する"
 tags = [
 	"SQL",
 	"Transact-SQL",
-	"SQLServer"
+	"SQL Server"
 ]
 
 +++
@@ -65,4 +65,4 @@ FROM カレンダー;
 |2017-06-30 00:00:00.000|
 
 ## Reference
-[「SqlServerで期間内の日付を取得するには？」（2） Database Expert － ＠IT](http://www.atmarkit.co.jp/bbs/phpBB/viewtopic.php?topic=45260&forum=26&start=8)
+[「SQL Serverで期間内の日付を取得するには？」（2） Database Expert － ＠IT](http://www.atmarkit.co.jp/bbs/phpBB/viewtopic.php?topic=45260&forum=26&start=8)

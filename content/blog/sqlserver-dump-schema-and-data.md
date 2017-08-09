@@ -1,9 +1,9 @@
 +++
 date = "2017-08-01T14:17:05+09:00"
 draft = false
-title = "[SQLServer] Dump Schema and Data in SQL Server"
+title = "[SQL Server] Dump Schema and Data in SQL Server"
 tags = [
-    "SQLServer"
+    "SQL Server"
 ]
 
 +++
