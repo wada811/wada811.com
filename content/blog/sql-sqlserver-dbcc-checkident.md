@@ -1,14 +1,14 @@
-+++
-date = "2017-06-19T20:52:44+09:00"
-draft = false
-title = "[SQL Server][Transact-SQL] Indentity の値を調べる・設定する"
-tags = [
+---
+date: "2017-06-19T20:52:44+09:00"
+draft: false
+title: "[SQL Server][Transact-SQL] Indentity の値を調べる・設定する"
+tags: [
 	"SQL",
 	"Transact-SQL",
 	"SQL Server"
 ]
 
-+++
+---
 
 ## Indentity の値を調べる
 Users テーブルの Indentity の値を調べる場合は以下のSQLを実行する。

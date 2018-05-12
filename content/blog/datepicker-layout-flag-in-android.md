@@ -1,12 +1,12 @@
-+++
-date = "2015-06-07T20:54:09+09:00"
-draft = false
-title = "[Android] DatePicker のレイアウトのフラグがカオスな件について"
-tags = [
+---
+date: "2015-06-07T20:54:09+09:00"
+draft: false
+title: "[Android] DatePicker のレイアウトのフラグがカオスな件について"
+tags: [
     "Android",
 ]
 
-+++
+---
 
 ## カオスな DatePicker のレイアウトのフラグ
 

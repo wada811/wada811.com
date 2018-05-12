@@ -1,14 +1,14 @@
-+++
-date = "2017-07-06T19:00:00+09:00"
-draft = false
-title = "[C#][log4net] log4net in Console Application"
-tags = [
+---
+date: "2017-07-06T19:00:00+09:00"
+draft: false
+title: "[C#][log4net] log4net in Console Application"
+tags: [
     "CSharp",
     "Console Application",
     "log4net",
 ]
 
-+++
+---
 
 ## log4net の設定
 

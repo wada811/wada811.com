@@ -1,21 +1,21 @@
-+++
-date = "2017-01-23T07:54:00+09:00"
-draft = false
-title = "Android Studio Plugin: Save Actions"
-tags = [
+---
+date: "2017-01-23T07:54:00+09:00"
+draft: false
+title: "Android Studio Plugin: Save Actions"
+tags: [
     "Android",
     "Android Studio",
     "Android Studio Plugin",
 ]
 
-+++
+---
 
 > # Updated: 2017-04-13
-> 
+>
 > アンインストールしました。
-> 
+>
 > ## Why uninstall?
-> 
+>
 > インストール後、気がついたら build.gradle を編集中に入力もままならないほど遅くなってしまったため。
 
 ## Why

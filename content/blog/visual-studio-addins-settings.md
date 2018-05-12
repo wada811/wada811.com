@@ -1,13 +1,13 @@
-+++
-date = "2015-04-15T11:44:36+09:00"
-draft = false
-title = "[Visual Studio]アドインの読み込み"
-tags = [
+---
+date: "2015-04-15T11:44:36+09:00"
+draft: false
+title: "[Visual Studio]アドインの読み込み"
+tags: [
     "Windows",
     "Visual Studio",
     "Visual Studio 2013"
 ]
-+++
+---
 
 ## アドインの読み込み
 アドインを入手した場合、Visual Studio からアドインを読み込むためには Visual Studio が認識できるディレクトリに置く必要があります。

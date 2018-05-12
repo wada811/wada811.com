@@ -1,12 +1,12 @@
-+++
-title = "git rebase --onto で初回のコミットの前にコミットを追加する"
-date = "2017-01-23T08:51:35+09:00"
-draft = false
-tags = [
+---
+title: "git rebase --onto で初回のコミットの前にコミットを追加する"
+date: "2017-01-23T08:51:35+09:00"
+draft: false
+tags: [
     "Git"
 ]
 
-+++
+---
 
 ## コマンド
 

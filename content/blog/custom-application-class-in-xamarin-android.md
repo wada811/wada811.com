@@ -1,14 +1,14 @@
-+++
-date = "2015-08-21T15:00:24+09:00"
-draft = false
-title = "Custom application class in Xamarin.Android"
-tags = [
+---
+date: "2015-08-21T15:00:24+09:00"
+draft: false
+title: "Custom application class in Xamarin.Android"
+tags: [
     "Android",
     "Xamarin.Android",
     "Xamarin",
 ]
 
-+++
+---
 
 ## Implement custom application class
 

@@ -1,12 +1,12 @@
-+++
-date = "2017-06-15T19:54:00+09:00"
-draft = false
-title = "[C#] System.currentTimeMillis() in C#"
-tags = [
+---
+date: "2017-06-15T19:54:00+09:00"
+draft: false
+title: "[C#] System.currentTimeMillis() in C#"
+tags: [
     "CSharp",
 ]
 
-+++
+---
 
 ちょっと処理時間を計測したくなったので<br>
 楽にミリ秒単位で現在時刻を取得する Java のアレを C# で。

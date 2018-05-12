@@ -1,13 +1,13 @@
-+++
-date = "2017-06-19T19:54:00+09:00"
-draft = false
-title = "[C#][Dapper] カラム名と変数をマッピングする"
-tags = [
+---
+date: "2017-06-19T19:54:00+09:00"
+draft: false
+title: "[C#][Dapper] カラム名と変数をマッピングする"
+tags: [
     "CSharp",
     "Dapper",
 ]
 
-+++
+---
 
 [Dapper \- a simple object mapper for \.Net](https://github.com/StackExchange/Dapper) を利用する際に、<br>
 標準ではカラム名と変数名が一致するとマッピングされます。<br>

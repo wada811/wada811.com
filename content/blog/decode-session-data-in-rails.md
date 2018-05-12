@@ -1,13 +1,13 @@
-+++
-date = "2015-08-28T22:34:01+09:00"
-draft = false
-title = "Decode session data in Rails"
-tags = [
+---
+date: "2015-08-28T22:34:01+09:00"
+draft: false
+title: "Decode session data in Rails"
+tags: [
     "Ruby",
     "Rails"
 ]
 
-+++
+---
 
 Rails の Session データは marshal して base64 されている。<br>
 `marshal`: オブジェクトのシリアライズ関数

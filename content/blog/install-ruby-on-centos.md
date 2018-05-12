@@ -1,15 +1,15 @@
-+++
-date = "2015-09-09T08:44:56+09:00"
-draft = false
-title = "Install Ruby on CentOS"
-tags = [
+---
+date: "2015-09-09T08:44:56+09:00"
+draft: false
+title: "Install Ruby on CentOS"
+tags: [
     "Linux",
     "CentOS",
     "Ruby",
     "rbenv"
 ]
 
-+++
+---
 
 バージョンによる違いはないと思う。<br>
 実行したのは Amazon Linux だけど CentOS も同じかと。

@@ -1,13 +1,13 @@
-+++
-date = "2015-06-15T08:07:37+09:00"
-draft = false
-title = "[Android] Espresso で他の Activity を起動する"
-tags = [
+---
+date: "2015-06-15T08:07:37+09:00"
+draft: false
+title: "[Android] Espresso で他の Activity を起動する"
+tags: [
     "Android",
     "Espresso",
 ]
 
-+++
+---
 
 ## ActivityTestRule を使う
 

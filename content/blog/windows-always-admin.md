@@ -1,12 +1,12 @@
-+++
-date = "2017-06-21T17:54:00+09:00"
-draft = false
-title = "[Windows] 常に管理者権限を得る"
-tags = [
+---
+date: "2017-06-21T17:54:00+09:00"
+draft: false
+title: "[Windows] 常に管理者権限を得る"
+tags: [
     "Windows"
 ]
 
-+++
+---
 
 ## セキュリティ上のリスクがあります。自己責任でどうぞ。
 

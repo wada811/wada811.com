@@ -1,12 +1,12 @@
-+++
-date = "2017-08-01T14:17:05+09:00"
-draft = false
-title = "[SQL Server] Dump Schema and Data in SQL Server"
-tags = [
+---
+date: "2017-08-01T14:17:05+09:00"
+draft: false
+title: "[SQL Server] Dump Schema and Data in SQL Server"
+tags: [
     "SQL Server"
 ]
 
-+++
+---
 
 ## How
 

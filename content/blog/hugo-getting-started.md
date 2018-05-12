@@ -1,14 +1,14 @@
-+++
-date = "2015-03-04T22:40:40+09:00"
-draft = false
-title = "Hugo Getting Started"
-tags = [
+---
+date: "2015-03-04T22:40:40+09:00"
+draft: false
+title: "Hugo Getting Started"
+tags: [
     "Hugo",
     "Blog",
     "Mac OS X"
 ]
 
-+++
+---
 
 ## [Hugo](http://gohugo.io/) とは
 

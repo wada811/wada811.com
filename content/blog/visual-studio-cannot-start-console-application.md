@@ -1,13 +1,13 @@
-+++
-date = "2017-06-28T19:07:37+09:00"
-draft = false
-title = "[Visual Studio] プログラム exe を開始できません。この要求はサポートされていません。"
-tags = [
+---
+date: "2017-06-28T19:07:37+09:00"
+draft: false
+title: "[Visual Studio] プログラム exe を開始できません。この要求はサポートされていません。"
+tags: [
     "Visual Studio",
     "Visual Studio 2017",
 ]
 
-+++
+---
 
 ## Problem
 

@@ -1,13 +1,13 @@
-+++
-date = "2017-04-25T12:54:00+09:00"
-draft = false
-title = "[Windows] 巨大なサイズのファイルを作成するコマンド"
-tags = [
+---
+date: "2017-04-25T12:54:00+09:00"
+draft: false
+title: "[Windows] 巨大なサイズのファイルを作成するコマンド"
+tags: [
     "Windows",
     "Windows Command",
 ]
 
-+++
+---
 
 ## Commnad
 

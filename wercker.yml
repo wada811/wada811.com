@@ -1,7 +1,6 @@
 box: debian
 build:
   steps:
-  steps:
     - install-packages:
         packages: git
     - script:

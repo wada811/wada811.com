@@ -1,13 +1,13 @@
-+++
-date = "2015-09-16T20:14:49+09:00"
-draft = false
-title = "[Android]アプリのレビューを Slack に通知する"
-tags = [
+---
+date: "2015-09-16T20:14:49+09:00"
+draft: false
+title: "[Android]アプリのレビューを Slack に通知する"
+tags: [
     "Android",
     "Slack"
 ]
 
-+++
+---
 
 > [Post Google Play App. Reviews to Slack | wada811's gist ](https://gist.github.com/wada811/5f6469f043daea5bcb5b)
 > ### 参考

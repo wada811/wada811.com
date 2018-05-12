@@ -1,13 +1,13 @@
-+++
-date = "2017-08-25T19:47:05+09:00"
-draft = false
-title = "[PowerShell] open Internet Explorer"
-tags = [
+---
+date: "2017-08-25T19:47:05+09:00"
+draft: false
+title: "[PowerShell] open Internet Explorer"
+tags: [
     "PowerShell",
     "Internet Explorer"
 ]
 
-+++
+---
 
 ## PowerShell で IE を開く Script (`OpenIE.ps1`)
 

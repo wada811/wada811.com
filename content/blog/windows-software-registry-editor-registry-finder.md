@@ -1,14 +1,14 @@
-+++
-date = "2017-06-15T12:54:00+09:00"
-draft = false
-title = "[Windows][フリーソフト][レジストリエディタ] Registry Finder"
-tags = [
+---
+date: "2017-06-15T12:54:00+09:00"
+draft: false
+title: "[Windows][フリーソフト][レジストリエディタ] Registry Finder"
+tags: [
     "Windows",
     "フリーソフト",
     "レジストリエディタ",
 ]
 
-+++
+---
 
 ## regedit より使いやすいレジストリエディタ
 

@@ -1,10 +1,10 @@
-+++
-date = ""
-title = ""
-draft = false
-tags = [
+---
+date: ""
+title: ""
+draft: false
+tags: [
     ""
 ]
 
-+++
+---
 

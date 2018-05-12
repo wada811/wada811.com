@@ -1,12 +1,12 @@
-+++
-date = "2015-03-03T08:51:30+09:00"
-draft = false
-title = "git commit --amend でコミットメッセージを編集しない方法"
-tags = [
+---
+date: "2015-03-03T08:51:30+09:00"
+draft: false
+title: "git commit --amend でコミットメッセージを編集しない方法"
+tags: [
     "Git",
 ]
 
-+++
+---
 
 `git commit --amend` すると `vim` などでコミットメッセージの編集画面が開きます。
 コミットメッセージは別に修正したくない場合や、

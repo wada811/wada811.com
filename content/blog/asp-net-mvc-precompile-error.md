@@ -1,12 +1,12 @@
-+++
-date = "2017-06-21T19:54:00+09:00"
-draft = false
-title = "[ASP.NET MVC] Microsoft.VisualStudio.Web.PageInspector.Loader が読み込めないのでプリコンパイルして発行できない"
-tags = [
+---
+date: "2017-06-21T19:54:00+09:00"
+draft: false
+title: "[ASP.NET MVC] Microsoft.VisualStudio.Web.PageInspector.Loader が読み込めないのでプリコンパイルして発行できない"
+tags: [
     "ASP.NET MVC"
 ]
 
-+++
+---
 
 ## 試行錯誤編
 

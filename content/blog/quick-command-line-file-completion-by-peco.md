@@ -1,13 +1,13 @@
-+++
-date = "2015-08-19T15:26:05+09:00"
-draft = false
-title = "Quick Command-line File Completion by peco"
-tags = [
+---
+date: "2015-08-19T15:26:05+09:00"
+draft: false
+title: "Quick Command-line File Completion by peco"
+tags: [
     "peco",
     "zsh",
 ]
 
-+++
+---
 
 ## きっかけ
 

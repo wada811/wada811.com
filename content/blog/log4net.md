@@ -1,13 +1,13 @@
-+++
-date = "2017-04-10T17:54:00+09:00"
-draft = false
-title = "log4net"
-tags = [
+---
+date: "2017-04-10T17:54:00+09:00"
+draft: false
+title: "log4net"
+tags: [
     "log4net",
     "CSharp",
 ]
 
-+++
+---
 
 ## log4net is the de facto standard for logging library in C#(.NET)
 

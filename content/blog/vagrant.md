@@ -1,10 +1,10 @@
-+++
-title = "Vagrant"
-date = "2017-04-03T07:32:21+09:00"
-tags = ["Vagrant"]
-draft = false
+---
+title: "Vagrant"
+date: "2017-04-03T07:32:21+09:00"
+tags: ["Vagrant"]
+draft: false
 
-+++
+---
 
 ## Vagrant とは
 

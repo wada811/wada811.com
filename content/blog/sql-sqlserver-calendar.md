@@ -1,14 +1,14 @@
-+++
-date = "2017-06-15T18:52:44+09:00"
-draft = false
-title = "[SQL Server][Transact-SQL] 特定期間の日付を取得する"
-tags = [
+---
+date: "2017-06-15T18:52:44+09:00"
+draft: false
+title: "[SQL Server][Transact-SQL] 特定期間の日付を取得する"
+tags: [
 	"SQL",
 	"Transact-SQL",
 	"SQL Server"
 ]
 
-+++
+---
 
 ## SQL
 ```sql

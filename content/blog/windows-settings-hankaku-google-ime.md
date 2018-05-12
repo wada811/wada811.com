@@ -1,14 +1,14 @@
-+++
-date = "2017-06-15T19:54:00+09:00"
-draft = false
-title = "[Windows][GoogleIME] 無変換キーを半角キーに割り当てる"
-tags = [
+---
+date: "2017-06-15T19:54:00+09:00"
+draft: false
+title: "[Windows][GoogleIME] 無変換キーを半角キーに割り当てる"
+tags: [
     "Windows",
     "GoogleIME",
     "設定"
 ]
 
-+++
+---
 
 ## Why
 

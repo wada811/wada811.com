@@ -1,14 +1,14 @@
-+++
-date = "2017-06-28T08:07:37+09:00"
-draft = false
-title = "[JavaScript][jQuery] focus() が IE で動かない"
-tags = [
+---
+date: "2017-06-28T08:07:37+09:00"
+draft: false
+title: "[JavaScript][jQuery] focus() が IE で動かない"
+tags: [
     "JavaScript",
     "jQuery",
     "Internet Explorer",
 ]
 
-+++
+---
 
 ## Problem
 

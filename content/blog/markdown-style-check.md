@@ -1,13 +1,13 @@
-+++
-date = "2015-02-23T09:23:06+09:00"
-draft = false
-title = "Markdown style check"
-tags = [
+---
+date: "2015-02-23T09:23:06+09:00"
+draft: false
+title: "Markdown style check"
+tags: [
     "Blog",
     "Markdown"
 ]
 
-+++
+---
 
 ## References
 

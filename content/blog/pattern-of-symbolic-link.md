@@ -1,13 +1,13 @@
-+++
-date = "2015-08-31T08:57:15+09:00"
-draft = false
-title = "Pattern of symbolic link"
-tags = [
+---
+date: "2015-08-31T08:57:15+09:00"
+draft: false
+title: "Pattern of symbolic link"
+tags: [
     "Linux",
     "Linux Command",
 ]
 
-+++
+---
 
 ## シンボリックリンクの作成
 

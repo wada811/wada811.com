@@ -1,13 +1,13 @@
-+++
-date = "2017-03-15T17:54:00+09:00"
-title = "Hugo の記事の更新日時に Git のコミット日時を設定する"
-draft = false
-tags = [
+---
+date: "2017-03-15T17:54:00+09:00"
+title: "Hugo の記事の更新日時に Git のコミット日時を設定する"
+draft: false
+tags: [
     "Hugo",
     "Blog"
 ]
 
-+++
+---
 
 ## Why
 記事の更新日時を自動で設定したい。<br>

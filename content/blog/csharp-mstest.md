@@ -1,15 +1,15 @@
-+++
-date = "2017-07-06T18:00:00+09:00"
-draft = false
-title = "[C#] MSTest"
-tags = [
+---
+date: "2017-07-06T18:00:00+09:00"
+draft: false
+title: "[C#] MSTest"
+tags: [
     "CSharp",
     "Visual Studio",
     "Unit Testing",
     "MSTest",
 ]
 
-+++
+---
 
 ## MSTest とは
 

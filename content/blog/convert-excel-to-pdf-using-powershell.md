@@ -1,15 +1,15 @@
-+++
-date = "2016-09-05T19:13:22+09:00"
-draft = false
-title = "Convert Excel to PDF using PowerShell"
-tags = [
+---
+date: "2016-09-05T19:13:22+09:00"
+draft: false
+title: "Convert Excel to PDF using PowerShell"
+tags: [
     "PowerShell",
     "Microsoft Office",
     "Excel",
     "PDF"
 ]
 
-+++
+---
 
 大量の Excel ファイルを PDF に変換したいことはありませんか？<br>
 いちいちファイルを開いて PDF に変換していたら日が暮れてしまいます。<br>

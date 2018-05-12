@@ -1,0 +1,23 @@
+baseURL: "https://wada811.com"
+languageCode: "ja-JP"
+title: "wada811.com"
+theme: "wada811"
+enableGitInfo: true
+preserveTaxonomyNames: true
+
+params:
+  author: "wada811"
+  dateForm: "2006-01-02" # time - The Go Programming Language http://golang.org/pkg/time/#Time.Format
+  twitter: "wada811"
+  github: "wada811"
+  syntaxHighlightTheme: "solarized_dark.min.css"
+  googleAnalyticsUserID: "UA-41423152-2"
+  showRelatedPost: true
+
+indexes:
+  tag: "tags"
+
+permalinks:
+  blog: "/:section/:filename/"
+  slide: "/:section/:filename/"
+  wiki: "/:section/:filename/"

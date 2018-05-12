@@ -1,14 +1,14 @@
-+++
-date = "2015-02-22T16:13:22+09:00"
-draft = false
-title = "Hugoでブログを書くことにしました"
-tags = [
+---
+date: "2015-02-22T16:13:22+09:00"
+draft: false
+title: "Hugoでブログを書くことにしました"
+tags: [
     "Blog",
     "Hugo",
     "Markdown"
 ]
 
-+++
+---
 
 今まで Blogger でブログを書いていましたが Hugo に移行しました。(過去記事は移行できていないけど…)
 

@@ -1,13 +1,13 @@
-+++
-date = "2017-06-19T17:54:00+09:00"
-draft = false
-title = "[C#][ASP.NET MVC] RouteConfig の設定"
-tags = [
+---
+date: "2017-06-19T17:54:00+09:00"
+draft: false
+title: "[C#][ASP.NET MVC] RouteConfig の設定"
+tags: [
     "CSharp",
     "ASP.NET MVC",
 ]
 
-+++
+---
 
 ## RouteConfig.cs
 

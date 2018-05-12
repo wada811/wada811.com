@@ -1,11 +1,11 @@
-+++
-date = "2015-06-28T09:05:54+09:00"
-draft = false
-title = "[Android] Compound ListView のパフォーマンス、あるいは MergeAdapter が便利という話"
-tags = [
+---
+date: "2015-06-28T09:05:54+09:00"
+draft: false
+title: "[Android] Compound ListView のパフォーマンス、あるいは MergeAdapter が便利という話"
+tags: [
     "Android"
 ]
-+++
+---
 
 ## Compound ListView とは
 

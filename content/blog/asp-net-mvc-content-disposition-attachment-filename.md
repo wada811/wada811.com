@@ -1,14 +1,14 @@
-+++
-date = "2017-06-15T19:54:00+09:00"
-draft = false
-title = "[C#][ASP.NET MVC] ファイルをダウンロードする際に日本語ファイル名が文字化けする"
-tags = [
+---
+date: "2017-06-15T19:54:00+09:00"
+draft: false
+title: "[C#][ASP.NET MVC] ファイルをダウンロードする際に日本語ファイル名が文字化けする"
+tags: [
     "CSharp",
     "ASP.NET MVC",
     "Internet Explorer"
 ]
 
-+++
+---
 
 以下のように `Content-Disposition` を設定して、 Chrome でダウンロードしてみると正常にダウンロードできますが、<br>
 IE で開くとファイル名が文字化けしてしまいます。

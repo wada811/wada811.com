@@ -1,13 +1,13 @@
-+++
-date = "2016-09-07T19:15:11+09:00"
-draft = false
-title = "Concat PDF files using PowerShell"
-tags = [
+---
+date: "2016-09-07T19:15:11+09:00"
+draft: false
+title: "Concat PDF files using PowerShell"
+tags: [
     "PowerShell",
     "PDF"
 ]
 
-+++
+---
 
 大量の PDF ファイルを1ファイルに結合してまとめたいことはありませんか？<br>
 PDF 結合ソフトでいちいちファイルを結合していたら日が暮れてしまいます。<br>

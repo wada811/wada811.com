@@ -1,12 +1,12 @@
-+++
-date = "2017-08-22T17:47:05+09:00"
-draft = false
-title = "[Git] stage/unstage hunks interactively"
-tags = [
+---
+date: "2017-08-22T17:47:05+09:00"
+draft: false
+title: "[Git] stage/unstage hunks interactively"
+tags: [
     "Git"
 ]
 
-+++
+---
 
 ## 差分をインタラクティブにインデックスに追加する
 

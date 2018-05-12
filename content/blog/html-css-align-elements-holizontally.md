@@ -1,13 +1,13 @@
-+++
-date = "2017-06-15T17:54:00+09:00"
-title = "[HTML][CSS] 要素を横並びにする"
-draft = false
-tags = [
+---
+date: "2017-06-15T17:54:00+09:00"
+title: "[HTML][CSS] 要素を横並びにする"
+draft: false
+tags: [
 	"HTML",
 	"CSS"
 ]
 
-+++
+---
 
 <style>
 	h2 {

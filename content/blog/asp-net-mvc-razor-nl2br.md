@@ -1,13 +1,13 @@
-+++
-date = "2017-06-15T19:54:00+09:00"
-draft = false
-title = "[C#][ASP.NET MVC] Razor で改行コードを br タグに変換する"
-tags = [
+---
+date: "2017-06-15T19:54:00+09:00"
+draft: false
+title: "[C#][ASP.NET MVC] Razor で改行コードを br タグに変換する"
+tags: [
     "CSharp",
     "ASP.NET MVC",
 ]
 
-+++
+---
 
 PHP のいわゆる nl2br が欲しい場合、以下のように記述する。
 

@@ -1,14 +1,14 @@
-+++
-date = "2015-05-22T22:51:27+09:00"
-draft = false
-title = "Get java.lang.Class on Xamarin.Android"
-tags = [
+---
+date: "2015-05-22T22:51:27+09:00"
+draft: false
+title: "Get java.lang.Class on Xamarin.Android"
+tags: [
     "CSharp",
     "Xamarin",
     "Xamarin.Android",
 ]
 
-+++
+---
 
 ## Xamarin.Android で Intent を生成するためにクラスを取得したい
 Java だったら以下のように `MainActivity.class` で取得できる。

@@ -1,13 +1,13 @@
-+++
-date = "2017-06-27T08:07:37+09:00"
-draft = false
-title = "[JavaScript] UserAgent でブラウザが IE か判定する"
-tags = [
+---
+date: "2017-06-27T08:07:37+09:00"
+draft: false
+title: "[JavaScript] UserAgent でブラウザが IE か判定する"
+tags: [
     "JavaScript",
     "Internet Explorer",
 ]
 
-+++
+---
 
 ## IE か判定する
 

@@ -1,13 +1,13 @@
-+++
-date = "2017-07-21T19:00:00+09:00"
-draft = false
-title = "Microsoft de:code 2017 参加報告"
-tags = [
+---
+date: "2017-07-21T19:00:00+09:00"
+draft: false
+title: "Microsoft de:code 2017 参加報告"
+tags: [
     "Microsoft",
     "de:code",
 ]
 
-+++
+---
 
 class: middle, center
 

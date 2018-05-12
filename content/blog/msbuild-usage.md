@@ -1,15 +1,15 @@
-+++
-draft = false
-date = "2017-02-13T17:54:00+09:00"
-title = "MSBuild で Visual Studio プロジェクトをビルドする"
-tags = [
+---
+draft: false
+date: "2017-02-13T17:54:00+09:00"
+title: "MSBuild で Visual Studio プロジェクトをビルドする"
+tags: [
     "Microsoft",
     "Windows",
     "Visual Studio",
     "MSBuild",
 ]
 
-+++
+---
 
 ## 環境
 

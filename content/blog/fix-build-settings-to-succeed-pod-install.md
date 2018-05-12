@@ -1,15 +1,15 @@
-+++
-date = "2016-12-23T13:45:00+09:00"
-draft = false
-title = "pod install が失敗する Build Settings を修正する"
-tags = [
+---
+date: "2016-12-23T13:45:00+09:00"
+draft: false
+title: "pod install が失敗する Build Settings を修正する"
+tags: [
     "iOS",
     "XCode",
     "CocoaPods",
     "Swift"
 ]
 
-+++
+---
 
 ## 環境
 
