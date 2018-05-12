@@ -14,7 +14,7 @@ build:
     - arjen/hugo-build:
         version: "0.24.1"
         theme: wada811
-        flags: --buildDrafts=true
+        flags: --buildDrafts=false
         disable_pygments: true
 deploy:
   steps:
