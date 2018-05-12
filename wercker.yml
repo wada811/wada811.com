@@ -12,7 +12,7 @@ build:
         code: |
           export BUILD_DATE=`date`
     - arjen/hugo-build:
-        version: "0.24.1"
+        version: "0.40.3"
         theme: wada811
         flags: --buildDrafts=false
         disable_pygments: true
