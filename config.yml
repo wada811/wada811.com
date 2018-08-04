@@ -19,5 +19,6 @@ indexes:
 
 permalinks:
   blog: "/:section/:filename/"
+  nippo: "/:section/:year/:month/:day/"
   slide: "/:section/:filename/"
   wiki: "/:section/:filename/"

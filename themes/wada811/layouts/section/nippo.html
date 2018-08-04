@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="posts">
 
-                {{ $paginator := .Paginate  (where .Data.Pages "Type" "nippo") 10 }}
+                {{ $paginator := .Paginate (where .Data.Pages "Type" "nippo") 10 }}
                 {{ range $paginator.Pages }}
                 {{ .Render "li" }}
                 {{ end }}
@@ -18,7 +18,7 @@
                         <li class="previous disabled"><span aria-hidden="true">&larr; Newer</span></li>
                         {{ end }}
 
-                        <li><a href="/">All</a></li>
+                        <li><a href="/nippo/">All</a></li>
 
                         {{ if $paginator.HasNext }}
                         <li class="next"><a href="{{ $paginator.Next.URL | absURL }}">Older <span aria-hidden="true">&rarr;</span></a></li>

@@ -1,0 +1,74 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <article class="post">
+
+                <header>
+                    <div class="post-meta">
+                        <a class="seeOnGitHub" href="https://github.com/wada811/wada811.com/blob/master/content/{{ .File.Path }}" target="_blank" title="See on GitHub"><i class="fa fa-github-square"></i></a>
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        <time datetime="{{ .Date.Format .Site.Params.DateForm }}" data-type="date">{{ .Date.Format .Site.Params.DateForm }}</time>
+                        {{ if .GitInfo }}
+                            <span class="glyphicon glyphicon-refresh"></span>
+                            <time datetime="{{ .GitInfo.AuthorDate.Format .Site.Params.DateForm }}" data-type="git">{{ .GitInfo.AuthorDate.Format .Site.Params.DateForm }}</time>
+                        {{ end }}
+                        <ul class="list-inline visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline">
+                            {{ range .Params.tags }}
+                            <li>
+                                <a href="/tags/{{ . | urlize }}">
+                                    <i class="fa fa-tags"></i>
+                                    {{ . }}
+                                </a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    <div class="markdown">
+                        <h1 class="post-title">{{ .Title }}</h1>
+                    </div>
+                </header>
+
+                <div class="markdown post-content">{{ .Content }}</div>
+
+                <!-- Pagination. -->
+                <footer>
+
+                    <nav>
+                        <ul class="pager">
+
+                            {{ if .Prev }}
+                            <li class="previous"><a href="{{ .Prev.Permalink }}"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                            {{ else }}
+                            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
+                            {{ end }}
+
+                            <li><a href="/nippo">All</a></li>
+
+                            {{ if .Next }}
+                            <li class="next"><a href="{{ .Next.Permalink }}">Older <span aria-hidden="true">&rarr;</span></a></li>
+                            {{ else }}
+                            <li class="next disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
+                            {{ end }}
+
+                        </ul>
+                    </nav>
+                </footer>
+
+            </article>
+        </div>
+        <!--
+        <div class="col-md-4">
+            {{ partial "sidebar.html" . }}
+        </div>
+        -->
+    </div>
+</div>
+
+{{ partial "footer.html" . }}
+<script>
+$(function(){
+    $(".post-content table").addClass("table table-striped table-bordered");
+});
+</script>
