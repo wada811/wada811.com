@@ -3,6 +3,7 @@ languageCode: "ja-JP"
 title: "wada811.com"
 theme: "wada811"
 enableGitInfo: true
+hasCJKLanguage: true
 preserveTaxonomyNames: true
 
 params:
