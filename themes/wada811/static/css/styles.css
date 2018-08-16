@@ -16,7 +16,7 @@ pre code {
 }
 
 .navbar-brand {
-    background: url("/assets/logo.png") no-repeat left center;
+    background: url("/assets/logo_128_trans.png") no-repeat left center;
     background-size: 32px 32px;
     padding-left: 36px;
 }
