@@ -22,14 +22,22 @@
                     </ul>
                     -->
                     <ul class="nav navbar-nav navbar-right">
-                        {{ if isset .Site.Params "Twitter" }}
+                        <li>
+                            <form method="get" action="https://github.com/wada811/wada811.com/search">
+                                <label style="margin: 0; padding: 10px; position: relative;">
+                                    <input type="text" name="q">
+                                    <i class="fa fa-search" style="position: absolute; top: 16px; right: 16px; color: #777;"></i>
+                                </label>
+                            </form>
+                        </li>
+                        {{ if isset .Site.Params "twitter" }}
                         <li>
                             <a href="https://twitter.com/{{ .Site.Params.Twitter }}" target="_blank">
                                 <i class="fa fa-twitter-square"></i>
                                 Twitter</a>
                         </li>
                         {{ end }}
-                        {{ if isset .Site.Params "Github" }}
+                        {{ if isset .Site.Params "github" }}
                         <li>
                             <a href="https://github.com/{{ .Site.Params.Github }}" target="_blank">
                                 <i class="fa fa-github-square"></i>
