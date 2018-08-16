@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 
 <meta charset="utf-8">
-
-<!-- Enable responsiveness on mobile devices-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+{{ if eq .URL "/" }}
+<title>{{ .Site.Title }}</title>
+<meta name="description" content="@wada811's website" />
+{{ else }}
+<title>{{ .Title }} | {{ .Site.Title }}</title>
+<meta name="description" content="{{ .Summary }}" />
+{{ end }}
 
 <meta property="og:url" content="{{ .Site.BaseURL }}{{ .URL }}">
 {{ if eq .URL "/" }}
@@ -32,13 +39,10 @@
 {{ end }}
 <meta name="twitter:image" content="{{ .Site.BaseURL }}/assets/logo_512.png" />
 
-<title>
-    {{ if eq .URL "/" }}
-    {{ .Site.Title }}
-    {{ else }}
-    {{ .Title }} | {{ .Site.Title }}
-    {{ end }}
-</title>
+<!-- Icons -->
+<link rel="shortcut icon" href="/assets/favicon.ico">
+<!-- RSS -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
 
 <!-- CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -48,9 +52,3 @@
 <link rel="stylesheet" href="/css/markdown.css?v={{ getenv "COMMIT_HASH" }}">
 <link rel="stylesheet" href="/css/styles.css?v={{ getenv "COMMIT_HASH" }}">
 <link rel="stylesheet" href="/css/code.css?v={{ getenv "COMMIT_HASH" }}">
-
-<!-- Icons -->
-<link rel="shortcut icon" href="/assets/favicon.ico">
-
-<!-- RSS -->
-<link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
