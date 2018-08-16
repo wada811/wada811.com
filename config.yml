@@ -17,9 +17,13 @@ params:
 
 indexes:
   tag: "tags"
+  year: "year"
+  month: "month"
 
 permalinks:
   blog: "/:section/:filename/"
-  nippo: "/:section/:year/:month/:day/"
   slide: "/:section/:filename/"
   wiki: "/:section/:filename/"
+  nippo: "/:section/:year/:month/:day/"
+  year: "/nippo/:slug/"
+  month: "/nippo/:slug/"
