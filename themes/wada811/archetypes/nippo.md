@@ -1,8 +1,8 @@
 ---
-year: "{{ dateFormat .Date.UTC "2006" }}"
-month: "{{ dateFormat .Date.UTC "2006/01" }}"
-date: "{{ dateFormat .Date.UTC "2006-01-02" }}"
-title: "{{ dateFormat .Date.UTC "2006-01-02" }} "
+year: "{{ dateFormat "2006" .Date.UTC }}"
+month: "{{ dateFormat "2006/01" .Date.UTC }}"
+date: "{{ dateFormat "2006-01-02" .Date.UTC }}"
+title: "{{ dateFormat "2006-01-02" .Date.UTC }} "
 draft: true
 tags: [
     "日報"
