@@ -11,7 +11,7 @@ tags: [
 ## カオスな DatePicker のレイアウトのフラグ
 
 <div class="scrollable-table">
-
+    
 |属性|値|API Level|
 |---|---|---|
 |`android:calendarViewShown`|`true` or `false`|11|
