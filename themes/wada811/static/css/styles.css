@@ -51,4 +51,5 @@ pre code {
     display: inline-block;
     width: auto!important;
     overflow: auto;
+    white-space: nowrap;
 }
