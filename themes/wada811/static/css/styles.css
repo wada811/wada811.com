@@ -26,7 +26,11 @@ pre code {
 }
 
 .post-title {
-    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.post-meta {
+    margin-bottom: 1em;
 }
 
 .seeOnGitHub img {
