@@ -42,3 +42,7 @@
 .language-javascript:before {
     content: 'JavaScript';
 }
+
+.language-kotlin:before {
+    content: 'Kotlin';
+}
