@@ -10,7 +10,7 @@
                         <h1 class="post-title">{{ .Title }}</h1>
                     </div>
                     <div class="post-meta">
-                        <a class="seeOnGitHub" href="https://github.com/wada811/wada811.com/blob/master/content/{{ .File.Path }}" target="_blank" title="See on GitHub"><i class="fa fa-github-square"></i></a>
+                        <a class="see-on-github" href="https://github.com/wada811/wada811.com/blob/master/content/{{ .File.Path }}" target="_blank" title="See on GitHub"><i class="fa fa-github-square"></i></a>
                         <span class="glyphicon glyphicon-calendar"></span>
                         <time datetime="{{ .Date.Format .Site.Params.DateForm }}" data-type="date">{{ .Date.Format .Site.Params.DateForm }}</time>
                         {{ if .GitInfo }}
