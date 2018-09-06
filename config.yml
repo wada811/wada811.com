@@ -23,7 +23,7 @@ indexes:
 permalinks:
   blog: "/:section/:filename/"
   slide: "/:section/:filename/"
-  wiki: "/:section/:filename/"
+  wiki: "/:sections/:filename/"
   nippo: "/:section/:year/:month/:day/"
   year: "/nippo/:slug/"
   month: "/nippo/:slug/"

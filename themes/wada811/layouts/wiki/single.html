@@ -27,6 +27,28 @@
 
                 <div class="markdown post-content">{{ .Content }}</div>
 
+                <aside class="markdown">
+                    {{ if .Site.Params.ShowRelatedPost }}
+                        {{ $posts := (where .Site.Pages "Type" "wiki") }}
+                        {{ $has_posts := $posts | gt 0 }}
+                        {{ if $has_posts }}
+                            <!-- Related post. -->
+                            <h3>関連記事</h3>
+                            <ul class="post-rels">
+                                {{ $page_link := .Permalink }}
+                                {{ $tags := .Params.tags }}
+                                {{ range $posts }}
+                                {{ $page := . }}
+                                {{ $has_common_tags := intersect $tags .Params.tags | len | lt 0 }}
+                                    {{ if and $has_common_tags (ne $page_link $page.Permalink) }}
+                                        <li><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></li>
+                                    {{ end }}
+                                {{ end }}
+                            </ul>
+                        {{ end }}
+                    {{ end }}
+                </aside>
+
                 <!-- Pagination. -->
                 <footer>
 
@@ -39,7 +61,7 @@
                             <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
                             {{ end }}
 
-                            <li><a href="/nippo">All</a></li>
+                            <li><a href="/wiki">All</a></li>
 
                             {{ if .Next }}
                             <li class="next"><a href="{{ .Next.Permalink }}">Older <span aria-hidden="true">&rarr;</span></a></li>

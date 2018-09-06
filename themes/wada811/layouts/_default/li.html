@@ -22,12 +22,7 @@
             {{ end }}
             <ul class="list-inline visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline">
                 {{ range .Params.tags }}
-                <li>
-                    <a href="/tags/{{ . | urlize }}">
-                        <i class="fa fa-tags"></i>
-                        {{ . }}
-                    </a>
-                </li>
+                <li><a href="/tags/{{ . | urlize }}"><i class="fa fa-tags"></i>{{ . }}</a></li>
                 {{ end }}
             </ul>
         </div>
