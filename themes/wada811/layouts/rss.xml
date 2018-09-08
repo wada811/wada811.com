@@ -17,7 +17,7 @@
         <guid>{{ .Permalink }}</guid>
         <description>{{ .Content | html }}</description>
         {{ range .Params.tags }}
-        <category>{{ . }}</category>
+        <category>{{ . | urlize }}</category>
         {{ end }}
       </item>
     {{ end }}
