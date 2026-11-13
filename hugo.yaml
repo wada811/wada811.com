@@ -1,0 +1,12 @@
+baseURL: https://wada811.com
+defaultContentLanguage: ja
+locale: ja-JP
+title: wada811.com
+hasCJKLanguage: true
+timeZone: Asia/Tokyo
+disableKinds:
+  - taxonomy
+  - term
+  - rss
+  - sitemap
+  - section
