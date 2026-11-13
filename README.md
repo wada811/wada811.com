@@ -42,6 +42,15 @@ work の frontmatter を次のように変える。
 - `状態: published` で `公開日` が空だと失敗する。
 - `公開先` は取り込まない。
 
+## 試験
+
+```bash
+mise exec -- bash scripts/test.sh
+```
+
+- 取り込みスクリプトの変換（`draft`・`date`・`title` のエスケープ・冪等・公開日が空なら失敗）を確かめる。
+- 日本時間で過ぎた時刻の記事が、ビルドの時刻にかかわらず一覧に出ることも確かめる。CI は UTC で動くので、`hugo.yaml` の `timeZone: Asia/Tokyo` が無いと、日本時間の 0〜9 時のビルドで当日の記事が出ない。
+
 ## 公開の流れ
 
 1. work の `blog/<記事>.md` で `状態: published`・`公開日` を埋める。
